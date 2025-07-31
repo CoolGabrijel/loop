@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://i0ldgoa5yexw"
-path="res://.godot/imported/SM_wall_plug.fbx-f9f599651f453405877f8c6b93b667a4.scn"
+path="res://.godot/imported/SM_wall_plug.fbx-232a563b56569129d286266b60e80319.scn"
 
 [deps]
 
-source_file="res://scenes/environment/office_elements/SM_wall_plug.fbx"
-dest_files=["res://.godot/imported/SM_wall_plug.fbx-f9f599651f453405877f8c6b93b667a4.scn"]
+source_file="res://scenes/environment/structures/SM_wall_plug.fbx"
+dest_files=["res://.godot/imported/SM_wall_plug.fbx-232a563b56569129d286266b60e80319.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cyxg3xi6fliya"
-path="res://.godot/imported/SM_corridor_empty.fbx-2060ddeba2c36ab79f2b5179cbeb45e5.scn"
+uid="uid://drgtqrya1s6f2"
+path="res://.godot/imported/SM_floor_half.fbx-ef950e7072fc7c88c15621de49723d76.scn"
 
 [deps]
 
-source_file="res://scenes/environment/structures/SM_corridor_empty.fbx"
-dest_files=["res://.godot/imported/SM_corridor_empty.fbx-2060ddeba2c36ab79f2b5179cbeb45e5.scn"]
+source_file="res://scenes/environment/structures/SM_floor_half.fbx"
+dest_files=["res://.godot/imported/SM_floor_half.fbx-ef950e7072fc7c88c15621de49723d76.scn"]
 
 [params]
 

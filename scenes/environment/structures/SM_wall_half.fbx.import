@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://duru03m1mnj23"
-path="res://.godot/imported/SM_floor_2x2.fbx-383d81ad5181940e851b1765790e5629.scn"
+uid="uid://umbxo2xdlx0b"
+path="res://.godot/imported/SM_wall_half.fbx-bbbc9b9dbb54304a0c23e0cec4b32d0b.scn"
 
 [deps]
 
-source_file="res://scenes/environment/office_elements/SM_floor_2x2.fbx"
-dest_files=["res://.godot/imported/SM_floor_2x2.fbx-383d81ad5181940e851b1765790e5629.scn"]
+source_file="res://scenes/environment/structures/SM_wall_half.fbx"
+dest_files=["res://.godot/imported/SM_wall_half.fbx-bbbc9b9dbb54304a0c23e0cec4b32d0b.scn"]
 
 [params]
 

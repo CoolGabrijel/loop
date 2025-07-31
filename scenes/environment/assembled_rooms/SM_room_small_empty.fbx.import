@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bnt464olyou6t"
-path="res://.godot/imported/SM_door_wall.fbx-65474204fa277b5a7cd121ac4e237149.scn"
+uid="uid://cqpsroqbf0fu6"
+path="res://.godot/imported/SM_room_small_empty.fbx-d28ca04708d40218456f706453d16bfb.scn"
 
 [deps]
 
-source_file="res://scenes/environment/office_elements/SM_door_wall.fbx"
-dest_files=["res://.godot/imported/SM_door_wall.fbx-65474204fa277b5a7cd121ac4e237149.scn"]
+source_file="res://scenes/environment/assembled_rooms/SM_room_small_empty.fbx"
+dest_files=["res://.godot/imported/SM_room_small_empty.fbx-d28ca04708d40218456f706453d16bfb.scn"]
 
 [params]
 

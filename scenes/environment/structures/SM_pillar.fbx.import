@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cqpsroqbf0fu6"
-path="res://.godot/imported/SM_room_small_empty.fbx-4d9b440b4e81779133aafda91f99e7f3.scn"
+uid="uid://bub178c7yd83r"
+path="res://.godot/imported/SM_pillar.fbx-7b52b390b4089a17a3f4b55447d45dfd.scn"
 
 [deps]
 
-source_file="res://scenes/environment/structures/SM_room_small_empty.fbx"
-dest_files=["res://.godot/imported/SM_room_small_empty.fbx-4d9b440b4e81779133aafda91f99e7f3.scn"]
+source_file="res://scenes/environment/structures/SM_pillar.fbx"
+dest_files=["res://.godot/imported/SM_pillar.fbx-7b52b390b4089a17a3f4b55447d45dfd.scn"]
 
 [params]
 
