@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8d4eosu31kqr"
-path="res://.godot/imported/square-rounded-24.png-dc80993c6cb08725cff586c84a71acd2.ctex"
+uid="uid://bxunvtkoci25d"
+path="res://.godot/imported/triangle.png-5dc2365fb7bdd29d398264dbde604540.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/square-rounded-24.png"
-dest_files=["res://.godot/imported/square-rounded-24.png-dc80993c6cb08725cff586c84a71acd2.ctex"]
+source_file="res://assets/sprites/ui/triangle.png"
+dest_files=["res://.godot/imported/triangle.png-5dc2365fb7bdd29d398264dbde604540.ctex"]
 
 [params]
 

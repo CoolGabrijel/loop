@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxunvtkoci25d"
-path="res://.godot/imported/triangle-24.png-169176de3791c56d58abbcc796d761ca.ctex"
+uid="uid://bx3s2v1pqapbf"
+path="res://.godot/imported/hud_heart_half.png-b7ef04a16ff6a448192b96a23cfbbc00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/triangle-24.png"
-dest_files=["res://.godot/imported/triangle-24.png-169176de3791c56d58abbcc796d761ca.ctex"]
+source_file="res://assets/sprites/ui/hud_heart_half.png"
+dest_files=["res://.godot/imported/hud_heart_half.png-b7ef04a16ff6a448192b96a23cfbbc00.ctex"]
 
 [params]
 

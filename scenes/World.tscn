@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://be4y2wwjnek6y" path="res://scenes/rooms/corridor.tscn" id="3_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://bniykmsjaoqh3" path="res://scenes/ui/hud_ui.tscn" id="4_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://c1kr8rxxx5th4" path="res://scenes/characters/player.tscn" id="5_w7kh3"]
-[ext_resource type="PackedScene" uid="uid://drrynew3w310r" path="res://scenes/enviroment.tscn" id="6_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://drrynew3w310r" path="res://scenes/environment.tscn" id="6_e3hyu"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_qfnet")
@@ -21,4 +21,4 @@ offset_bottom = 40.0
 
 [node name="Player" parent="." instance=ExtResource("5_w7kh3")]
 
-[node name="Env" parent="." instance=ExtResource("6_e3hyu")]
+[node name="Environment" parent="." instance=ExtResource("6_e3hyu")]
