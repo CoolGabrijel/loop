@@ -1,0 +1,14 @@
+Game SFX:
+Footsteps
+Marching, walking, stumbling loops
+MC character hit sound
+Room transition for opening door
+
+Background ambience:
+Water dripping
+Wind
+
+UI: 
+Menu Hover
+Map being opened
+
