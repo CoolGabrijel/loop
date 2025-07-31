@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8syco72472s4"]
+
+[ext_resource type="Texture2D" uid="uid://ce4rrt8fiojf4" path="res://scenes/UI/Game/hud_heartFull.png" id="1_4h7j7"]
+[ext_resource type="Texture2D" uid="uid://bvomgn5ivcen2" path="res://scenes/UI/Game/hud_heartEmpty.png" id="2_4wgx7"]
+[ext_resource type="Texture2D" uid="uid://bx3s2v1pqapbf" path="res://scenes/UI/Game/hud_heartHalf.png" id="3_72eml"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_left = 72.8595
+offset_top = 160.074
+offset_right = 112.859
+offset_bottom = 200.074
+
+[node name="HudHeartFull" type="Sprite2D" parent="."]
+position = Vector2(146.141, 178.926)
+texture = ExtResource("1_4h7j7")
+
+[node name="HudHeartEmpty" type="Sprite2D" parent="."]
+position = Vector2(-2.8595, 167.926)
+texture = ExtResource("2_4wgx7")
+
+[node name="HudHeartHalf" type="Sprite2D" parent="."]
+position = Vector2(70.1405, 170.926)
+texture = ExtResource("3_72eml")

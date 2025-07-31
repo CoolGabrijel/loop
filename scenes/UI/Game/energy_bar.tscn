@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c1r4ytmlqwhpi"]
+
+[node name="Energy_Bar" type="ProgressBar"]
+custom_minimum_size = Vector2(250, 0)
+offset_left = 9.0
+offset_top = 40.0
+offset_right = 259.0
+offset_bottom = 67.0
+value = 0.31

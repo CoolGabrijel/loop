@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://d2hrj408gqob6"]
+[gd_scene load_steps=4 format=3 uid="uid://d2hrj408gqob6"]
+
+[ext_resource type="PackedScene" uid="uid://c1r4ytmlqwhpi" path="res://scenes/UI/Game/energy_bar.tscn" id="1_d1c63"]
+[ext_resource type="Texture2D" uid="uid://bvomgn5ivcen2" path="res://scenes/UI/Game/hud_heartEmpty.png" id="2_1lgw5"]
+[ext_resource type="Texture2D" uid="uid://ce4rrt8fiojf4" path="res://scenes/UI/Game/hud_heartFull.png" id="3_hlk0d"]
 
 [node name="World" type="Node3D"]
+
+[node name="Energy_Bar" parent="." instance=ExtResource("1_d1c63")]
+
+[node name="Hud_Heart_Life_Lost" type="Sprite2D" parent="."]
+position = Vector2(113, 18)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1lgw5")
+
+[node name="Hud_Heart_Life_Remain" type="Sprite2D" parent="."]
+position = Vector2(28, 18)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_hlk0d")
+
+[node name="HudHeartFull" type="Sprite2D" parent="."]
+position = Vector2(71, 18)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_hlk0d")
