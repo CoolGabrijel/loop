@@ -1,14 +1,32 @@
 Game SFX:
-Footsteps
-Marching, walking, stumbling loops
+
+marching loop
+walking loop
+stumbling loop
 MC character hit sound
 Room transition for opening door
+Rickety fan loop
+Static shock
+Stapler melee
+Stapler ranged attack
+Stapler ranged hit
+Stapler ranged empty
+Mop charge hit
+
+
+VFX:
+MC
+deep male
+female
+boss
 
 Background ambience:
 Water dripping
 Wind
+Static
 
 UI: 
 Menu Hover
 Map being opened
-
+Accept
+Cancel
