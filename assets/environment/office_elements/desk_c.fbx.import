@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d0otwl0y0gpie"
-path="res://.godot/imported/SM_carpet.fbx-55b7c49797766583ba1971eafb939a84.scn"
+uid="uid://o3lqqbbnqby0"
+path="res://.godot/imported/desk_c.fbx-3422bdfbc103dce9ba63d8849bd7cfd9.scn"
 
 [deps]
 
-source_file="res://assets/environment/office_elements/SM_carpet.fbx"
-dest_files=["res://.godot/imported/SM_carpet.fbx-55b7c49797766583ba1971eafb939a84.scn"]
+source_file="res://assets/environment/office_elements/desk_c.fbx"
+dest_files=["res://.godot/imported/desk_c.fbx-3422bdfbc103dce9ba63d8849bd7cfd9.scn"]
 
 [params]
 

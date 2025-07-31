@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://o3lqqbbnqby0"
-path="res://.godot/imported/SM_desk_c.fbx-9d3f1f6f7e48c77d55c34bd1c344f63c.scn"
+uid="uid://bub178c7yd83r"
+path="res://.godot/imported/pillar.fbx-0360d420fc7fb1b8447e21fe868b8502.scn"
 
 [deps]
 
-source_file="res://assets/environment/office_elements/SM_desk_c.fbx"
-dest_files=["res://.godot/imported/SM_desk_c.fbx-9d3f1f6f7e48c77d55c34bd1c344f63c.scn"]
+source_file="res://assets/environment/structures/pillar.fbx"
+dest_files=["res://.godot/imported/pillar.fbx-0360d420fc7fb1b8447e21fe868b8502.scn"]
 
 [params]
 

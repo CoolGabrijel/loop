@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bub178c7yd83r"
-path="res://.godot/imported/SM_pillar.fbx-5a7ca0665abd90beeebe28e23ccdfe47.scn"
+uid="uid://umbxo2xdlx0b"
+path="res://.godot/imported/wall_half.fbx-201a531bb373c50270abc0427532a87f.scn"
 
 [deps]
 
-source_file="res://assets/environment/structures/SM_pillar.fbx"
-dest_files=["res://.godot/imported/SM_pillar.fbx-5a7ca0665abd90beeebe28e23ccdfe47.scn"]
+source_file="res://assets/environment/structures/wall_half.fbx"
+dest_files=["res://.godot/imported/wall_half.fbx-201a531bb373c50270abc0427532a87f.scn"]
 
 [params]
 

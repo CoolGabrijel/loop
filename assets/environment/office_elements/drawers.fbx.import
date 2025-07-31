@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d16qt4tn24akh"
-path="res://.godot/imported/SM_chair.fbx-07ef4d6fdb32d101b5dcb88582fe2ef4.scn"
+uid="uid://ddud05s3fpu6h"
+path="res://.godot/imported/drawers.fbx-56942e2db36647c6c1b179a51810ea22.scn"
 
 [deps]
 
-source_file="res://assets/environment/office_elements/SM_chair.fbx"
-dest_files=["res://.godot/imported/SM_chair.fbx-07ef4d6fdb32d101b5dcb88582fe2ef4.scn"]
+source_file="res://assets/environment/office_elements/drawers.fbx"
+dest_files=["res://.godot/imported/drawers.fbx-56942e2db36647c6c1b179a51810ea22.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://kwogjc17hy0f"
-path="res://.godot/imported/SM_room_small.fbx-8788cb4ecb203136977e841052979bad.scn"
+uid="uid://bqgg0iomchy1g"
+path="res://.godot/imported/clock.fbx-5055dd1be9f266a9fec8c02c387b98e6.scn"
 
 [deps]
 
-source_file="res://assets/environment/assembled_rooms/SM_room_small.fbx"
-dest_files=["res://.godot/imported/SM_room_small.fbx-8788cb4ecb203136977e841052979bad.scn"]
+source_file="res://assets/environment/office_elements/clock.fbx"
+dest_files=["res://.godot/imported/clock.fbx-5055dd1be9f266a9fec8c02c387b98e6.scn"]
 
 [params]
 

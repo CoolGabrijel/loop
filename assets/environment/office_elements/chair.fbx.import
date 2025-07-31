@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cyxg3xi6fliya"
-path="res://.godot/imported/SM_corridor_empty.fbx-80b241a85f552303fdf28fb4907c1eb4.scn"
+uid="uid://d16qt4tn24akh"
+path="res://.godot/imported/chair.fbx-5837505962fb0ddc0eb0b4d862b67711.scn"
 
 [deps]
 
-source_file="res://assets/environment/assembled_rooms/SM_corridor_empty.fbx"
-dest_files=["res://.godot/imported/SM_corridor_empty.fbx-80b241a85f552303fdf28fb4907c1eb4.scn"]
+source_file="res://assets/environment/office_elements/chair.fbx"
+dest_files=["res://.godot/imported/chair.fbx-5837505962fb0ddc0eb0b4d862b67711.scn"]
 
 [params]
 
