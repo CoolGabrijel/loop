@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://7ydmkamu0eyb"]
+[gd_scene load_steps=4 format=3 uid="uid://bomgebpabfa7n"]
 
-[ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/Room.gd" id="1_gu14q"]
-[ext_resource type="Script" uid="uid://dhm34geqivke2" path="res://assets/scripts/RoomConnection.gd" id="2_ppjss"]
+[ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/room.gd" id="1_gu14q"]
+[ext_resource type="Script" uid="uid://dhm34geqivke2" path="res://assets/scripts/room_connection.gd" id="2_ppjss"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ppjss"]
 

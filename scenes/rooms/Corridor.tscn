@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://be4y2wwjnek6y"]
+[gd_scene load_steps=4 format=3 uid="uid://dj5a7o120ecao"]
 
-[ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/Room.gd" id="1_qa5td"]
-[ext_resource type="Script" uid="uid://dhm34geqivke2" path="res://assets/scripts/RoomConnection.gd" id="2_hprjh"]
+[ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/room.gd" id="1_qa5td"]
+[ext_resource type="Script" uid="uid://dhm34geqivke2" path="res://assets/scripts/room_connection.gd" id="2_hprjh"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hprjh"]
 size = Vector2(4, 2)
