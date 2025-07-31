@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2hrj408gqob6"]
 
-[ext_resource type="Script" path="res://assets/scripts/World_Gen.gd" id="1_32lhk"]
+[ext_resource type="Script" uid="uid://bnvfgjfds8oxh" path="res://assets/scripts/World_Gen.gd" id="1_32lhk"]
 [ext_resource type="PackedScene" uid="uid://c1kr8rxxx5th4" path="res://scenes/characters/Player.tscn" id="1_kqs1s"]
 [ext_resource type="PackedScene" uid="uid://7ydmkamu0eyb" path="res://scenes/rooms/Small_Room.tscn" id="2_d1c63"]
 [ext_resource type="PackedScene" uid="uid://be4y2wwjnek6y" path="res://scenes/rooms/Corridor.tscn" id="3_1lgw5"]
