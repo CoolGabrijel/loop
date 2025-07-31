@@ -12,6 +12,9 @@ Stapler ranged attack
 Stapler ranged hit
 Stapler ranged empty
 Mop charge hit
+Notebook melee
+Newspaper melee
+Object throw
 
 
 VFX:
@@ -23,7 +26,7 @@ boss
 Background ambience:
 Water dripping
 Wind
-Static
+Static electronics
 
 UI: 
 Menu Hover
