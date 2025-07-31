@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://bniykmsjaoqh3"]
+
+[ext_resource type="PackedScene" uid="uid://c1r4ytmlqwhpi" path="res://scenes/UI/Game/energy_bar.tscn" id="1_8qakl"]
+[ext_resource type="Texture2D" uid="uid://ce4rrt8fiojf4" path="res://scenes/UI/Game/hud_heartFull.png" id="2_n1ea6"]
+[ext_resource type="Texture2D" uid="uid://bvomgn5ivcen2" path="res://scenes/UI/Game/hud_heartEmpty.png" id="3_gqn5w"]
+[ext_resource type="Texture2D" uid="uid://bx3s2v1pqapbf" path="res://scenes/UI/Game/hud_heartHalf.png" id="4_riojq"]
+[ext_resource type="Texture2D" uid="uid://c8d4eosu31kqr" path="res://scenes/UI/Game/square-rounded-24.png" id="5_gqn5w"]
+[ext_resource type="Texture2D" uid="uid://dwcx54u8wje5k" path="res://scenes/UI/Game/circle-128.png" id="5_n1ea6"]
+
+[node name="UiScene" type="Node2D"]
+
+[node name="Energy_Bar" parent="." instance=ExtResource("1_8qakl")]
+offset_left = 450.0
+offset_top = 580.0
+offset_right = 700.0
+offset_bottom = 607.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 179.0
+offset_bottom = 38.0
+
+[node name="Hud_Heart_Full" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(27, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_n1ea6")
+
+[node name="Hud_Heart_Empty" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(105, 18)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_gqn5w")
+
+[node name="Hud_Heart_Half" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(67, 17)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_riojq")
+
+[node name="Buff1" type="Sprite2D" parent="."]
+position = Vector2(472, 556)
+texture = ExtResource("5_gqn5w")
+
+[node name="Buff2" type="Sprite2D" parent="."]
+position = Vector2(515, 556)
+texture = ExtResource("5_gqn5w")
+
+[node name="Buff3" type="Sprite2D" parent="."]
+position = Vector2(553, 556)
+texture = ExtResource("5_gqn5w")
+
+[node name="Hud_Mini_Map" type="Sprite2D" parent="."]
+position = Vector2(1070, 72)
+texture = ExtResource("5_n1ea6")
