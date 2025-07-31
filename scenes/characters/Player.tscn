@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1kr8rxxx5th4"]
 
-[ext_resource type="Script" uid="uid://cese66jyrcxy6" path="res://assets/scripts/player_controller.gd" id="1_pq8s5"]
+[ext_resource type="Script" path="res://assets/scripts/player_controller.gd" id="1_pq8s5"]
 [ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/Health.gd" id="2_gin2a"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pq8s5"]
