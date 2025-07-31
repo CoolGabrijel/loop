@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d02ju31b6jmph"
-path="res://.godot/imported/rectangle-48.png-1d37384492527fb6e3918be864681b2b.ctex"
+uid="uid://bkm1eyvvtg71p"
+path="res://.godot/imported/Triangle_Black.png-7e1b7b93b0d83bebb7fd390da480aa2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/UI/Menu/rectangle-48.png"
-dest_files=["res://.godot/imported/rectangle-48.png-1d37384492527fb6e3918be864681b2b.ctex"]
+source_file="res://scenes/UI/Menu/Triangle_Black.png"
+dest_files=["res://.godot/imported/Triangle_Black.png-7e1b7b93b0d83bebb7fd390da480aa2f.ctex"]
 
 [params]
 
