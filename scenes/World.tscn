@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://d2hrj408gqob6"]
 
-[ext_resource type="Script" uid="uid://bnvfgjfds8oxh" path="res://assets/scripts/World_Gen.gd" id="1_32lhk"]
+[ext_resource type="Script" path="res://assets/scripts/World_Gen.gd" id="1_32lhk"]
 [ext_resource type="PackedScene" uid="uid://c1kr8rxxx5th4" path="res://scenes/characters/Player.tscn" id="1_kqs1s"]
 [ext_resource type="PackedScene" uid="uid://7ydmkamu0eyb" path="res://scenes/rooms/Small_Room.tscn" id="2_d1c63"]
 [ext_resource type="PackedScene" uid="uid://be4y2wwjnek6y" path="res://scenes/rooms/Corridor.tscn" id="3_1lgw5"]
-[ext_resource type="PackedScene" uid="uid://bniykmsjaoqh3" path="res://scenes/UI/Game/UIScene.tscn" id="4_hlk0d"]
+[ext_resource type="PackedScene" uid="uid://bniykmsjaoqh3" path="res://scenes/UI/Game/HUD.tscn" id="4_hlk0d"]
 [ext_resource type="PackedScene" uid="uid://drrynew3w310r" path="res://scenes/Env.tscn" id="5_1lgw5"]
 
 [node name="World" type="Node3D"]
@@ -17,7 +17,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="UIScene" parent="UIManager" instance=ExtResource("4_hlk0d")]
+[node name="HUD" parent="UIManager" instance=ExtResource("4_hlk0d")]
 
 [node name="Player" parent="." instance=ExtResource("1_kqs1s")]
 

@@ -1,7 +1,0 @@
-[gd_scene load_steps=0 format=3 uid="uid://cdlcgqf6g3lvw"]
-
-[node name="HBoxContainer" type="HBoxContainer"]
-offset_left = -44.0
-offset_top = -24.0
-offset_right = 272.0
-offset_bottom = 20.0
