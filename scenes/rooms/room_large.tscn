@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjxko51r53tqw"]
 
-[ext_resource type="PackedScene" uid="uid://iyi6qjy6u7e2" path="res://assets/environment/assembled_rooms/SM_room_large.fbx" id="1_cfld3"]
+[ext_resource type="PackedScene" uid="uid://iyi6qjy6u7e2" path="res://assets/environment/assembled_rooms/room_large.fbx" id="1_cfld3"]
 
 [node name="RoomLarge" type="Node3D"]
 

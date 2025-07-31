@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2hrj408gqob6"]
+[gd_scene load_steps=8 format=3 uid="uid://d2hrj408gqob6"]
 
 [ext_resource type="Script" uid="uid://bnvfgjfds8oxh" path="res://assets/scripts/world_gen.gd" id="1_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bomgebpabfa7n" path="res://scenes/rooms/Small_Room.tscn" id="2_i7141"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bniykmsjaoqh3" path="res://scenes/ui/hud_ui.tscn" id="4_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://c1kr8rxxx5th4" path="res://scenes/characters/player.tscn" id="5_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://drrynew3w310r" path="res://scenes/environment.tscn" id="6_e3hyu"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qfnet"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_qfnet")
@@ -22,3 +24,8 @@ offset_bottom = 40.0
 [node name="Player" parent="." instance=ExtResource("5_w7kh3")]
 
 [node name="Environment" parent="." instance=ExtResource("6_e3hyu")]
+
+[node name="FloorCollider" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorCollider"]
+shape = SubResource("WorldBoundaryShape3D_qfnet")

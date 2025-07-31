@@ -1,4 +1,4 @@
-@icon("res://scenes/UI/Game/hud_heartHalf.png")
+@icon("res://assets/sprites/ui/hud_heart_half.png")
 extends Node
 class_name Health
 
