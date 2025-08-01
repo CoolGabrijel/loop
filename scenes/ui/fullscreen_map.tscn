@@ -1,6 +1,16 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=2 format=3 uid="uid://cveq8fisdnle7"]
 
 [ext_resource type="Texture2D" uid="uid://d4ik3jedp1k0b" path="res://assets/sprites/ui/fullscreen_map.png" id="1_shg8n"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://cyt8p317g5go2"]
+
+[ext_resource type="Texture2D" uid="uid://d4ik3jedp1k0b" path="res://assets/sprites/ui/fullscreen_map.png" id="1_shg8n"]
+[ext_resource type="Texture2D" uid="uid://cqqquxi5y8rr" path="res://assets/sprites/ui/close_map_button.png" id="2_emq6i"]
+[ext_resource type="Texture2D" uid="uid://batj7o3ft50m6" path="res://assets/sprites/ui/zoom_in_button.png" id="3_sgms1"]
+[ext_resource type="Texture2D" uid="uid://lmb0y732e6m1" path="res://assets/sprites/ui/zoom_out_button.png" id="4_46wb2"]
+[ext_resource type="AudioStream" uid="uid://nwrffmycujkp" path="res://assets/sfx/ui_open_map.wav" id="5_emq6i"]
+>>>>>>> Stashed changes
 
 [node name="FullScreenMap" type="CanvasLayer"]
 
@@ -21,8 +31,18 @@ offset_top = 64.0
 offset_right = 1135.0
 offset_bottom = 81.0
 
+<<<<<<< Updated upstream
 [node name="ZoomOutButton" type="Button" parent="."]
 offset_left = 1104.0
 offset_top = 94.0
 offset_right = 1133.0
 offset_bottom = 109.0
+=======
+[node name="ZoomOutButton" type="Sprite2D" parent="."]
+position = Vector2(1121, 133)
+texture = ExtResource("4_46wb2")
+
+[node name="UI Open Map" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_emq6i")
+bus = &"UI"
+>>>>>>> Stashed changes
