@@ -1,11 +1,22 @@
 Game SFX:
 
+MC:
 marching loop
 walking loop
 stumbling loop
+MC jump
 MC character hit sound
+
+Enemies:
+Enemy melee hit
+Enemy midrange hit
+Enemy far range hit
+
+Environment:
 Room transition for opening door
 Rickety fan loop
+
+Weapons:
 Static shock
 Stapler melee
 Stapler ranged attack
@@ -15,6 +26,12 @@ Mop charge hit
 Notebook melee
 Newspaper melee
 Object throw
+
+Boss:
+Boss idle stomp
+Boss proximity loop
+Boss attack charging
+Boss clap attack
 
 
 VFX:
