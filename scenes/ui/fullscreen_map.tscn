@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyt8p317g5go2"]
+
+[ext_resource type="Texture2D" uid="uid://d4ik3jedp1k0b" path="res://assets/sprites/ui/fullscreen_map.png" id="1_shg8n"]
+[ext_resource type="Texture2D" uid="uid://cqqquxi5y8rr" path="res://assets/sprites/ui/close_map_button.png" id="2_emq6i"]
+[ext_resource type="Texture2D" uid="uid://batj7o3ft50m6" path="res://assets/sprites/ui/zoom_in_button.png" id="3_sgms1"]
+[ext_resource type="Texture2D" uid="uid://lmb0y732e6m1" path="res://assets/sprites/ui/zoom_out_button.png" id="4_46wb2"]
+
+[node name="FullScreenMap" type="Node2D"]
+
+[node name="FullScreenMap" type="Sprite2D" parent="."]
+position = Vector2(575, 326)
+scale = Vector2(2.25391, 1.27344)
+texture = ExtResource("1_shg8n")
+
+[node name="CloseMapButton" type="Sprite2D" parent="."]
+position = Vector2(1121, 27)
+texture = ExtResource("2_emq6i")
+
+[node name="ZoomInButton" type="Sprite2D" parent="."]
+position = Vector2(1120, 98)
+texture = ExtResource("3_sgms1")
+
+[node name="ZoomOutButton" type="Sprite2D" parent="."]
+position = Vector2(1121, 133)
+texture = ExtResource("4_46wb2")
