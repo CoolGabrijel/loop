@@ -7,28 +7,37 @@
 [node name="MainMenu" type="CanvasLayer"]
 
 [node name="GameLogo" type="Sprite2D" parent="."]
-position = Vector2(604, 124)
+position = Vector2(579.75, 186.5)
+scale = Vector2(1.29492, 0.738281)
 texture = ExtResource("1_1g8jr")
 
-[node name="PlayButton" type="Sprite2D" parent="."]
-position = Vector2(599, 317)
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 471.5
+offset_top = 322.0
+offset_right = 687.5
+offset_bottom = 502.0
+
+[node name="PlayButton" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(108, 34.912)
 scale = Vector2(4, 1.038)
 texture = ExtResource("2_m1kxf")
 
-[node name="SettingsButton" type="Sprite2D" parent="."]
-position = Vector2(597, 369)
+[node name="SettingsButton" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(108, 88.912)
 scale = Vector2(4, 0.938)
 texture = ExtResource("2_m1kxf")
 
-[node name="QuitGameButton" type="Sprite2D" parent="."]
-position = Vector2(596, 421)
+[node name="QuitGameButton" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(108, 144.912)
 scale = Vector2(4, 1.04167)
 texture = ExtResource("2_m1kxf")
 
 [node name="MuteSoundButton" type="Sprite2D" parent="."]
-position = Vector2(1081, 36)
+position = Vector2(1085.25, 60.25)
+scale = Vector2(2.43751, 2.22917)
 texture = ExtResource("3_x2yvf")
 
 [node name="CreditsButton" type="Sprite2D" parent="."]
-position = Vector2(1031, 35)
+position = Vector2(148.75, 604.5)
+scale = Vector2(9.35417, 1.45833)
 texture = ExtResource("3_x2yvf")

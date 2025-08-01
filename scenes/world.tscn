@@ -13,11 +13,7 @@
 script = ExtResource("1_qfnet")
 room_components = Array[PackedScene]([ExtResource("2_i7141"), ExtResource("3_4mrxx")])
 
-[node name="UIManager" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="UIManager" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="UIManager" instance=ExtResource("4_7r4gi")]
 
