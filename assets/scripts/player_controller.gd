@@ -27,6 +27,8 @@ func update_movement_input() -> void:
 	movement_input.y = Input.get_axis("Up", "Down")
 		
 	if movement_input != Vector2.ZERO and !walking_sounds.playing:
+		walking_sounds.pitch_scale = randf_range(0.75, 1.25)
+		walking_sounds.volume_db = randf_range(0.75, 1.25)
 		walking_sounds.play()
 	elif movement_input == Vector2.ZERO:
 		walking_sounds.stop()

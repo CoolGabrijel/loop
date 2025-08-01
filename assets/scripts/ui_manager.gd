@@ -16,7 +16,13 @@ extends CanvasLayer
 func _ready() -> void:
 	add_child(main_menu)
 	add_child(hud)
+	add_child(options)
+	add_child(map)
+	add_child(credits)
 	hud.hide()
+	map.hide()
+	options.hide()
+	credits.hide()
 	
 	main_menu.play_button_was_pressed.connect(_on_play_button_pressed)
 	main_menu.options_button_was_pressed.connect(_on_options_button_pressed)
