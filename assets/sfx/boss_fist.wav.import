@@ -2,11 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-<<<<<<< Updated upstream
-uid="uid://4ilhagjv7ql6"
-=======
-uid="uid://cfm5a3ci1p6k3"
->>>>>>> Stashed changes
+uid="uid://do52o1fk15age"
 path="res://.godot/imported/boss_fist.wav-e01891598cdfe9ed65312b1c66250405.sample"
 
 [deps]

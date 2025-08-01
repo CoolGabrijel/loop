@@ -2,11 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-<<<<<<< Updated upstream
-uid="uid://da636hwtuwddf"
-=======
-uid="uid://c7rh5chorhtgr"
->>>>>>> Stashed changes
+uid="uid://db1qwq41rvwta"
 path="res://.godot/imported/ui_hover.wav-5df8a96f9e36b3dd44f6ced480a5a16a.sample"
 
 [deps]
