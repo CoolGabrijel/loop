@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkm1eyvvtg71p"
-path="res://.godot/imported/Triangle_Black.png-0e39cf8ac53253b311747946fd19bc2d.ctex"
+uid="uid://5w8kwtylxn1m"
+path="res://.godot/imported/tx_ac_alb.png-6b0ae7ab1f997f64d6c6ae79880f1b6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/Triangle_Black.png"
-dest_files=["res://.godot/imported/Triangle_Black.png-0e39cf8ac53253b311747946fd19bc2d.ctex"]
+source_file="res://assets/textures/tx_ac_alb.png"
+dest_files=["res://.godot/imported/tx_ac_alb.png-6b0ae7ab1f997f64d6c6ae79880f1b6c.ctex"]
 
 [params]
 
