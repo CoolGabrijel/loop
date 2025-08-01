@@ -4,13 +4,16 @@ extends Node
 
 @onready var player: CharacterBody3D = $".."
 @onready var sprite: AnimatedSprite3D = $"../AnimatedSprite3D"
+@onready var walking_sounds: AudioStreamPlayer = $"../MC_Marching"
 
-var movement_input : Vector2
+var movement_input: Vector2
+
 
 func _physics_process(delta: float) -> void:
 	update_movement_input()
 	handle_movement(delta)
 	update_sprite()
+
 
 func handle_movement(delta: float) -> void:
 	var normalized_input = movement_input.normalized()
@@ -18,9 +21,16 @@ func handle_movement(delta: float) -> void:
 	player.velocity = dir * delta * base_speed
 	player.move_and_slide()
 
+
 func update_movement_input() -> void:
 	movement_input.x = Input.get_axis("Left", "Right")
 	movement_input.y = Input.get_axis("Up", "Down")
+	
+	if movement_input != Vector2(0, 0):
+		walking_sounds.play()
+	else:
+		walking_sounds.stop()
+	
 
 func update_sprite() -> void:
 	if movement_input.x >= 0:
