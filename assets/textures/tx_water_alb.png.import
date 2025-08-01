@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://81n06rtfwe0m"
-path="res://.godot/imported/tx_lambert1_ao.png-e17ce04f18cba8eba225c44651b866eb.ctex"
+uid="uid://c7xfoumbf1ac2"
+path="res://.godot/imported/tx_water_alb.png-4d313c00e2f1718b534e1a362792d0f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/tx_lambert1_ao.png"
-dest_files=["res://.godot/imported/tx_lambert1_ao.png-e17ce04f18cba8eba225c44651b866eb.ctex"]
+source_file="res://assets/textures/tx_water_alb.png"
+dest_files=["res://.godot/imported/tx_water_alb.png-4d313c00e2f1718b534e1a362792d0f0.ctex"]
 
 [params]
 
