@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dj5a7o120ecao"]
 
-[ext_resource type="Script" path="res://assets/scripts/room.gd" id="1_qa5td"]
+[ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/room.gd" id="1_qa5td"]
 [ext_resource type="PackedScene" uid="uid://cjnmywl7bnqu5" path="res://assets/environment/assembled_rooms/corridor.fbx" id="2_chkh3"]
-[ext_resource type="Script" path="res://assets/scripts/room_connection.gd" id="2_hprjh"]
+[ext_resource type="Script" uid="uid://dhm34geqivke2" path="res://assets/scripts/room_connection.gd" id="2_hprjh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_chkh3"]
 size = Vector3(18, 4, 0.1)

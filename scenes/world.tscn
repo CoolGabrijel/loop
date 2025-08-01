@@ -1,6 +1,5 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2hrj408gqob6"]
 
-
 [ext_resource type="Script" uid="uid://bnvfgjfds8oxh" path="res://assets/scripts/world_gen.gd" id="1_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bomgebpabfa7n" path="res://scenes/rooms/small_room.tscn" id="2_i7141"]
 [ext_resource type="PackedScene" uid="uid://dj5a7o120ecao" path="res://scenes/rooms/corridor.tscn" id="3_4mrxx"]
