@@ -30,6 +30,8 @@ Object throw
 Boss:
 Boss idle stomp
 Boss proximity loop
+Boss attack charging
+Boss clap attack
 
 
 VFX:
