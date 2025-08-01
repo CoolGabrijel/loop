@@ -100,3 +100,5 @@ text = "Made for"
 [connection signal="pressed" from="ButtonHolder/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ButtonHolder/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="ButtonHolder/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
+[connection signal="toggled" from="MuteButton" to="." method="_on_mute_button_toggled"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
