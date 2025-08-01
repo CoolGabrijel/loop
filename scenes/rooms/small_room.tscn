@@ -324,19 +324,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254738, -3.57628e-07, -2.77
 [node name="Drawers" type="Node3D" parent="GFX"]
 
 [node name="drawers" parent="GFX/Drawers" instance=ExtResource("10_odw37")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -9)
-
-[node name="drawers6" parent="GFX/Drawers" instance=ExtResource("10_odw37")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.72453, 0, -12.7374)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50458, 0, -5)
 
 [node name="drawers2" parent="GFX/Drawers" instance=ExtResource("10_odw37")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5026, 0, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00718, 0, -5)
 
 [node name="drawers3" parent="GFX/Drawers" instance=ExtResource("10_odw37")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6018, 0, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96366, 0, -5)
 
 [node name="drawers4" parent="GFX/Drawers" instance=ExtResource("10_odw37")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1044, 0, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46106, 0, -5)
 
 [node name="Cabinets" type="Node3D" parent="GFX"]
 
@@ -361,7 +358,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.997
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
 
 [node name="drawers5" parent="GFX/Pillars/pillar" instance=ExtResource("10_odw37")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7769, 0, -3.79935)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25365, 0, 0.243831)
 
 [node name="clock" parent="GFX/Pillars/pillar" instance=ExtResource("13_ptf7m")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00598073, -2.42534, 2.60669)
@@ -380,6 +377,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.2512
 
 [node name="pillar3" parent="GFX/Pillars" instance=ExtResource("12_v3l3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+
+[node name="drawers6" parent="GFX/Pillars/pillar3" instance=ExtResource("10_odw37")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.237361, 0, -0.243646)
 
 [node name="pillar4" parent="GFX/Pillars" instance=ExtResource("12_v3l3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -2)
