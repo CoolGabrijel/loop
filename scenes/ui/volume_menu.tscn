@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d02ju31b6jmph" path="res://assets/sprites/ui/slider.png" id="1_yeq1m"]
 [ext_resource type="Texture2D" uid="uid://bxunvtkoci25d" path="res://assets/sprites/ui/triangle.png" id="2_dvsn6"]
 
-[node name="VolumeMenu" type="Node2D"]
+[node name="VolumeMenu" type="CanvasLayer"]
 
 [node name="BackButton" type="Sprite2D" parent="."]
 position = Vector2(1003, 562)
