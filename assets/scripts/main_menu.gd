@@ -4,16 +4,14 @@ extends CanvasLayer
 @onready var settings_button: Button = $ButtonHolder/SettingsButton
 @onready var quit_game_button: Button = $ButtonHolder/QuitGameButton
 
-@onready var main_menu: CanvasLayer = $"."
+var pause_menu_is_showing: bool
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey:
-		if event.keycode == KEY_ESCAPE and event.is_pressed():
-			main_menu.show()
+signal play_button_was_pressed
 
 
 func _on_play_button_pressed():
-	main_menu.hide()
+	hide()
+	emit_signal("play_button_was_pressed")
 
 
 func _on_quit_game_button_pressed() -> void:
