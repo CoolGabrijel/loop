@@ -6,7 +6,7 @@ signal on_death
 signal on_damage
 signal on_heal
 
-@export var base_max_hp := 10
+@export var base_max_hp := 30
 
 var current_hp: int
 

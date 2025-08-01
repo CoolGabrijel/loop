@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/marching_loop.ogg-1fc5c63cb2e0b32f8ac6378c74e
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0.0
 bpm=0.0
 beat_count=0

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq7aw1vqv4ohb"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_27i05"]
+
+[node name="Vendor" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.98478, 0, 0, 0, 1, 0, 0, 0, 1.23622, 0, 0, 0)
+shape = SubResource("CylinderShape3D_27i05")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area3D"]

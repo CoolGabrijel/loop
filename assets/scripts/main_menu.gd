@@ -8,7 +8,7 @@ extends CanvasLayer
 var pause_menu_is_showing: bool
 
 signal play_button_was_pressed
-signal options_button_was_pressed
+signal options_button_was_pressed 
 signal credits_button_was_pressed
 
 func _on_play_button_pressed() -> void:
@@ -25,7 +25,7 @@ func _on_quit_game_button_pressed() -> void:
 
 
 func _on_mute_button_toggled(toggled_on: bool) -> void:
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), toggled_on)
 
 
 func _on_credits_button_pressed() -> void:

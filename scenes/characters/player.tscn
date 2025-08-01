@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1kr8rxxx5th4"]
+[gd_scene load_steps=10 format=3 uid="uid://c1kr8rxxx5th4"]
 
 [ext_resource type="Script" uid="uid://wijgm4seg182" path="res://assets/scripts/player.gd" id="1_dyp2m"]
 [ext_resource type="Script" uid="uid://cese66jyrcxy6" path="res://assets/scripts/player_controller.gd" id="1_pq8s5"]
 [ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/components/health.gd" id="2_gin2a"]
 [ext_resource type="Texture2D" uid="uid://2tqjcet4ahac" path="res://assets/sprites/characters/main_character_placeholder.png" id="3_7n8ao"]
 [ext_resource type="AudioStream" uid="uid://dlbofhuv8xv61" path="res://assets/sfx/marching_loop.ogg" id="4_dyp2m"]
+[ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/components/damage.gd" id="6_kqtwu"]
+[ext_resource type="Script" uid="uid://o6abt6qw55vj" path="res://assets/scripts/components/speed.gd" id="7_6eyoc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7n8ao"]
 animations = [{
@@ -25,7 +27,9 @@ script = ExtResource("1_dyp2m")
 
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource("1_pq8s5")
-base_speed = 500.0
+base_speed = 250.0
+volume = 0.5
+pitch_variance = 0.25
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 11.5, 8)
@@ -34,7 +38,9 @@ fov = 60.0
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("2_gin2a")
-base_max_hp = 30
+
+[node name="Damage" type="Node" parent="."]
+script = ExtResource("6_kqtwu")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0)
@@ -48,3 +54,6 @@ shape = SubResource("CylinderShape3D_76oj4")
 stream = ExtResource("4_dyp2m")
 pitch_scale = 1.05
 bus = &"SFX"
+
+[node name="Speed" type="Node" parent="."]
+script = ExtResource("7_6eyoc")
