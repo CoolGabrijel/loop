@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2hrj408gqob6"]
+[gd_scene load_steps=9 format=3 uid="uid://d2hrj408gqob6"]
 
 [ext_resource type="Script" uid="uid://bnvfgjfds8oxh" path="res://assets/scripts/world_gen.gd" id="1_qfnet"]
-[ext_resource type="PackedScene" uid="uid://bomgebpabfa7n" path="res://scenes/rooms/Small_Room.tscn" id="2_i7141"]
-[ext_resource type="PackedScene" uid="uid://dj5a7o120ecao" path="res://scenes/rooms/Corridor.tscn" id="3_4mrxx"]
-[ext_resource type="PackedScene" uid="uid://bniykmsjaoqh3" path="res://scenes/ui/hud.tscn" id="4_7r4gi"]
+[ext_resource type="PackedScene" uid="uid://bomgebpabfa7n" path="res://scenes/rooms/small_room.tscn" id="2_i7141"]
+[ext_resource type="PackedScene" uid="uid://dj5a7o120ecao" path="res://scenes/rooms/corridor.tscn" id="3_4mrxx"]
+[ext_resource type="Script" uid="uid://5pk7wycrh87b" path="res://assets/scripts/ui_manager.gd" id="4_i7141"]
+[ext_resource type="PackedScene" uid="uid://b6edee52tjkgr" path="res://scenes/ui/main_menu.tscn" id="5_i7141"]
 [ext_resource type="PackedScene" uid="uid://c1kr8rxxx5th4" path="res://scenes/characters/player.tscn" id="5_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://drrynew3w310r" path="res://scenes/environment.tscn" id="6_e3hyu"]
 
@@ -14,8 +15,8 @@ script = ExtResource("1_qfnet")
 room_components = Array[PackedScene]([ExtResource("2_i7141"), ExtResource("3_4mrxx")])
 
 [node name="UIManager" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="UIManager" instance=ExtResource("4_7r4gi")]
+script = ExtResource("4_i7141")
+main_menu_scene = ExtResource("5_i7141")
 
 [node name="Player" parent="." instance=ExtResource("5_w7kh3")]
 

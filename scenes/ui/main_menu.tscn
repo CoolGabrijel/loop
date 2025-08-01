@@ -1,43 +1,87 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6edee52tjkgr"]
+[gd_scene load_steps=6 format=3 uid="uid://b6edee52tjkgr"]
 
-[ext_resource type="Texture2D" uid="uid://fmse6kbdolml" path="res://assets/sprites/ui/logo.png" id="1_1g8jr"]
-[ext_resource type="Texture2D" uid="uid://d02ju31b6jmph" path="res://assets/sprites/ui/slider.png" id="2_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://dv6mwh4xcx5xc" path="res://assets/sprites/ui/gmtkgj2k25_server_logo.png" id="1_1g8jr"]
 [ext_resource type="Texture2D" uid="uid://c8d4eosu31kqr" path="res://assets/sprites/ui/square.png" id="3_x2yvf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1g8jr"]
+
+[sub_resource type="Theme" id="Theme_m1kxf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_x2yvf"]
 
 [node name="MainMenu" type="CanvasLayer"]
 
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.203705, 0.380515, 0.489827, 1)
+material = SubResource("CanvasItemMaterial_1g8jr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.99709)
+theme = SubResource("Theme_m1kxf")
+texture = SubResource("CanvasTexture_x2yvf")
+
 [node name="GameLogo" type="Sprite2D" parent="."]
-position = Vector2(579.75, 186.5)
-scale = Vector2(1.29492, 0.738281)
+position = Vector2(579, 189)
+scale = Vector2(25, 10)
+texture = ExtResource("3_x2yvf")
+
+[node name="JamLogo" type="Sprite2D" parent="."]
+position = Vector2(1057, 552)
+scale = Vector2(0.210448, 0.210448)
 texture = ExtResource("1_1g8jr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 471.5
-offset_top = 322.0
-offset_right = 687.5
-offset_bottom = 502.0
+[node name="ButtonHolder" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = 6.0
+offset_right = 22.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.69336, 1.76109)
 
-[node name="PlayButton" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(108, 34.912)
-scale = Vector2(4, 1.038)
-texture = ExtResource("2_m1kxf")
+[node name="PlayButton" type="Button" parent="ButtonHolder"]
+layout_mode = 2
+text = "Start Game"
 
-[node name="SettingsButton" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(108, 88.912)
-scale = Vector2(4, 0.938)
-texture = ExtResource("2_m1kxf")
+[node name="SettingsButton" type="Button" parent="ButtonHolder"]
+layout_mode = 2
+text = "Options"
 
-[node name="QuitGameButton" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(108, 144.912)
-scale = Vector2(4, 1.04167)
-texture = ExtResource("2_m1kxf")
+[node name="QuitGameButton" type="Button" parent="ButtonHolder"]
+layout_mode = 2
+text = "Exit"
 
-[node name="MuteSoundButton" type="Sprite2D" parent="."]
-position = Vector2(1085.25, 60.25)
+[node name="MuteButton" type="CheckButton" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_top = -316.0
+offset_right = -134.0
+offset_bottom = -285.0
+grow_horizontal = 0
+grow_vertical = 2
 scale = Vector2(2.43751, 2.22917)
-texture = ExtResource("3_x2yvf")
+text = "Mute"
 
-[node name="CreditsButton" type="Sprite2D" parent="."]
-position = Vector2(148.75, 604.5)
-scale = Vector2(9.35417, 1.45833)
-texture = ExtResource("3_x2yvf")
+[node name="CreditsButton" type="Button" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -92.0
+offset_right = 91.0
+offset_bottom = -61.0
+grow_vertical = 0
+scale = Vector2(2.25526, 2.15017)
+text = "Credits"

@@ -1,9 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb2g4wmqrqan1"]
+[gd_scene load_steps=6 format=3 uid="uid://bb2g4wmqrqan1"]
 
 [ext_resource type="Texture2D" uid="uid://d02ju31b6jmph" path="res://assets/sprites/ui/slider.png" id="1_yeq1m"]
 [ext_resource type="Texture2D" uid="uid://bxunvtkoci25d" path="res://assets/sprites/ui/triangle.png" id="2_dvsn6"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lamhx"]
+
+[sub_resource type="Theme" id="Theme_5qqp5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c0ffj"]
+
 [node name="VolumeMenu" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.203922, 0.380392, 0.490196, 1)
+material = SubResource("CanvasItemMaterial_lamhx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5qqp5")
+texture = SubResource("CanvasTexture_c0ffj")
 
 [node name="BackButton" type="Sprite2D" parent="."]
 position = Vector2(1003, 562)
