@@ -6,4 +6,4 @@
 
 [node name="GFX" type="Node3D" parent="."]
 
-[node name="SM_room_large" parent="GFX" instance=ExtResource("1_cfld3")]
+[node name="RoomLarge" parent="GFX" instance=ExtResource("1_cfld3")]

@@ -5,50 +5,50 @@
 
 [node name="VolumeMenu" type="Node2D"]
 
-[node name="back_button" type="Sprite2D" parent="."]
+[node name="BackButton" type="Sprite2D" parent="."]
 position = Vector2(1003, 562)
 scale = Vector2(5, 1)
 texture = ExtResource("1_yeq1m")
 
-[node name="master_volume" type="Sprite2D" parent="."]
+[node name="MasterVolume" type="Sprite2D" parent="."]
 position = Vector2(420, 92)
 scale = Vector2(5, 1)
 texture = ExtResource("1_yeq1m")
 
-[node name="master_volume_slider" type="Sprite2D" parent="master_volume"]
+[node name="MasterVolumeSlider" type="Sprite2D" parent="MasterVolume"]
 position = Vector2(19.8, -22)
 rotation = -3.14159
 scale = Vector2(0.2, 1)
 texture = ExtResource("2_dvsn6")
 
-[node name="music_volume" type="Sprite2D" parent="."]
+[node name="MusicVolume" type="Sprite2D" parent="."]
 position = Vector2(418, 172)
 scale = Vector2(5, 1)
 texture = ExtResource("1_yeq1m")
 
-[node name="music_volume_slider" type="Sprite2D" parent="music_volume"]
+[node name="MusicVolumeSlider" type="Sprite2D" parent="MusicVolume"]
 position = Vector2(18.6, -22)
 rotation = -3.14159
 scale = Vector2(0.2, 1)
 texture = ExtResource("2_dvsn6")
 
-[node name="sfx_volume" type="Sprite2D" parent="."]
+[node name="SFXVolume" type="Sprite2D" parent="."]
 position = Vector2(419, 248)
 scale = Vector2(5, 1)
 texture = ExtResource("1_yeq1m")
 
-[node name="sfx_volume_slider" type="Sprite2D" parent="sfx_volume"]
+[node name="SFXVolumeSlider" type="Sprite2D" parent="SFXVolume"]
 position = Vector2(19.6, -23)
 rotation = -3.14159
 scale = Vector2(0.2, 1)
 texture = ExtResource("2_dvsn6")
 
-[node name="dialogue_volume" type="Sprite2D" parent="."]
+[node name="DialogueVolume" type="Sprite2D" parent="."]
 position = Vector2(419, 319)
 scale = Vector2(5, 1)
 texture = ExtResource("1_yeq1m")
 
-[node name="dialogue_volume_slider" type="Sprite2D" parent="dialogue_volume"]
+[node name="DialogueVolumeSlider" type="Sprite2D" parent="DialogueVolume"]
 position = Vector2(20, -23)
 rotation = -3.14159
 scale = Vector2(0.2, 1)
