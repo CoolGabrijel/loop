@@ -28,6 +28,8 @@ script = ExtResource("1_dyp2m")
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource("1_pq8s5")
 base_speed = 250.0
+volume = 0.5
+pitch_variance = 0.25
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 11.5, 8)
