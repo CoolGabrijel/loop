@@ -17,3 +17,4 @@ mono_crash.*.json
 
 *.tmp
 build/
+assets/sprites/ui/Triangle_Black.png.import
