@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dj5a7o120ecao"]
 
-[ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/room.gd" id="1_qa5td"]
-[ext_resource type="PackedScene" uid="uid://cjnmywl7bnqu5" path="res://assets/environment/assembled_rooms/corridor.fbx" id="2_chkh3"]
-[ext_resource type="Script" uid="uid://dhm34geqivke2" path="res://assets/scripts/room_connection.gd" id="2_hprjh"]
+[ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/room.gd" id="1_u6nsy"]
+[ext_resource type="PackedScene" uid="uid://cjnmywl7bnqu5" path="res://assets/environment/assembled_rooms/corridor.fbx" id="2_a5ngl"]
+[ext_resource type="Script" uid="uid://dhm34geqivke2" path="res://assets/scripts/room_connection.gd" id="3_jf14u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_chkh3"]
 size = Vector3(18, 4, 0.1)
@@ -14,24 +14,24 @@ size = Vector3(0.1, 4, 3)
 size = Vector3(0.1, 4, 2)
 
 [node name="Corridor" type="Node3D" node_paths=PackedStringArray("connection_points")]
-script = ExtResource("1_qa5td")
+script = ExtResource("1_u6nsy")
 connection_points = [NodePath("Connections/Node3D"), NodePath("Connections/Node3D2")]
 
 [node name="GFX" type="Node3D" parent="."]
 
-[node name="Corridor" parent="GFX" instance=ExtResource("2_chkh3")]
+[node name="Corridor" parent="GFX" instance=ExtResource("2_a5ngl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 3)
 
 [node name="Connections" type="Node3D" parent="."]
 
 [node name="Node3D" type="Node3D" parent="Connections"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -0.5)
-script = ExtResource("2_hprjh")
+script = ExtResource("3_jf14u")
 direction = 3
 
 [node name="Node3D2" type="Node3D" parent="Connections"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -0.5)
-script = ExtResource("2_hprjh")
+script = ExtResource("3_jf14u")
 direction = 1
 
 [node name="RoomCollider" type="StaticBody3D" parent="."]
