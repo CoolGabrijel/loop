@@ -25,10 +25,10 @@ func handle_movement(delta: float) -> void:
 func update_movement_input() -> void:
 	movement_input.x = Input.get_axis("Left", "Right")
 	movement_input.y = Input.get_axis("Up", "Down")
-	
-	if movement_input != Vector2(0, 0):
+		
+	if movement_input != Vector2.ZERO and !walking_sounds.playing:
 		walking_sounds.play()
-	else:
+	elif movement_input == Vector2.ZERO:
 		walking_sounds.stop()
 	
 
