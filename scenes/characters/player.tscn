@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1kr8rxxx5th4"]
+[gd_scene load_steps=12 format=3 uid="uid://c1kr8rxxx5th4"]
 
 [ext_resource type="Script" uid="uid://wijgm4seg182" path="res://assets/scripts/player.gd" id="1_dyp2m"]
 [ext_resource type="Script" uid="uid://cese66jyrcxy6" path="res://assets/scripts/player_controller.gd" id="1_pq8s5"]
@@ -7,6 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://dlbofhuv8xv61" path="res://assets/sfx/marching_loop.ogg" id="4_dyp2m"]
 [ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/components/damage.gd" id="6_kqtwu"]
 [ext_resource type="Script" uid="uid://o6abt6qw55vj" path="res://assets/scripts/components/speed.gd" id="7_6eyoc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6eyoc"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6eyoc"]
+size = Vector3(3, 1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7n8ao"]
 animations = [{
@@ -39,8 +45,18 @@ fov = 60.0
 [node name="Health" type="Node" parent="."]
 script = ExtResource("2_gin2a")
 
-[node name="Damage" type="Node" parent="."]
+[node name="Damage" type="Node3D" parent="."]
 script = ExtResource("6_kqtwu")
+attack_damage = 10
+
+[node name="Area3D" type="Area3D" parent="Damage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Damage/Area3D"]
+shape = SubResource("BoxShape3D_6eyoc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Damage/Area3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_6eyoc")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0)
@@ -57,3 +73,8 @@ bus = &"SFX"
 
 [node name="Speed" type="Node" parent="."]
 script = ExtResource("7_6eyoc")
+
+[connection signal="area_entered" from="Damage/Area3D" to="Damage" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Damage/Area3D" to="Damage" method="_on_area_3d_area_exited"]
+[connection signal="body_entered" from="Damage/Area3D" to="Damage" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Damage/Area3D" to="Damage" method="_on_area_3d_body_exited"]
