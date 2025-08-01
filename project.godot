@@ -18,6 +18,12 @@ config/icon="res://icon.svg"
 [file_customization]
 
 folder_colors={
+"res://assets/environment/office_elements/": "purple",
+"res://assets/environment/structures/": "purple",
+"res://assets/materials/": "red",
+"res://assets/scripts/": "blue",
+"res://assets/sprites/": "green",
+"res://assets/textures/": "green",
 "res://scenes/": "gray"
 }
 
