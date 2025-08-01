@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bx8kgvoah1vaq"]
+[gd_scene load_steps=9 format=3 uid="uid://bx8kgvoah1vaq"]
 
 [ext_resource type="Script" uid="uid://baqrykwr3ohax" path="res://assets/scripts/chaser_enemy.gd" id="1_8nrqd"]
 [ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="1_ft5sb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/components/states/chasing.gd" id="4_ij6ca"]
 [ext_resource type="Script" uid="uid://c0urfdqqav6u7" path="res://assets/scripts/components/states/patrolling.gd" id="5_o5s0t"]
 [ext_resource type="Script" uid="uid://cw7tjqsmiuaf4" path="res://assets/scripts/components/states/attacking.gd" id="7_8igut"]
+[ext_resource type="AudioStream" uid="uid://bb6qkawy3yw5g" path="res://assets/sfx/enemy_melee_hit.wav" id="7_o5s0t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8nrqd"]
 size = Vector3(1.30945, 1.32855, 0.203125)
@@ -43,3 +44,7 @@ Chasing = NodePath("../Chasing")
 
 [node name="Attacking" type="Node" parent="StateMachine"]
 script = ExtResource("7_8igut")
+
+[node name="Chaser is Damaged Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_o5s0t")
+bus = &"SFX"
