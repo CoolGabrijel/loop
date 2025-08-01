@@ -7,11 +7,14 @@ extends CanvasLayer
 
 @onready var main_menu = main_menu_scene.instantiate()
 @onready var hud = hud_scene.instantiate()
+@onready var options = volume_control_menu_scene.instantiate()
+
 
 func _ready() -> void:
 	add_child(main_menu)
 	add_child(hud)
 	hud.hide()
+	main_menu.options_button_was_pressed.connect(_on_options_button_pressed)
 	main_menu.play_button_was_pressed.connect(_on_play_button_pressed)
 
 
@@ -19,8 +22,13 @@ func _on_play_button_pressed():
 	hud.show()
 
 
+func _on_options_button_pressed():
+	options.show()
+
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		if event.keycode == KEY_ESCAPE and event.is_pressed():
 			main_menu.show()
 			hud.hide()
+			options.hide()
