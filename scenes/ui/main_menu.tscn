@@ -51,7 +51,7 @@ scale = Vector2(1.69336, 1.76109)
 
 [node name="PlayButton" type="Button" parent="ButtonHolder"]
 layout_mode = 2
-text = "Start Game"
+text = "Play Game"
 
 [node name="SettingsButton" type="Button" parent="ButtonHolder"]
 layout_mode = 2
@@ -89,3 +89,4 @@ scale = Vector2(2.18953, 1.55366)
 text = "Credits"
 
 [connection signal="pressed" from="ButtonHolder/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ButtonHolder/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
