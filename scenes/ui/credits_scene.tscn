@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://h7wrnmmv0v4c"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = 43.0
+offset_right = 133.0
+offset_bottom = 579.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 72
+text = "Credits:"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+ratio = 30.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+text = "Kusaku
+Ligthern
+Gabrijel
+Femme
+pebble
+Pory
+Giovanni
+Jernstolpe
+Lucas
+Din
+Christin"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2

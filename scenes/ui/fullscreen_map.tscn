@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d4ik3jedp1k0b" path="res://assets/sprites/ui/fullscreen_map.png" id="1_shg8n"]
 
-[node name="FullScreenMap" type="Node2D"]
+[node name="FullScreenMap" type="CanvasLayer"]
 
 [node name="FullScreenMap" type="Sprite2D" parent="."]
 position = Vector2(575, 326)
