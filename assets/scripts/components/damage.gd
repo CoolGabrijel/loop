@@ -1,6 +1,7 @@
 extends Node3D
 class_name Damage
 
+@export_flags_3d_physics var mouse_pos_mask
 @export var attack_damage: int
 @export var attack_speed: float
 @export var dot_damage: float
@@ -15,7 +16,7 @@ var enemies_within_range: Array[Node3D]
 func _physics_process(delta: float) -> void:
 	var mouse_pos := _get_mouse_pos_in_3d()
 	mouse_pos.y = global_position.y
-	look_at(-mouse_pos)
+	look_at(mouse_pos)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if !event.is_action_pressed("Attack"):
@@ -43,7 +44,7 @@ func _get_mouse_pos_in_3d() -> Vector3:
 	var mouse_pos := get_viewport().get_mouse_position()
 	var from := camera.project_ray_origin(mouse_pos)
 	var to := camera.project_ray_normal(mouse_pos) * 1000
-	var query := PhysicsRayQueryParameters3D.create(from, to)
+	var query := PhysicsRayQueryParameters3D.create(from, to, mouse_pos_mask)
 	var result := space_state.intersect_ray(query)
 	
 	if result["collider"] != null:

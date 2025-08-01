@@ -55,6 +55,10 @@ Attack={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_4="MouseRaycast"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

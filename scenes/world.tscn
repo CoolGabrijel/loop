@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2hrj408gqob6"]
+[gd_scene load_steps=14 format=3 uid="uid://d2hrj408gqob6"]
 
 [ext_resource type="Script" uid="uid://bnvfgjfds8oxh" path="res://assets/scripts/world_gen.gd" id="1_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bomgebpabfa7n" path="res://scenes/rooms/small_room.tscn" id="2_i7141"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://h7wrnmmv0v4c" path="res://scenes/ui/credits_scene.tscn" id="9_e3hyu"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qfnet"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e3hyu"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_qfnet")
@@ -34,3 +36,10 @@ credits_scene = ExtResource("9_e3hyu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FloorCollider"]
 shape = SubResource("WorldBoundaryShape3D_qfnet")
+
+[node name="Mouse_Catcher" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mouse_Catcher"]
+shape = SubResource("WorldBoundaryShape3D_e3hyu")

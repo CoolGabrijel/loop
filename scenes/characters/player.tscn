@@ -47,10 +47,11 @@ script = ExtResource("2_gin2a")
 
 [node name="Damage" type="Node3D" parent="."]
 script = ExtResource("6_kqtwu")
+mouse_pos_mask = 8
 attack_damage = 10
 
 [node name="Area3D" type="Area3D" parent="Damage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Damage/Area3D"]
 shape = SubResource("BoxShape3D_6eyoc")
