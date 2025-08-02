@@ -6,7 +6,7 @@ const CHASER_ENEMY = preload("res://scenes/characters/enemies/chaser/chaser_enem
 @export var patrol_waypoints : Node3D
 
 func _ready() -> void:
-	spawn_enemy()
+	#spawn_enemy()
 	pass
 
 func spawn_enemy() -> void:
