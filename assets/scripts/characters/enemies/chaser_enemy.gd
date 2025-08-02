@@ -10,11 +10,7 @@ class_name chaser_enemy
 @onready var damage_component: Damage = $DamageComponent
 @onready var health_component: Health = $HealthComponent
 
-@export var health: float
-@export var speed: float
-
 @export_group("Object References")
-@export var player_ref: CharacterBody3D
 @export var patrol_points: NodePath
 
 @export_group("Combat")
@@ -30,15 +26,12 @@ var waypoints: Array[Vector3] = []
 var current_waypoint: int = 0
 
 func _ready() -> void:
-	if !player_ref:
+	if !Player.player:
 		queue_free()
 	
 	state_machine.init(self)
 	
 	_create_waypoints()
-	
-	health_component.base_max_hp = health
-	speed_component.speed = speed
 	
 	damage_component.attack_damage = attack_damage
 	damage_component.attack_speed = attack_speed
@@ -72,7 +65,7 @@ func update_movement() -> void:
 		
 func can_see_player(view_range: float) -> bool:
 	var parent_pos: Vector3 = global_position
-	var player_pos: Vector3 = player_ref.global_position
+	var player_pos: Vector3 = Player.player.global_position
 	
 	var distance = parent_pos.distance_to(player_pos)
 	
