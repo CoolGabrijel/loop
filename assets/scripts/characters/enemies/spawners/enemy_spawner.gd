@@ -2,7 +2,6 @@ extends Node3D
 class_name EnemySpawner
 
 const CHASER_ENEMY = preload("res://scenes/characters/enemies/chaser/chaser_enemy.tscn")
-
 @export var patrol_waypoints : Node3D
 
 func _ready() -> void:

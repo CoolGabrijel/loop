@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cexdtg55jpbmp"]
 
-[ext_resource type="Script" uid="uid://cvoryiwwm5k2t" path="res://assets/scripts/bullet.gd" id="1_rcpd2"]
+[ext_resource type="Script" uid="uid://cvoryiwwm5k2t" path="res://assets/scripts/characters/enemies/spawners/bullet.gd" id="1_rcpd2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rcpd2"]
 

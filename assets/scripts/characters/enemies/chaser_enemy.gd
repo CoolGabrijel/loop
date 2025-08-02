@@ -6,7 +6,6 @@ class_name chaser_enemy
 @onready var debug_label: Label3D = $DebugLabel
 @onready var damaged_sfx: AudioStreamPlayer = $"Chaser is Damaged Sound"
 
-
 @onready var speed_component: Speed = $SpeedComponent
 @onready var damage_component: Damage = $DamageComponent
 @onready var health_component: Health = $HealthComponent
@@ -15,7 +14,6 @@ class_name chaser_enemy
 @export var speed: float
 
 @export_group("Object References")
-@export var pickup_scene: PackedScene
 @export var player_ref: CharacterBody3D
 @export var patrol_points: NodePath
 
@@ -83,12 +81,5 @@ func can_see_player(view_range: float) -> bool:
 func _on_damaged() -> void:
 	damaged_sfx.play()
 
-
-# pickup is lost in time and space
 func _on_death() -> void:
-	var pickup: Node3D = pickup_scene.instantiate()
-	get_tree().current_scene.add_child(pickup)
-	pickup.global_position = global_position
-	pickup.show()
-	print("Chaser Enemy :: Dropped Health")
 	queue_free()

@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://c0j75ggv8qrkm"]
 
 [ext_resource type="PackedScene" uid="uid://babv1xukg6bjw" path="res://scenes/characters/enemies/waypoint/waypoint.tscn" id="1_8lak6"]
-[ext_resource type="PackedScene" uid="uid://c1kr8rxxx5th4" path="res://scenes/characters/player.tscn" id="2_de3vm"]
+[ext_resource type="PackedScene" uid="uid://c1kr8rxxx5th4" path="res://scenes/characters/player/player.tscn" id="2_de3vm"]
 [ext_resource type="PackedScene" uid="uid://cexdtg55jpbmp" path="res://scenes/objects/bullet/bullet.tscn" id="2_vf87c"]
 [ext_resource type="PackedScene" uid="uid://bx8kgvoah1vaq" path="res://scenes/characters/enemies/chaser/chaser_enemy.tscn" id="3_himde"]
-[ext_resource type="Script" uid="uid://dbsa304r1fd1q" path="res://assets/scripts/bullet_maker.gd" id="4_xbs10"]
+[ext_resource type="Script" uid="uid://dbsa304r1fd1q" path="res://assets/scripts/characters/enemies/spawners/bullet_maker.gd" id="4_xbs10"]
 [ext_resource type="PackedScene" uid="uid://dywqknbf016tq" path="res://scenes/characters/enemies/ranger/ranger.tscn" id="6_sllat"]
 [ext_resource type="PackedScene" uid="uid://b8uiduwj7s6b1" path="res://scenes/characters/enemies/boss/boss.tscn" id="7_akw8o"]
 
@@ -120,6 +120,7 @@ detection_range = 8.0
 
 [node name="Ranger" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("6_sllat")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5315, 1, 10.5344)
+speed = 2.0
 player_ref = NodePath("../Player")
 patrol_points = NodePath("../NavigationRegion3D/PatrollingRangerPath")
 attack_speed = 1.5
