@@ -112,8 +112,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4739, 0, -14.9115)
 [node name="ChaserEnemy" parent="." instance=ExtResource("3_himde")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6207, 1, -21.2433)
 patrol_points = NodePath("../NavigationRegion3D/PatrollingChaserPath")
-attack_damage = 5
-detection_range = 8.0
 
 [node name="Ranger" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("6_sllat")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5315, 1, 10.5344)

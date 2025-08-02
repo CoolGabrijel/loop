@@ -16,7 +16,7 @@ func process_frame(_delta: float) -> State:
 	return null
 
 func process_physics(_delta: float) -> State:
-	parent.navigation_agent.target_position = parent.player_ref.global_position
+	parent.navigation_agent.target_position = Player.player.global_position
 	parent.update_movement()
 
 	if not parent.can_see_player(parent.damage_component.detection_range):

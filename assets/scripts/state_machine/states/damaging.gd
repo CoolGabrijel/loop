@@ -36,7 +36,7 @@ func process_physics(_delta: float) -> State:
 	
 func deal_damage(attack_damage: float) -> void:
 	if _can_attack:
-		parent.player_ref.health_node.damage(attack_damage)
+		Player.player.health_node.damage(attack_damage)
 		reset_timer()
 
 func shoot(shoot_position: Vector3, direction: Vector3) -> void:
