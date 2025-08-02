@@ -30,6 +30,7 @@ func _ready() -> void:
 	main_menu.credits_button_was_pressed.connect(_on_credits_button_pressed)
 	options.back_button_was_pressed.connect(_on_back_button_pressed)
 	credits.back_button_was_pressed.connect(_on_back_button_pressed)
+	hud.show_map.connect(_on_show_map)
 
 
 func _on_play_button_pressed() -> void:
@@ -48,6 +49,10 @@ func _on_back_button_pressed() -> void:
 	options.hide()
 	credits.hide()
 	main_menu.show()
+
+
+func _on_show_map() -> void:
+	map.show()
 
 
 func _input(event: InputEvent) -> void:
