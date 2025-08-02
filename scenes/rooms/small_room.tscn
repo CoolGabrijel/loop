@@ -39,9 +39,10 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 [sub_resource type="BoxShape3D" id="BoxShape3D_r64i6"]
 size = Vector3(12, 1, 10)
 
-[node name="SmallRoom" type="Node3D" node_paths=PackedStringArray("connection_points")]
+[node name="SmallRoom" type="Node3D" node_paths=PackedStringArray("connection_points", "enemy_spawners")]
 script = ExtResource("1_r5qor")
 connection_points = [NodePath("Connections/Node3D"), NodePath("Connections/Node3D2"), NodePath("Connections/Node3D3")]
+enemy_spawners = [NodePath("EnemySpawners/EnemySpawner")]
 
 [node name="GFX" type="Node3D" parent="."]
 

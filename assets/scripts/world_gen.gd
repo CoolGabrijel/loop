@@ -67,6 +67,7 @@ func generate_room(depth: int, parent_connection: RoomConnection) -> void:
 		final_room = room
 		add_child(room)
 		room.global_position = room_pos
+		room.spawn_enemies()
 		
 		if depth >= max_depth:
 			return
