@@ -37,9 +37,9 @@ text = "Sound Effects:"
 layout_mode = 2
 text = "Music:"
 
-[node name="DialougeLabel" type="Label" parent="LabelContainer"]
+[node name="DialogueLabel" type="Label" parent="LabelContainer"]
 layout_mode = 2
-text = "Dialouge:"
+text = "Dialogue:"
 
 [node name="MasterVolumeSlider" type="HSlider" parent="."]
 offset_left = 211.0
