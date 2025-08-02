@@ -1,20 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bniykmsjaoqh3"]
+[gd_scene load_steps=8 format=3 uid="uid://bniykmsjaoqh3"]
 
+[ext_resource type="Script" uid="uid://1bdew5xetju" path="res://assets/scripts/ui/hud.gd" id="1_oj5la"]
 [ext_resource type="Texture2D" uid="uid://ce4rrt8fiojf4" path="res://assets/sprites/ui/hud_heart_full.png" id="2_n1ea6"]
 [ext_resource type="Texture2D" uid="uid://bvomgn5ivcen2" path="res://assets/sprites/ui/hud_heart_empty.png" id="3_gqn5w"]
 [ext_resource type="Texture2D" uid="uid://bx3s2v1pqapbf" path="res://assets/sprites/ui/hud_heart_half.png" id="4_riojq"]
 [ext_resource type="Texture2D" uid="uid://c8d4eosu31kqr" path="res://assets/sprites/ui/square.png" id="5_gqn5w"]
 [ext_resource type="Texture2D" uid="uid://dwcx54u8wje5k" path="res://assets/sprites/ui/circle.png" id="5_n1ea6"]
 
-[node name="HUD" type="CanvasLayer"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_136eg"]
 
-[node name="EnergyBar" type="ProgressBar" parent="."]
-custom_minimum_size = Vector2(250, 0)
-offset_left = 450.0
-offset_top = 597.0
-offset_right = 700.0
-offset_bottom = 624.0
-value = 0.31
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_oj5la")
 
 [node name="HeartsContainer" type="HBoxContainer" parent="."]
 offset_left = 19.0
@@ -38,6 +34,20 @@ position = Vector2(102.875, 26.875)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_riojq")
 
+[node name="Minimap" type="Sprite2D" parent="."]
+position = Vector2(1072, 81.0001)
+scale = Vector2(0.921876, 0.921876)
+texture = ExtResource("5_n1ea6")
+
+[node name="Area2D" type="Area2D" parent="Minimap"]
+position = Vector2(-130.169, 55.3219)
+scale = Vector2(1.08474, 1.08474)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minimap/Area2D"]
+position = Vector2(120, -51)
+scale = Vector2(6.19619, 6.19619)
+shape = SubResource("CircleShape2D_136eg")
+
 [node name="BuffContainer" type="HBoxContainer" parent="."]
 offset_left = 443.0
 offset_top = 563.0
@@ -56,7 +66,10 @@ texture = ExtResource("5_gqn5w")
 position = Vector2(77, 19)
 texture = ExtResource("5_gqn5w")
 
-[node name="Minimap" type="Sprite2D" parent="."]
-position = Vector2(1072, 81.0001)
-scale = Vector2(0.921876, 0.921876)
-texture = ExtResource("5_n1ea6")
+[node name="EnergyBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(250, 0)
+offset_left = 450.0
+offset_top = 597.0
+offset_right = 700.0
+offset_bottom = 624.0
+value = 0.31

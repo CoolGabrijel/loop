@@ -29,6 +29,7 @@ func _ready() -> void:
 	main_menu.options_button_was_pressed.connect(_on_options_button_pressed)
 	main_menu.credits_button_was_pressed.connect(_on_credits_button_pressed)
 	options.back_button_was_pressed.connect(_on_back_button_pressed)
+	credits.back_button_was_pressed.connect(_on_back_button_pressed)
 
 
 func _on_play_button_pressed() -> void:
@@ -45,6 +46,7 @@ func _on_credits_button_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	options.hide()
+	credits.hide()
 	main_menu.show()
 
 

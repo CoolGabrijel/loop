@@ -11,16 +11,19 @@ scale = Vector2(2.25391, 1.27344)
 texture = ExtResource("1_shg8n")
 
 [node name="CloseMapButton" type="Button" parent="."]
-offset_left = 1106.0
-offset_top = 12.0
-offset_right = 1135.0
-offset_bottom = 34.0
+offset_left = 24.0
+offset_top = 583.0
+offset_right = 74.0
+offset_bottom = 614.0
+scale = Vector2(1.9441, 1.62832)
+text = "Close"
 
 [node name="ZoomInButton" type="Button" parent="."]
-offset_left = 1104.0
-offset_top = 64.0
-offset_right = 1135.0
-offset_bottom = 81.0
+offset_left = 23.0
+offset_top = 545.0
+offset_right = 94.0
+offset_bottom = 576.0
+text = "Zoom in"
 
 [node name="UI Open Map" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_emq6i")
