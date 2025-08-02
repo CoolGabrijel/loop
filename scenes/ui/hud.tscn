@@ -73,3 +73,5 @@ offset_top = 597.0
 offset_right = 700.0
 offset_bottom = 624.0
 value = 0.31
+
+[connection signal="area_entered" from="Minimap/Area2D" to="." method="_on_area_2d_area_entered"]
