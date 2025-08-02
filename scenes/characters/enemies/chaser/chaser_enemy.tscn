@@ -66,4 +66,6 @@ stream = ExtResource("10_klc86")
 volume_db = -15.0
 bus = &"SFX"
 
+[connection signal="on_damage" from="HealthComponent" to="." method="_on_damaged"]
+[connection signal="on_death" from="HealthComponent" to="." method="_on_death"]
 [connection signal="timeout" from="StateMachine/Damaging/DamageCooldownTimer" to="StateMachine/Damaging" method="_on_attack_cooldown_timeout"]
