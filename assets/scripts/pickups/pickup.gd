@@ -1,4 +1,6 @@
 extends Area3D
+class_name Pickup
+
 
 @export var sprite_2d: Sprite2D
 

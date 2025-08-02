@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba7xda0epbv4j"]
+
+[ext_resource type="PackedScene" uid="uid://cq7aw1vqv4ohb" path="res://scenes/objects/npcs/vendor.tscn" id="1_afdak"]
+[ext_resource type="Script" uid="uid://bp4lt48xrq8jy" path="res://assets/scripts/characters/vendors/vendor_oskar.gd" id="2_6xi6l"]
+
+[node name="Vendor" instance=ExtResource("1_afdak")]
+script = ExtResource("2_6xi6l")

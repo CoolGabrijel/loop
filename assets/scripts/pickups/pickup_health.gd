@@ -1,4 +1,4 @@
-extends Area3D
+extends Pickup
 
 var has_been_picked_up := false
 

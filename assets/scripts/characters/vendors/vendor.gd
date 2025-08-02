@@ -1,4 +1,6 @@
 extends Node3D
+class_name Vendor
+
 
 @onready var label: Label = $Label
 
