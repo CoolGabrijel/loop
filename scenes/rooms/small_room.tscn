@@ -54,7 +54,7 @@ size = Vector3(12, 1, 10)
 [node name="SmallRoom" type="Node3D" node_paths=PackedStringArray("connection_points", "enemy_spawners")]
 script = ExtResource("1_r5qor")
 connection_points = [NodePath("Connections/Node3D"), NodePath("Connections/Node3D2"), NodePath("Connections/Node3D3")]
-enemy_spawners = [NodePath("EnemySpawners/EnemySpawner")]
+enemy_spawners = [NodePath("EnemySpawners/EnemySpawner"), NodePath("EnemySpawners/EnemySpawner2"), NodePath("EnemySpawners/EnemySpawner3")]
 
 [node name="GFX" type="Node3D" parent="."]
 
@@ -499,6 +499,18 @@ shape = SubResource("BoxShape3D_p560i")
 
 [node name="EnemySpawner" type="Node3D" parent="EnemySpawners" node_paths=PackedStringArray("patrol_waypoints")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
+script = ExtResource("4_2mcrf")
+patrol_waypoints = NodePath("../../PatrolWaypoints")
+metadata/_custom_type_script = "uid://v83i1w254732"
+
+[node name="EnemySpawner2" type="Node3D" parent="EnemySpawners" node_paths=PackedStringArray("patrol_waypoints")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+script = ExtResource("4_2mcrf")
+patrol_waypoints = NodePath("../../PatrolWaypoints")
+metadata/_custom_type_script = "uid://v83i1w254732"
+
+[node name="EnemySpawner3" type="Node3D" parent="EnemySpawners" node_paths=PackedStringArray("patrol_waypoints")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
 script = ExtResource("4_2mcrf")
 patrol_waypoints = NodePath("../../PatrolWaypoints")
 metadata/_custom_type_script = "uid://v83i1w254732"

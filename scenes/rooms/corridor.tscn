@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dj5a7o120ecao"]
+[gd_scene load_steps=22 format=3 uid="uid://dj5a7o120ecao"]
 
 [ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/room.gd" id="1_u6nsy"]
 [ext_resource type="PackedScene" uid="uid://cjnmywl7bnqu5" path="res://assets/environment/assembled_rooms/corridor.fbx" id="2_a5ngl"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://by8ekb2vji252" path="res://assets/environment/office_elements/cabinet.fbx" id="14_yuqtb"]
 [ext_resource type="PackedScene" uid="uid://d0e6fd76sn2sy" path="res://assets/environment/office_elements/ac.fbx" id="15_8drpe"]
 [ext_resource type="PackedScene" uid="uid://bnt464olyou6t" path="res://assets/environment/structures/door_wall.fbx" id="17_8at85"]
+[ext_resource type="Script" uid="uid://v83i1w254732" path="res://assets/scripts/characters/enemies/spawners/enemy_spawner.gd" id="18_nyj86"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_chkh3"]
 size = Vector3(18, 4, 0.1)
@@ -27,9 +28,10 @@ size = Vector3(0.1, 4, 3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5255u"]
 size = Vector3(0.1, 4, 2)
 
-[node name="Corridor" type="Node3D" node_paths=PackedStringArray("connection_points")]
+[node name="Corridor" type="Node3D" node_paths=PackedStringArray("connection_points", "enemy_spawners")]
 script = ExtResource("1_u6nsy")
 connection_points = [NodePath("Connections/Node3D"), NodePath("Connections/Node3D2")]
+enemy_spawners = [NodePath("Spawners/EnemySpawner"), NodePath("Spawners/EnemySpawner2")]
 
 [node name="GFX" type="Node3D" parent="."]
 
@@ -387,3 +389,25 @@ shape = SubResource("BoxShape3D_5255u")
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="RoomCollider"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, -2)
 shape = SubResource("BoxShape3D_5255u")
+
+[node name="Spawners" type="Node3D" parent="."]
+
+[node name="EnemySpawner" type="Node3D" parent="Spawners" node_paths=PackedStringArray("patrol_waypoints")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+script = ExtResource("18_nyj86")
+patrol_waypoints = NodePath("../../Waypoints")
+metadata/_custom_type_script = "uid://v83i1w254732"
+
+[node name="EnemySpawner2" type="Node3D" parent="Spawners" node_paths=PackedStringArray("patrol_waypoints")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+script = ExtResource("18_nyj86")
+patrol_waypoints = NodePath("../../Waypoints")
+metadata/_custom_type_script = "uid://v83i1w254732"
+
+[node name="Waypoints" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="Waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Node3D2" type="Node3D" parent="Waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
