@@ -1,10 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2hrj408gqob6"]
+[gd_scene load_steps=16 format=3 uid="uid://d2hrj408gqob6"]
 
 [ext_resource type="Script" uid="uid://bnvfgjfds8oxh" path="res://assets/scripts/world_gen.gd" id="1_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bomgebpabfa7n" path="res://scenes/rooms/small_room.tscn" id="2_i7141"]
 [ext_resource type="PackedScene" uid="uid://dj5a7o120ecao" path="res://scenes/rooms/corridor.tscn" id="3_4mrxx"]
 [ext_resource type="Script" uid="uid://5pk7wycrh87b" path="res://assets/scripts/ui/ui_manager.gd" id="4_i7141"]
-[ext_resource type="PackedScene" uid="uid://doo7s3nni4bbs" path="res://scenes/rooms/boss_room.tscn" id="4_q5onr"]
+[ext_resource type="PackedScene" path="res://scenes/rooms/boss_room.tscn" id="4_q5onr"]
 [ext_resource type="PackedScene" uid="uid://b6edee52tjkgr" path="res://scenes/ui/main_menu.tscn" id="5_i7141"]
 [ext_resource type="PackedScene" uid="uid://c1kr8rxxx5th4" path="res://scenes/characters/player/player.tscn" id="5_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://bb2g4wmqrqan1" path="res://scenes/ui/volume_menu.tscn" id="6_7r4gi"]
