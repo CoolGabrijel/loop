@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://dywqknbf016tq"]
+
+[ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="1_diaec"]
+[ext_resource type="Script" uid="uid://refcortvn71d" path="res://assets/scripts/ranger_enemy.gd" id="1_m8spy"]
+[ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/components/state_machine/state_machine.gd" id="2_5teoy"]
+[ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/components/damage.gd" id="2_e4y25"]
+[ext_resource type="Script" uid="uid://o6abt6qw55vj" path="res://assets/scripts/components/speed.gd" id="3_gdvw5"]
+[ext_resource type="Script" uid="uid://c0urfdqqav6u7" path="res://assets/scripts/components/states/patrolling.gd" id="4_g47ss"]
+[ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/components/states/chasing.gd" id="5_gdvw5"]
+[ext_resource type="Script" uid="uid://cw7tjqsmiuaf4" path="res://assets/scripts/components/states/damaging.gd" id="6_m8spy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_diaec"]
+size = Vector3(1.30566, 1.26404, 0.322021)
+
+[node name="Ranger" type="CharacterBody3D"]
+script = ExtResource("1_m8spy")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_diaec")
+
+[node name="NavigationAgent" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="DebugLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00739, 0)
+text = "Ranger"
+font_size = 96
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00634766, 0.010437, -0.0601807)
+shape = SubResource("BoxShape3D_diaec")
+
+[node name="PlayerDetection" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -10)
+debug_shape_custom_color = Color(0.901961, 0, 0, 1)
+
+[node name="DamageComponent" type="Node" parent="."]
+script = ExtResource("2_e4y25")
+attack_damage = 10
+attack_speed = 2.0
+detection_range = 7.0
+attack_range = 6.5
+is_range_attack = true
+bullet_speed = 5.0
+
+[node name="SpeedComponent" type="Node" parent="."]
+script = ExtResource("3_gdvw5")
+speed = 3.0
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("2_5teoy")
+starting_state = NodePath("Patrolling")
+
+[node name="Patrolling" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
+script = ExtResource("4_g47ss")
+chasing = NodePath("../Chasing")
+
+[node name="Chasing" type="Node" parent="StateMachine" node_paths=PackedStringArray("patrolling", "damaging")]
+script = ExtResource("5_gdvw5")
+patrolling = NodePath("../Patrolling")
+damaging = NodePath("../Damaging")
+
+[node name="Damaging" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
+script = ExtResource("6_m8spy")
+chasing = NodePath("../Chasing")
+
+[node name="DamageCooldownTimer" type="Timer" parent="StateMachine/Damaging"]
+
+[node name="BulletSpawnpoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[connection signal="timeout" from="StateMachine/Damaging/DamageCooldownTimer" to="StateMachine/Damaging" method="_on_attack_cooldown_timeout"]

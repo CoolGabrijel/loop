@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx8kgvoah1vaq"]
+[gd_scene load_steps=11 format=3 uid="uid://bx8kgvoah1vaq"]
 
 [ext_resource type="Script" uid="uid://baqrykwr3ohax" path="res://assets/scripts/chaser_enemy.gd" id="1_8nrqd"]
 [ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="1_ft5sb"]
+[ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/components/damage.gd" id="3_5ysyj"]
 [ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/components/state_machine/state_machine.gd" id="3_ui4im"]
+[ext_resource type="Script" uid="uid://o6abt6qw55vj" path="res://assets/scripts/components/speed.gd" id="4_8igut"]
 [ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/components/states/chasing.gd" id="4_ij6ca"]
 [ext_resource type="Script" uid="uid://c0urfdqqav6u7" path="res://assets/scripts/components/states/patrolling.gd" id="5_o5s0t"]
-[ext_resource type="Script" uid="uid://cw7tjqsmiuaf4" path="res://assets/scripts/components/states/attacking.gd" id="7_8igut"]
+[ext_resource type="Script" uid="uid://cw7tjqsmiuaf4" path="res://assets/scripts/components/states/damaging.gd" id="7_8igut"]
 [ext_resource type="AudioStream" uid="uid://bb6qkawy3yw5g" path="res://assets/sfx/enemy_melee_hit.wav" id="7_o5s0t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8nrqd"]
@@ -30,21 +32,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78317, 0)
 text = "Chaser"
 font_size = 96
 
+[node name="DamageComponent" type="Node" parent="."]
+script = ExtResource("3_5ysyj")
+attack_damage = 10
+attack_speed = 2.0
+detection_range = 6.0
+attack_range = 2.0
+
+[node name="SpeedComponent" type="Node" parent="."]
+script = ExtResource("4_8igut")
+speed = 4.0
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
 script = ExtResource("3_ui4im")
 starting_state = NodePath("Patrolling")
 
-[node name="Chasing" type="Node" parent="StateMachine" node_paths=PackedStringArray("Patrolling")]
+[node name="Chasing" type="Node" parent="StateMachine" node_paths=PackedStringArray("patrolling", "damaging")]
 script = ExtResource("4_ij6ca")
-Patrolling = NodePath("../Patrolling")
+patrolling = NodePath("../Patrolling")
+damaging = NodePath("../Damaging")
 
-[node name="Patrolling" type="Node" parent="StateMachine" node_paths=PackedStringArray("Chasing")]
+[node name="Patrolling" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
 script = ExtResource("5_o5s0t")
-Chasing = NodePath("../Chasing")
+chasing = NodePath("../Chasing")
 
-[node name="Attacking" type="Node" parent="StateMachine"]
+[node name="Damaging" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
 script = ExtResource("7_8igut")
+chasing = NodePath("../Chasing")
+
+[node name="DamageCooldownTimer" type="Timer" parent="StateMachine/Damaging"]
 
 [node name="Chaser is Damaged Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_o5s0t")
 bus = &"SFX"
+
+[connection signal="timeout" from="StateMachine/Damaging/DamageCooldownTimer" to="StateMachine/Damaging" method="_on_attack_cooldown_timeout"]

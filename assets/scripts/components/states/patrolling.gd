@@ -1,6 +1,6 @@
 extends State
 
-@export var Chasing: State 
+@export var chasing: State 
 
 func enter() -> void:
 	pass
@@ -25,7 +25,7 @@ func process_physics(_delta: float) -> State:
 	parent.update_movement()
 	parent.move_and_slide()
 	
-	if parent.can_see_player():
-		return Chasing
+	if parent.can_see_player(parent.damage_component.detection_range):
+		return chasing
 	
 	return null

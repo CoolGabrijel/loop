@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0j75ggv8qrkm"]
+[gd_scene load_steps=11 format=3 uid="uid://c0j75ggv8qrkm"]
 
 [ext_resource type="PackedScene" uid="uid://babv1xukg6bjw" path="res://scenes/characters/enemies/waypoint/waypoint.tscn" id="1_8lak6"]
 [ext_resource type="PackedScene" uid="uid://c1kr8rxxx5th4" path="res://scenes/characters/player.tscn" id="2_de3vm"]
+[ext_resource type="PackedScene" uid="uid://cexdtg55jpbmp" path="res://scenes/objects/bullet/bullet.tscn" id="2_vf87c"]
 [ext_resource type="PackedScene" uid="uid://bx8kgvoah1vaq" path="res://scenes/characters/enemies/chaser/chaser_enemy.tscn" id="3_himde"]
+[ext_resource type="Script" uid="uid://dbsa304r1fd1q" path="res://assets/scripts/bullet_maker.gd" id="4_xbs10"]
+[ext_resource type="PackedScene" uid="uid://dywqknbf016tq" path="res://scenes/characters/enemies/ranger/ranger.tscn" id="6_sllat"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_de3vm"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -32,6 +35,10 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
 environment = SubResource("Environment_xbs10")
 
+[node name="BulletMaker" type="Node" parent="."]
+script = ExtResource("4_xbs10")
+bullet_scene = ExtResource("2_vf87c")
+
 [node name="Player" parent="." instance=ExtResource("2_de3vm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88985, 0, 9.92411)
 
@@ -57,24 +64,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.52247, 0.702698, -11.5326)
 use_collision = true
 size = Vector3(4.83643, 1.4054, 2.86908)
 
-[node name="PatrollingEnemyPath" type="Node3D" parent="NavigationRegion3D"]
+[node name="PatrollingChaserPath" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.193357, 0)
 
-[node name="Waypoint" parent="NavigationRegion3D/PatrollingEnemyPath" instance=ExtResource("1_8lak6")]
+[node name="Waypoint" parent="NavigationRegion3D/PatrollingChaserPath" instance=ExtResource("1_8lak6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18425, 0, -1.20461)
 
-[node name="Waypoint2" parent="NavigationRegion3D/PatrollingEnemyPath" instance=ExtResource("1_8lak6")]
+[node name="Waypoint2" parent="NavigationRegion3D/PatrollingChaserPath" instance=ExtResource("1_8lak6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6555, -9.53674e-07, -0.86917)
 
-[node name="Waypoint3" parent="NavigationRegion3D/PatrollingEnemyPath" instance=ExtResource("1_8lak6")]
+[node name="Waypoint3" parent="NavigationRegion3D/PatrollingChaserPath" instance=ExtResource("1_8lak6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7724, 0, 12.588)
 
-[node name="Waypoint4" parent="NavigationRegion3D/PatrollingEnemyPath" instance=ExtResource("1_8lak6")]
+[node name="Waypoint4" parent="NavigationRegion3D/PatrollingChaserPath" instance=ExtResource("1_8lak6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23787, 0, 13.0324)
+
+[node name="PatrollingRangerPath" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="Waypoint" parent="NavigationRegion3D/PatrollingRangerPath" instance=ExtResource("1_8lak6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72518, 0, -7.55536)
+
+[node name="Waypoint2" parent="NavigationRegion3D/PatrollingRangerPath" instance=ExtResource("1_8lak6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4739, 0, -14.9115)
 
 [node name="ChaserEnemy" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("3_himde")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 player_ref = NodePath("../Player")
-patrol_points = NodePath("../NavigationRegion3D/PatrollingEnemyPath")
-movement_speed = 5.0
-detection_range = 10.0
+patrol_points = NodePath("../NavigationRegion3D/PatrollingChaserPath")
+
+[node name="Ranger" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("6_sllat")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.402, 1, 0)
+player_ref = NodePath("../Player")
+patrol_points = NodePath("../NavigationRegion3D/PatrollingRangerPath")
