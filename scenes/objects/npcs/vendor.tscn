@@ -21,4 +21,5 @@ offset_bottom = 23.0
 theme_override_font_sizes/font_size = 26
 text = "placeholder dialogue text"
 
+[connection signal="player_is_in" from="." to="." method="advance_dialogue"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
