@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb2g4wmqrqan1"]
+[gd_scene load_steps=6 format=3 uid="uid://bb2g4wmqrqan1"]
+
+[ext_resource type="AudioStream" uid="uid://dau8l6aqublrn" path="res://assets/sfx/ui_accept.wav" id="1_lamhx"]
+[ext_resource type="AudioStream" uid="uid://bm31aan3dooad" path="res://assets/sfx/ui_cancel.wav" id="2_5qqp5"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lamhx"]
 
@@ -70,3 +73,13 @@ offset_left = 966.0
 offset_top = 579.0
 offset_right = 1107.0
 offset_bottom = 611.0
+
+[node name="UI Accept (Mouse Click)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_lamhx")
+bus = &"UI"
+
+[node name="UI Cancel (Back Button)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5qqp5")
+volume_db = 4.5
+pitch_scale = 1.02
+bus = &"UI"

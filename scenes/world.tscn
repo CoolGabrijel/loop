@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bb2g4wmqrqan1" path="res://scenes/ui/volume_menu.tscn" id="6_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://drrynew3w310r" path="res://scenes/environment.tscn" id="6_e3hyu"]
 [ext_resource type="PackedScene" uid="uid://bniykmsjaoqh3" path="res://scenes/ui/hud.tscn" id="7_w7kh3"]
-[ext_resource type="PackedScene" uid="uid://cveq8fisdnle7" path="res://scenes/ui/fullscreen_map.tscn" id="8_w7kh3"]
+[ext_resource type="PackedScene" uid="uid://cyt8p317g5go2" path="res://scenes/ui/fullscreen_map.tscn" id="8_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://h7wrnmmv0v4c" path="res://scenes/ui/credits_scene.tscn" id="9_e3hyu"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qfnet"]

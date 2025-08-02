@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6edee52tjkgr"]
+[gd_scene load_steps=8 format=3 uid="uid://b6edee52tjkgr"]
 
 [ext_resource type="Texture2D" uid="uid://dv6mwh4xcx5xc" path="res://assets/sprites/ui/gmtkgj2k25_server_logo.png" id="1_1g8jr"]
 [ext_resource type="Texture2D" uid="uid://bi1pd1wuts8ae" path="res://assets/sprites/ui/placeholder_game_name.png" id="2_1g8jr"]
+[ext_resource type="AudioStream" uid="uid://5sl47bjd56cs" path="res://assets/sfx/ui_game_start.wav" id="3_m1kxf"]
+[ext_resource type="AudioStream" uid="uid://dau8l6aqublrn" path="res://assets/sfx/ui_accept.wav" id="4_x2yvf"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1g8jr"]
 
@@ -94,6 +96,14 @@ offset_right = 978.0
 offset_bottom = 624.0
 theme_override_font_sizes/font_size = 20
 text = "Made for"
+
+[node name="UI Game Start (Play Game)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m1kxf")
+pitch_scale = 1.02
+bus = &"UI"
+
+[node name="UI Accept (Credits_Options)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_x2yvf")
 
 [connection signal="pressed" from="ButtonHolder/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ButtonHolder/SettingsButton" to="." method="_on_settings_button_pressed"]
