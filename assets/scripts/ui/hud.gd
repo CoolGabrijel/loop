@@ -5,7 +5,9 @@ extends CanvasLayer
 @onready var buff_container: HBoxContainer = $BuffContainer
 @onready var hearts_container: HBoxContainer = $HeartsContainer
 
-var can_click: bool = false
+@onready var area_2d: Area2D = $Minimap/Area2D
+
+var can_click: bool
 
 signal show_map
 
