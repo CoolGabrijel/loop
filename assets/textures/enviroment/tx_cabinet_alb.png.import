@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgfugy7akagwv"
-path.s3tc="res://.godot/imported/tx_door_alb.png-be7964557020f9681391cf3a078c7636.s3tc.ctex"
+uid="uid://dnvo76ujl2nya"
+path.s3tc="res://.godot/imported/tx_cabinet_alb.png-5ec4a334f05b0a9e02397abe9d93e6d4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/enviroment/tx_door_alb.png"
-dest_files=["res://.godot/imported/tx_door_alb.png-be7964557020f9681391cf3a078c7636.s3tc.ctex"]
+source_file="res://assets/textures/enviroment/tx_cabinet_alb.png"
+dest_files=["res://.godot/imported/tx_cabinet_alb.png-5ec4a334f05b0a9e02397abe9d93e6d4.s3tc.ctex"]
 
 [params]
 
