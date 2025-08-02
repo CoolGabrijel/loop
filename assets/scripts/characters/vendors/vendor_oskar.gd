@@ -33,9 +33,17 @@ var dialouge_line = [
 	"Be sure to break copier for Oskar. It is… problematic."
 ]
 
+var used := false
+
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body is not Player:
+	if body is not Player or used:
 		return
 	
 	oskars_theme.play()
+	give_buff()
+	used = true
+	queue_free()
 	# also add oskar's buffs
+
+func give_buff() -> void:
+	Player.player.speed_component.speed_modifier += 25

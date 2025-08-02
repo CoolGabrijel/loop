@@ -61,7 +61,7 @@ func update_movement() -> void:
 		var local_destination = next_path_position - global_position
 		var direction = local_destination.normalized()
 	
-		velocity = direction * speed_component.speed
+		velocity = direction * speed_component.total_speed
 		
 func can_see_player(view_range: float) -> bool:
 	var parent_pos: Vector3 = global_position

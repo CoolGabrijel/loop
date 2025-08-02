@@ -45,7 +45,6 @@ script = ExtResource("3_oosde")
 
 [node name="DamageComponent" type="Node3D" parent="."]
 script = ExtResource("2_e4y25")
-mouse_pos_mask = 8
 attack_damage = 10
 attack_speed = 2.0
 detection_range = 7.0
@@ -55,7 +54,7 @@ bullet_speed = 5.0
 
 [node name="SpeedComponent" type="Node" parent="."]
 script = ExtResource("3_gdvw5")
-speed = 3.0
+base_speed = 4.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
 script = ExtResource("2_5teoy")

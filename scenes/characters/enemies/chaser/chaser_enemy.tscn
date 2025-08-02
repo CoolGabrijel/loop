@@ -45,7 +45,7 @@ script = ExtResource("4_kaptv")
 
 [node name="SpeedComponent" type="Node" parent="."]
 script = ExtResource("5_klc86")
-speed = 2.0
+base_speed = 4.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
 script = ExtResource("6_klc86")

@@ -34,7 +34,6 @@ script = ExtResource("1_dyp2m")
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource("1_pq8s5")
 mouse_pos_mask = 8
-base_speed = 250.0
 volume = 0.5
 pitch_variance = 0.25
 
@@ -72,8 +71,9 @@ stream = ExtResource("4_dyp2m")
 pitch_scale = 1.05
 bus = &"SFX"
 
-[node name="Speed" type="Node" parent="."]
+[node name="SpeedComponent" type="Node" parent="."]
 script = ExtResource("7_6eyoc")
+base_speed = 250.0
 
 [node name="DebugLabel" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.738, 0)
