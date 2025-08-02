@@ -6,7 +6,7 @@ signal player_is_in
 
 # add lines based on the inherited npc
 var dialogue_lines: Array = [
-	# paste every npcs lines in the instances of this scene
+	
 ]
 
 var current_line: int = 0
