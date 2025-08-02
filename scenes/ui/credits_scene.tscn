@@ -1,9 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://h7wrnmmv0v4c"]
 
-[ext_resource type="Script" uid="uid://c54peqq4y0spq" path="res://assets/scripts/ui/credits_scene.gd" id="1_oobj6"]
+[ext_resource type="FontFile" uid="uid://bg1s5wb6k0hb2" path="res://assets/sprites/fonts/Scribbles-Regular.ttf" id="1_oobj6"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_oobj6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -41,9 +40,10 @@ ratio = 30.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 28
+theme_override_fonts/normal_font = ExtResource("1_oobj6")
+theme_override_font_sizes/normal_font_size = 66
 text = "Kusaku
-Lighthern
+Ligthern
 Gabrijel
 Femme
 pebble
@@ -57,13 +57,3 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 2
-
-[node name="BackButton" type="Button" parent="."]
-offset_left = 39.0
-offset_top = 582.0
-offset_right = 180.0
-offset_bottom = 614.0
-scale = Vector2(1.0292, 1.0292)
-text = "Back"
-
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

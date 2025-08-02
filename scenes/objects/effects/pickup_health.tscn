@@ -2,12 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://cil0xkjvlbq0r" path="res://scenes/objects/effects/pickup.tscn" id="1_w2dk6"]
 [ext_resource type="Script" uid="uid://danoi1vusiut6" path="res://assets/scripts/pickups/pickup_health.gd" id="2_3ta0l"]
-[ext_resource type="Texture2D" uid="uid://ce4rrt8fiojf4" path="res://assets/sprites/ui/hud_heart_full.png" id="3_k4aop"]
+[ext_resource type="Texture2D" uid="uid://davj5odmr7v7q" path="res://assets/sprites/ui/pickup_heart.png" id="3_k4aop"]
 
 [node name="Pickup" instance=ExtResource("1_w2dk6")]
 
 [node name="Area3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("2_3ta0l")
 
 [node name="Sprite2D" parent="Area3D" index="1"]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
 texture = ExtResource("3_k4aop")

@@ -10,6 +10,9 @@ class_name chaser_enemy
 @onready var damage_component: Damage = $DamageComponent
 @onready var health_component: Health = $HealthComponent
 
+@export var health: float = 30.0
+@export var speed: float = 4.0
+
 @export_group("Object References")
 @export var patrol_points: NodePath
 
@@ -18,9 +21,6 @@ class_name chaser_enemy
 @export var attack_speed: float
 @export var detection_range: float
 @export var attack_range: float
-
-@export_group("Movement")
-
 
 var waypoints: Array[Vector3] = []
 var current_waypoint: int = 0
@@ -33,11 +33,15 @@ func _ready() -> void:
 	
 	_create_waypoints()
 	
+	health_component.base_max_hp = health
+	speed_component.base_speed = speed
+	
 	damage_component.attack_damage = attack_damage
 	damage_component.attack_speed = attack_speed
 	damage_component.detection_range = detection_range
 	damage_component.attack_range = attack_range
 	
+
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -61,7 +65,7 @@ func update_movement() -> void:
 		var local_destination = next_path_position - global_position
 		var direction = local_destination.normalized()
 	
-		velocity = direction * speed_component.speed
+		velocity = direction * speed_component.total_speed
 		
 func can_see_player(view_range: float) -> bool:
 	var parent_pos: Vector3 = global_position
@@ -71,8 +75,17 @@ func can_see_player(view_range: float) -> bool:
 	
 	return distance <= view_range
 
+func drop_health_pickup() -> void:
+	const PICKUP = preload("res://scenes/objects/effects/pickup_health.tscn")
+	var pickup: Node3D = PICKUP.instantiate()
+	get_tree().current_scene.add_child(pickup)
+	pickup.global_position = global_position
+	pickup.show()
+	print("Chaser Enemy :: Dropped Health at " + str(global_position))
+
 func _on_damaged() -> void:
 	damaged_sfx.play()
 
 func _on_death() -> void:
+	drop_health_pickup()
 	queue_free()

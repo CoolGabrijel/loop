@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://dboce28r4m85n"]
+
+[ext_resource type="Script" uid="uid://bbn60hn4t57ci" path="res://assets/scripts/characters/enemies/guard_enemy.gd" id="1_nhv7k"]
+[ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="1_rhftm"]
+[ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/combat_components/health.gd" id="3_dn3d6"]
+[ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/combat_components/damage.gd" id="4_0gxep"]
+[ext_resource type="Script" uid="uid://o6abt6qw55vj" path="res://assets/scripts/combat_components/speed.gd" id="5_d2gc6"]
+[ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/state_machine/state_machine.gd" id="6_8jkhe"]
+[ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/state_machine/states/chasing.gd" id="7_yc30v"]
+[ext_resource type="Script" uid="uid://c0urfdqqav6u7" path="res://assets/scripts/state_machine/states/patrolling.gd" id="8_nqukw"]
+[ext_resource type="Script" uid="uid://buoscs767ordf" path="res://assets/scripts/state_machine/states/melee.gd" id="9_dn3d6"]
+[ext_resource type="Script" uid="uid://du4vs5cmgkyr6" path="res://assets/scripts/state_machine/states/shoot.gd" id="10_0gxep"]
+[ext_resource type="Script" uid="uid://co4ehb5e4olw0" path="res://assets/scripts/state_machine/states/stun.gd" id="11_d2gc6"]
+[ext_resource type="Script" uid="uid://brypbxfumqbso" path="res://assets/scripts/state_machine/states/retreat.gd" id="12_8jkhe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rhftm"]
+size = Vector3(1.25562, 1.30432, 0.241211)
+
+[node name="GuardEnemy" type="CharacterBody3D"]
+script = ExtResource("1_nhv7k")
+attack_damage = 10
+attack_speed = 1.0
+bullet_speed = 4.0
+stun_attack_duration = 2.0
+retreat_speed_multiplier = 2.0
+detection_range = 8.0
+melee_attack_range = 2.0
+range_attack_range = 7.5
+retreat_range_multiplier = 100.0
+combination_attack_cooldown = 5.0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_rhftm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012085, 0.00469971, 0.00830078)
+shape = SubResource("BoxShape3D_rhftm")
+
+[node name="NavigationAgent" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="DebugLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76416, 0)
+text = "Guard"
+font_size = 96
+
+[node name="HealthComponent" type="Node3D" parent="."]
+script = ExtResource("3_dn3d6")
+
+[node name="DamageComponent" type="Node3D" parent="."]
+script = ExtResource("4_0gxep")
+
+[node name="SpeedComponent" type="Node" parent="."]
+script = ExtResource("5_d2gc6")
+base_speed = 3.0
+
+[node name="CombinationTimer" type="Timer" parent="."]
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("6_8jkhe")
+starting_state = NodePath("Patrolling")
+enable_combination_shoot_stun = true
+
+[node name="Chasing" type="Node" parent="StateMachine" node_paths=PackedStringArray("patrolling", "melee", "shoot", "stun", "retreat")]
+script = ExtResource("7_yc30v")
+patrolling = NodePath("../Patrolling")
+melee = NodePath("../Melee")
+shoot = NodePath("../Shoot")
+stun = NodePath("../Stun")
+retreat = NodePath("../Retreat")
+
+[node name="Patrolling" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
+script = ExtResource("8_nqukw")
+chasing = NodePath("../Chasing")
+
+[node name="Melee" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
+script = ExtResource("9_dn3d6")
+chasing = NodePath("../Chasing")
+
+[node name="Shoot" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing", "stun")]
+script = ExtResource("10_0gxep")
+chasing = NodePath("../Chasing")
+stun = NodePath("../Stun")
+
+[node name="Stun" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
+script = ExtResource("11_d2gc6")
+chasing = NodePath("../Chasing")
+
+[node name="Retreat" type="Node" parent="StateMachine" node_paths=PackedStringArray("patrolling", "chasing")]
+script = ExtResource("12_8jkhe")
+patrolling = NodePath("../Patrolling")
+chasing = NodePath("../Chasing")
+
+[node name="AttackTimer" type="Timer" parent="StateMachine"]
+
+[connection signal="timeout" from="CombinationTimer" to="." method="_on_combination_timer_timeout"]
+[connection signal="timeout" from="StateMachine/AttackTimer" to="StateMachine" method="_on_attack_timer_timeout"]

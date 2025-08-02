@@ -51,10 +51,11 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 [sub_resource type="BoxShape3D" id="BoxShape3D_r64i6"]
 size = Vector3(12, 1, 10)
 
-[node name="SmallRoom" type="Node3D" node_paths=PackedStringArray("connection_points", "enemy_spawners")]
+[node name="SmallRoom" type="Node3D" node_paths=PackedStringArray("connection_points", "enemy_spawners", "vendor_locations")]
 script = ExtResource("1_r5qor")
 connection_points = [NodePath("Connections/Node3D"), NodePath("Connections/Node3D2"), NodePath("Connections/Node3D3")]
 enemy_spawners = [NodePath("EnemySpawners/EnemySpawner"), NodePath("EnemySpawners/EnemySpawner2"), NodePath("EnemySpawners/EnemySpawner3")]
+vendor_locations = [NodePath("VendorSpawns/Node3D")]
 
 [node name="GFX" type="Node3D" parent="."]
 
@@ -531,3 +532,8 @@ navigation_mesh = SubResource("NavigationMesh_2mcrf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_r64i6")
+
+[node name="VendorSpawns" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="VendorSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99959, 0, -4.36561)

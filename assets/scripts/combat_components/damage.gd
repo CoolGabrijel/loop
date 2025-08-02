@@ -13,6 +13,10 @@ class_name Damage
 @export var is_range_attack: bool
 @export var bullet_speed: float
 
+@export var stun_attack_duration: float
+# Cooldown of shoot and stun sequence attack, or any other combination
+@export var combination_attack_cooldown: float
+
 var enemies_within_range: Array[Node3D]
 
 func _physics_process(delta: float) -> void:

@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/state_machine/state_machine.gd" id="6_klc86"]
 [ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/state_machine/states/chasing.gd" id="7_klc86"]
 [ext_resource type="Script" uid="uid://c0urfdqqav6u7" path="res://assets/scripts/state_machine/states/patrolling.gd" id="8_kaptv"]
-[ext_resource type="Script" uid="uid://cw7tjqsmiuaf4" path="res://assets/scripts/state_machine/states/damaging.gd" id="9_krkx8"]
+[ext_resource type="Script" uid="uid://buoscs767ordf" path="res://assets/scripts/state_machine/states/melee.gd" id="9_klc86"]
 [ext_resource type="AudioStream" uid="uid://bb6qkawy3yw5g" path="res://assets/audio/sfx/enemy_melee_hit.wav" id="10_klc86"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8nrqd"]
@@ -16,6 +16,7 @@ size = Vector3(1.30945, 1.32855, 0.203125)
 
 [node name="ChaserEnemy" type="CharacterBody3D"]
 script = ExtResource("1_8nrqd")
+speed = 3.0
 attack_damage = 5
 attack_speed = 1.0
 detection_range = 8.0
@@ -45,26 +46,26 @@ script = ExtResource("4_kaptv")
 
 [node name="SpeedComponent" type="Node" parent="."]
 script = ExtResource("5_klc86")
-speed = 2.0
+base_speed = 4.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
 script = ExtResource("6_klc86")
 starting_state = NodePath("Patrolling")
 
-[node name="Chasing" type="Node" parent="StateMachine" node_paths=PackedStringArray("patrolling", "damaging")]
+[node name="Chasing" type="Node" parent="StateMachine" node_paths=PackedStringArray("patrolling", "melee")]
 script = ExtResource("7_klc86")
 patrolling = NodePath("../Patrolling")
-damaging = NodePath("../Damaging")
+melee = NodePath("../Melee")
 
 [node name="Patrolling" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
 script = ExtResource("8_kaptv")
 chasing = NodePath("../Chasing")
 
-[node name="Damaging" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
-script = ExtResource("9_krkx8")
+[node name="Melee" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
+script = ExtResource("9_klc86")
 chasing = NodePath("../Chasing")
 
-[node name="DamageCooldownTimer" type="Timer" parent="StateMachine/Damaging"]
+[node name="AttackTimer" type="Timer" parent="StateMachine"]
 
 [node name="Chaser is Damaged Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_klc86")
@@ -73,4 +74,4 @@ bus = &"SFX"
 
 [connection signal="on_damage" from="HealthComponent" to="." method="_on_damaged"]
 [connection signal="on_death" from="HealthComponent" to="." method="_on_death"]
-[connection signal="timeout" from="StateMachine/Damaging/DamageCooldownTimer" to="StateMachine/Damaging" method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="StateMachine/AttackTimer" to="StateMachine" method="_on_attack_timer_timeout"]

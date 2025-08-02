@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/combat_components/health.gd" id="3_oosde"]
 [ext_resource type="Script" uid="uid://c0urfdqqav6u7" path="res://assets/scripts/state_machine/states/patrolling.gd" id="4_g47ss"]
 [ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/state_machine/states/chasing.gd" id="5_gdvw5"]
-[ext_resource type="Script" uid="uid://cw7tjqsmiuaf4" path="res://assets/scripts/state_machine/states/damaging.gd" id="6_m8spy"]
+[ext_resource type="Script" uid="uid://du4vs5cmgkyr6" path="res://assets/scripts/state_machine/states/shoot.gd" id="9_oosde"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_diaec"]
 size = Vector3(1.30566, 1.26404, 0.322021)
@@ -19,7 +19,7 @@ attack_damage = 10
 attack_speed = 2.0
 detection_range = 7.0
 attack_range = 6.5
-bullet_speed = 120.0
+bullet_speed = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture = ExtResource("1_diaec")
@@ -45,7 +45,6 @@ script = ExtResource("3_oosde")
 
 [node name="DamageComponent" type="Node3D" parent="."]
 script = ExtResource("2_e4y25")
-mouse_pos_mask = 8
 attack_damage = 10
 attack_speed = 2.0
 detection_range = 7.0
@@ -55,7 +54,7 @@ bullet_speed = 5.0
 
 [node name="SpeedComponent" type="Node" parent="."]
 script = ExtResource("3_gdvw5")
-speed = 3.0
+base_speed = 4.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
 script = ExtResource("2_5teoy")
@@ -65,18 +64,18 @@ starting_state = NodePath("Patrolling")
 script = ExtResource("4_g47ss")
 chasing = NodePath("../Chasing")
 
-[node name="Chasing" type="Node" parent="StateMachine" node_paths=PackedStringArray("patrolling", "damaging")]
+[node name="Chasing" type="Node" parent="StateMachine" node_paths=PackedStringArray("patrolling", "shoot")]
 script = ExtResource("5_gdvw5")
 patrolling = NodePath("../Patrolling")
-damaging = NodePath("../Damaging")
+shoot = NodePath("../Shoot")
 
-[node name="Damaging" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
-script = ExtResource("6_m8spy")
+[node name="Shoot" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
+script = ExtResource("9_oosde")
 chasing = NodePath("../Chasing")
 
-[node name="DamageCooldownTimer" type="Timer" parent="StateMachine/Damaging"]
+[node name="AttackTimer" type="Timer" parent="StateMachine"]
 
 [node name="BulletSpawnpoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
-[connection signal="timeout" from="StateMachine/Damaging/DamageCooldownTimer" to="StateMachine/Damaging" method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="StateMachine/AttackTimer" to="StateMachine" method="_on_attack_timer_timeout"]

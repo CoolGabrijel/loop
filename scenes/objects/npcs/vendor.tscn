@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://n6ba1sa6grsq" path="res://assets/scripts/characters/vendors/vendor.gd" id="1_nv5uj"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_27i05"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_nv5uj"]
 
 [node name="Vendor" type="Node3D"]
 script = ExtResource("1_nv5uj")
@@ -10,8 +10,7 @@ script = ExtResource("1_nv5uj")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1.98478, 0, 0, 0, 1, 0, 0, 0, 1.23622, 0, 0, 0)
-shape = SubResource("CylinderShape3D_27i05")
+shape = SubResource("BoxShape3D_nv5uj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area3D"]
 
@@ -21,5 +20,4 @@ offset_bottom = 23.0
 theme_override_font_sizes/font_size = 26
 text = "placeholder dialogue text"
 
-[connection signal="player_is_in" from="." to="." method="advance_dialogue"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
