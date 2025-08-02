@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bomgebpabfa7n"]
+[gd_scene load_steps=26 format=3 uid="uid://bomgebpabfa7n"]
 
 [ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/room.gd" id="1_r5qor"]
 [ext_resource type="PackedScene" uid="uid://kwogjc17hy0f" path="res://assets/environment/assembled_rooms/room_small.fbx" id="2_2mcrf"]
@@ -21,7 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://bnt464olyou6t" path="res://assets/environment/structures/door_wall.fbx" id="18_pq6fp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ncbss"]
-size = Vector3(12, 4, 0.1)
+size = Vector3(9, 4, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pq6fp"]
+size = Vector3(2, 4, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_amxms"]
 size = Vector3(0.1, 4, 4)
@@ -424,8 +427,12 @@ transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -0.5, 0,
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2, -5)
 shape = SubResource("BoxShape3D_ncbss")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -5)
+shape = SubResource("BoxShape3D_pq6fp")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
