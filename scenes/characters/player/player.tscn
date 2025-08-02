@@ -33,6 +33,7 @@ script = ExtResource("1_dyp2m")
 
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource("1_pq8s5")
+mouse_pos_mask = 8
 base_speed = 250.0
 volume = 0.5
 pitch_variance = 0.25
@@ -42,12 +43,11 @@ transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 11.5, 8
 current = true
 fov = 60.0
 
-[node name="Health" type="Node" parent="."]
+[node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("2_gin2a")
 
 [node name="Damage" type="Node3D" parent="."]
 script = ExtResource("6_kqtwu")
-mouse_pos_mask = 8
 attack_damage = 10
 
 [node name="Area3D" type="Area3D" parent="Damage"]

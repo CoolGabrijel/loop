@@ -16,6 +16,10 @@ size = Vector3(1.30945, 1.32855, 0.203125)
 
 [node name="ChaserEnemy" type="CharacterBody3D"]
 script = ExtResource("1_8nrqd")
+attack_damage = 5
+attack_speed = 1.0
+detection_range = 8.0
+attack_range = 2.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture = ExtResource("1_ft5sb")
@@ -41,6 +45,7 @@ script = ExtResource("4_kaptv")
 
 [node name="SpeedComponent" type="Node" parent="."]
 script = ExtResource("5_klc86")
+speed = 2.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
 script = ExtResource("6_klc86")
@@ -66,4 +71,6 @@ stream = ExtResource("10_klc86")
 volume_db = -15.0
 bus = &"SFX"
 
+[connection signal="on_damage" from="HealthComponent" to="." method="_on_damaged"]
+[connection signal="on_death" from="HealthComponent" to="." method="_on_death"]
 [connection signal="timeout" from="StateMachine/Damaging/DamageCooldownTimer" to="StateMachine/Damaging" method="_on_attack_cooldown_timeout"]

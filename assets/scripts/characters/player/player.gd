@@ -3,8 +3,9 @@ class_name Player
 
 static var player: Player
 
-@onready var health_node: Health = $Health
+@onready var health_node: Health = $HealthComponent
 @onready var controller: Node = $PlayerController
+@onready var damage_node: Damage = $Damage
 
 func _ready() -> void:
 	player = self

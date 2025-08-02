@@ -1,5 +1,6 @@
 extends Node
 
+@export_flags_3d_physics var mouse_pos_mask
 @export var base_speed : float = 5
 @export_group("Footstep SFX Settings")
 @export var volume: float = 1
@@ -7,9 +8,10 @@ extends Node
 @export var pitch_variance: float = 0.1
 @export var volume_variance: float = 0.1
 
-@onready var player: CharacterBody3D = $".."
+@onready var player: Player = $".."
 @onready var sprite: AnimatedSprite3D = $"../AnimatedSprite3D"
 @onready var walking_sounds: AudioStreamPlayer = $"../MC_Marching"
+@onready var camera: Camera3D = $"../Camera3D"
 
 # For showing status effects, like stun
 @onready var debug_label: Label3D = $"../DebugLabel"
@@ -23,7 +25,13 @@ func _physics_process(delta: float) -> void:
 		handle_movement(delta)
 	update_sprite()
 	handle_footstep_sfx()
+	handle_damage_component()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if !event.is_action_pressed("Attack"):
+		return
+	
+	player.damage_node.deal_damage()
 
 func handle_movement(delta: float) -> void:
 	var normalized_input = movement_input.normalized()
@@ -31,6 +39,10 @@ func handle_movement(delta: float) -> void:
 	player.velocity = dir * delta * base_speed
 	player.move_and_slide()
 
+func handle_damage_component() -> void:
+	var mouse_pos := _get_mouse_pos_in_3d()
+	mouse_pos.y = player.damage_node.global_position.y
+	player.damage_node.look_at(mouse_pos)
 
 func update_movement_input() -> void:
 	movement_input.x = Input.get_axis("Left", "Right")
@@ -56,3 +68,15 @@ func stun(duration: float) -> void:
 	await get_tree().create_timer(duration).timeout
 	movement_locked = false
 	debug_label.text = ""
+
+func _get_mouse_pos_in_3d() -> Vector3:
+	var space_state := player.get_world_3d().direct_space_state
+	var mouse_pos := get_viewport().get_mouse_position()
+	var from := camera.project_ray_origin(mouse_pos)
+	var to := camera.project_ray_normal(mouse_pos) * 1000
+	var query := PhysicsRayQueryParameters3D.create(from, to, mouse_pos_mask)
+	var result := space_state.intersect_ray(query)
+	
+	if result["collider"] != null:
+		return result["position"]
+	return Vector3.ZERO
