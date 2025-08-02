@@ -76,7 +76,7 @@ func _get_mouse_pos_in_3d() -> Vector3:
 	var to := camera.project_ray_normal(mouse_pos) * 1000
 	var query := PhysicsRayQueryParameters3D.create(from, to, mouse_pos_mask)
 	var result := space_state.intersect_ray(query)
-	
-	if result["collider"] != null:
-		return result["position"]
+	#
+	#if result["collider"] != null:
+		#return result["position"]
 	return Vector3.ZERO
