@@ -64,9 +64,7 @@ func _on_damaged() -> void:
 # pickup is lost in time and space
 func _on_death() -> void:
 	var pickup = pickup_scene.instantiate()
-	get_tree()
-	add_child(pickup)
+	get_tree().current_scene.add_child(pickup)
 	pickup.show()
-	pickup.position = position + Vector3(10, 0, 10)
-	print("pickup was dropped")
+	print("Chaser Enemy :: Dropped Health")
 	queue_free()
