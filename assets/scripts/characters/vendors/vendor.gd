@@ -4,7 +4,7 @@ class_name Vendor
 
 @onready var label: Label = $Label
 
-signal player_is_in
+signal on_player_enter
 
 # add lines based on the inherited npc
 var dialogue_lines: Array = [
@@ -12,16 +12,15 @@ var dialogue_lines: Array = [
 ]
 
 var current_line: int = 0
-
+var player_is_in := false
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:
-		emit_signal("player_is_in")
+		on_player_enter.emit()
 		# add buffs 
 
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_pressed() and player_is_in:
 		advance_dialogue()
 
 

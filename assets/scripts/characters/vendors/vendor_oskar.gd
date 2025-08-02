@@ -34,5 +34,8 @@ var dialouge_line = [
 ]
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body is not Player:
+		return
+	
 	oskars_theme.play()
 	# also add oskar's buffs
