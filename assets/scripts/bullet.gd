@@ -1,36 +1,41 @@
 extends Area3D
 class_name Bullet
 
-@onready var LifeTimer: Timer = $LifeTimer
+@onready var life_timer: Timer = $LifeTimer
 
 # Bullet movement direction and speed
-var Direction: Vector3 = Vector3(50, -50, -50)
+var _direction: Vector3 = Vector3(50, -50, -50)
 
-var LifeTime: float = 10.0
+var life_time: float = 10.0
+var _damage: int = 0
 
 func _ready() -> void:
-	LifeTimer.wait_time = LifeTime
-	LifeTimer.start()
+	life_timer.wait_time = life_time
+	life_timer.start()
 
 func _process(delta: float) -> void:
-	position += Direction * delta
+	position += _direction * delta
 
-func setup(StartPosition: Vector3, _Direction: Vector3, Speed: float) -> void:
-	var AdjustedDirection = _Direction.normalized()
+func setup(start_position: Vector3, direction: Vector3, speed: float, damage: int) -> void:
+	var adjusted_direction = direction.normalized()
 	
 	# Reduce vertical drop
-	AdjustedDirection.y *= 0.1 
+	adjusted_direction.y *= 0.1 
 	
 	# Set direction and speed
-	Direction = AdjustedDirection.normalized() * Speed
+	_direction = adjusted_direction.normalized() * speed
 	
 	# Set starting position
-	global_position = StartPosition
+	global_position = start_position
+	
+	# Setup bullet damage
+	_damage = damage
 
-func _on_body_entered(_body: Node3D) -> void:
+func _on_body_entered(body: Node3D) -> void:
 	# Destroy bullet on collision
-	# queue_free()
-	pass
+	if body is Player:
+		body.health_node.damage(_damage)
+		queue_free()
 
 func _on_life_timer_timeout() -> void:
 	# Destroy bullet after period of time

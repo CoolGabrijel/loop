@@ -11,12 +11,16 @@ extends Node
 @onready var sprite: AnimatedSprite3D = $"../AnimatedSprite3D"
 @onready var walking_sounds: AudioStreamPlayer = $"../MC_Marching"
 
-var movement_input: Vector2
+# For showing status effects, like stun
+@onready var debug_label: Label3D = $"../DebugLabel"
 
+var movement_input: Vector2
+var movement_locked: bool = false
 
 func _physics_process(delta: float) -> void:
-	update_movement_input()
-	handle_movement(delta)
+	if movement_locked == false:
+		update_movement_input()
+		handle_movement(delta)
 	update_sprite()
 	handle_footstep_sfx()
 
@@ -45,3 +49,10 @@ func update_sprite() -> void:
 		sprite.flip_h = false
 	else:
 		sprite.flip_h = true
+		
+func stun(duration: float) -> void:
+	movement_locked = true
+	debug_label.text = "Stunned"
+	await get_tree().create_timer(duration).timeout
+	movement_locked = false
+	debug_label.text = ""

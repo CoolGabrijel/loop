@@ -75,6 +75,10 @@ bus = &"SFX"
 [node name="Speed" type="Node" parent="."]
 script = ExtResource("7_6eyoc")
 
+[node name="DebugLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.738, 0)
+font_size = 96
+
 [connection signal="area_entered" from="Damage/Area3D" to="Damage" method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Damage/Area3D" to="Damage" method="_on_area_3d_area_exited"]
 [connection signal="body_entered" from="Damage/Area3D" to="Damage" method="_on_area_3d_body_entered"]

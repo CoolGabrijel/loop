@@ -24,10 +24,8 @@ func process_physics(_delta: float) -> State:
 	if not parent.can_see_player(parent.damage_component.attack_range):
 		return chasing
 		
-	#AttackComponentNode.dealDamage(Parent.PlayerRef)
-	
 	if parent.damage_component.is_range_attack == false:
-		melee_test()
+		deal_damage(parent.damage_component.attack_damage)
 	else:
 		var shoot_posistion: Vector3 = parent.global_position
 		var shoot_direction: Vector3 = parent.global_position.direction_to(parent.player_ref.global_position)
@@ -36,15 +34,9 @@ func process_physics(_delta: float) -> State:
 	
 	return null
 	
-	
-#func deal_damage(player_ref: Player) -> void:
-	#if _can_attack:
-		#player_ref.take_damage(damage_component.attack_damage)
-		#reset_timer()
-		
-func melee_test() -> void:
+func deal_damage(attack_damage: float) -> void:
 	if _can_attack:
-		print("Op")
+		parent.player_ref.health_node.damage(attack_damage)
 		reset_timer()
 
 func shoot(shoot_position: Vector3, direction: Vector3) -> void:
@@ -52,6 +44,7 @@ func shoot(shoot_position: Vector3, direction: Vector3) -> void:
 		SignalHub.emit_on_create_bullet(
 			shoot_position, direction,
 			parent.damage_component.bullet_speed,
+			parent.damage_component.attack_damage
 		)
 		reset_timer()
 	

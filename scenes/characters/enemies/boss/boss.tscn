@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8uiduwj7s6b1"]
+
+[ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="1_1u71s"]
+[ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/components/health.gd" id="2_0wkl8"]
+[ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/components/damage.gd" id="3_85anx"]
+[ext_resource type="Script" uid="uid://o6abt6qw55vj" path="res://assets/scripts/components/speed.gd" id="4_85anx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1u71s"]
+size = Vector3(1.28894, 1.28949, 0.287598)
+
+[node name="Boss" type="CharacterBody3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_1u71s")
+
+[node name="NavigationAgent" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00628662, 0.0104065, 0.00805664)
+shape = SubResource("BoxShape3D_1u71s")
+
+[node name="DebugLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42119, 0)
+text = "Boss"
+font_size = 96
+
+[node name="HealthComponent" type="Node3D" parent="."]
+script = ExtResource("2_0wkl8")
+
+[node name="DamageComponent" type="Node3D" parent="."]
+script = ExtResource("3_85anx")
+mouse_pos_mask = 1
+attack_damage = 8
+attack_speed = 2.0
+detection_range = 10.0
+attack_range = 2.0
+
+[node name="SpeedComponent" type="Node" parent="."]
+script = ExtResource("4_85anx")
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Node" type="Node" parent="StateMachine"]

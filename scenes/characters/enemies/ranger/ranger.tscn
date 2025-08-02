@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dywqknbf016tq"]
+[gd_scene load_steps=11 format=3 uid="uid://dywqknbf016tq"]
 
 [ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="1_diaec"]
 [ext_resource type="Script" uid="uid://refcortvn71d" path="res://assets/scripts/ranger_enemy.gd" id="1_m8spy"]
 [ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/components/state_machine/state_machine.gd" id="2_5teoy"]
 [ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/components/damage.gd" id="2_e4y25"]
 [ext_resource type="Script" uid="uid://o6abt6qw55vj" path="res://assets/scripts/components/speed.gd" id="3_gdvw5"]
+[ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/components/health.gd" id="3_oosde"]
 [ext_resource type="Script" uid="uid://c0urfdqqav6u7" path="res://assets/scripts/components/states/patrolling.gd" id="4_g47ss"]
 [ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/components/states/chasing.gd" id="5_gdvw5"]
 [ext_resource type="Script" uid="uid://cw7tjqsmiuaf4" path="res://assets/scripts/components/states/damaging.gd" id="6_m8spy"]
@@ -14,17 +15,17 @@ size = Vector3(1.30566, 1.26404, 0.322021)
 
 [node name="Ranger" type="CharacterBody3D"]
 script = ExtResource("1_m8spy")
+attack_damage = 10
+attack_speed = 2.0
+detection_range = 7.0
+attack_range = 6.5
+bullet_speed = 120.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture = ExtResource("1_diaec")
 
 [node name="NavigationAgent" type="NavigationAgent3D" parent="."]
 debug_enabled = true
-
-[node name="DebugLabel" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00739, 0)
-text = "Ranger"
-font_size = 96
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00634766, 0.010437, -0.0601807)
@@ -34,8 +35,17 @@ shape = SubResource("BoxShape3D_diaec")
 target_position = Vector3(0, 0, -10)
 debug_shape_custom_color = Color(0.901961, 0, 0, 1)
 
-[node name="DamageComponent" type="Node" parent="."]
+[node name="DebugLabel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00739, 0)
+text = "Ranger"
+font_size = 96
+
+[node name="HealthComponent" type="Node3D" parent="."]
+script = ExtResource("3_oosde")
+
+[node name="DamageComponent" type="Node3D" parent="."]
 script = ExtResource("2_e4y25")
+mouse_pos_mask = 8
 attack_damage = 10
 attack_speed = 2.0
 detection_range = 7.0

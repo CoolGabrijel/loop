@@ -8,10 +8,22 @@ class_name ranger_enemy
 
 @onready var speed_component: Speed = $SpeedComponent
 @onready var damage_component: Damage = $DamageComponent
+@onready var health_component: Node3D = $HealthComponent
+
+@export var health: float = 30.0
+@export var speed: float = 4.0
 
 @export_group("Object References")
 @export var player_ref: CharacterBody3D
 @export var patrol_points: NodePath
+
+@export_group("Combat")
+@export var attack_damage: int
+@export var attack_speed: float
+@export var detection_range: float
+@export var attack_range: float
+@export var bullet_speed: float
+
 
 var waypoints: Array[Vector3] = []
 var current_waypoint: int = 0
@@ -23,7 +35,16 @@ func _ready() -> void:
 	state_machine.init(self)
 	
 	_create_waypoints()
-
+	
+	health_component.base_max_hp = health
+	speed_component.speed = speed
+	
+	damage_component.attack_damage = attack_damage
+	damage_component.attack_speed = attack_speed
+	damage_component.detection_range = detection_range
+	damage_component.attack_range = attack_range
+	damage_component.bullet_speed = bullet_speed
+	
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)
 
