@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dplt1tt4bsrd"]
+
+[ext_resource type="Script" uid="uid://da6eipc3iqy1s" path="res://intro_cutscene.gd" id="1_rlq26"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-139, -97)
+script = ExtResource("1_rlq26")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 130.0
+offset_top = 152.0
+offset_right = 219.0
+offset_bottom = 175.0
