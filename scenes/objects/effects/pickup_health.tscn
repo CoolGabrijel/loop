@@ -7,8 +7,9 @@
 [node name="Pickup" instance=ExtResource("1_w2dk6")]
 
 [node name="Area3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("2_3ta0l")
 
 [node name="Sprite2D" parent="Area3D" index="1"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 6, 0)
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
 texture = ExtResource("3_k4aop")
