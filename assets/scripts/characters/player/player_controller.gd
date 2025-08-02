@@ -1,7 +1,6 @@
 extends Node
 
 @export_flags_3d_physics var mouse_pos_mask
-@export var base_speed : float = 5
 @export_group("Footstep SFX Settings")
 @export var volume: float = 1
 @export var pitch: float = 1
@@ -36,7 +35,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func handle_movement(delta: float) -> void:
 	var normalized_input = movement_input.normalized()
 	var dir = Vector3(normalized_input.x, 0, normalized_input.y)
-	player.velocity = dir * delta * base_speed
+	player.velocity = dir * delta * player.speed_component.total_speed
 	player.move_and_slide()
 
 func handle_damage_component() -> void:

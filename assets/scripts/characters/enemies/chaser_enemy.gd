@@ -65,7 +65,7 @@ func update_movement() -> void:
 		var local_destination = next_path_position - global_position
 		var direction = local_destination.normalized()
 	
-		velocity = direction * speed_component.speed
+		velocity = direction * speed_component.total_speed
 		
 func can_see_player(view_range: float) -> bool:
 	var parent_pos: Vector3 = global_position
@@ -75,8 +75,17 @@ func can_see_player(view_range: float) -> bool:
 	
 	return distance <= view_range
 
+func drop_health_pickup() -> void:
+	const PICKUP = preload("res://scenes/objects/effects/pickup_health.tscn")
+	var pickup: Node3D = PICKUP.instantiate()
+	get_tree().current_scene.add_child(pickup)
+	pickup.global_position = global_position
+	pickup.show()
+	print("Chaser Enemy :: Dropped Health at " + str(global_position))
+
 func _on_damaged() -> void:
 	damaged_sfx.play()
 
 func _on_death() -> void:
+	drop_health_pickup()
 	queue_free()

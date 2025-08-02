@@ -1,5 +1,7 @@
 extends Vendor
 
+@onready var oskars_theme: AudioStreamPlayer = $VendorOskarThemeFinal
+
 var dialouge_line = [
 	"You look hungry, my friend!", 
 	"Fresh food is good for the soul.", 
@@ -31,6 +33,17 @@ var dialouge_line = [
 	"Be sure to break copier for Oskar. It is… problematic."
 ]
 
+var used := false
+
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	pass
-	# add oskar's buffs
+	if body is not Player or used:
+		return
+	
+	oskars_theme.play()
+	give_buff()
+	used = true
+	queue_free()
+	# also add oskar's buffs
+
+func give_buff() -> void:
+	Player.player.speed_component.speed_modifier += 25

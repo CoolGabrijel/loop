@@ -16,7 +16,7 @@ extends CanvasLayer
 @onready var intro = intro_scene.instantiate()
 @onready var end_game = end_game_scene.instantiate()
 @onready var player: Player = $"../Player"
-
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
 
 func _ready() -> void:
 	player.set_process_input(false)
@@ -52,6 +52,7 @@ func _on_play_button_pressed() -> void:
 	hud.show()
 	main_menu.hide()
 	player.set_process_input(true)
+	audio_stream_player.play()
 
 
 func _on_options_button_pressed() -> void:
