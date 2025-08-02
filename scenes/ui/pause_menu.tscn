@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmtfjau2fo6rw"]
+
+[ext_resource type="Texture2D" uid="uid://c2wbqus67i1f1" path="res://assets/sprites/ui/PausMenuBackground.png" id="1_6tw0m"]
+
+[node name="PauseMenu" type="Node2D"]
+
+[node name="PauseMenuBackground" type="Sprite2D" parent="."]
+position = Vector2(616, 264)
+scale = Vector2(6.375, 3.79687)
+texture = ExtResource("1_6tw0m")
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 304.0
+offset_right = 744.0
+offset_bottom = 336.0
+
+[node name="SettingsButton" type="Button" parent="."]
+offset_left = 486.0
+offset_top = 241.0
+offset_right = 746.0
+offset_bottom = 273.0
+
+[node name="ResumeButton" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 171.0
+offset_right = 744.0
+offset_bottom = 203.0

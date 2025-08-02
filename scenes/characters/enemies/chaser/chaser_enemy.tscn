@@ -1,15 +1,18 @@
 [gd_scene load_steps=12 format=3 uid="uid://bx8kgvoah1vaq"]
 
-[ext_resource type="Script" uid="uid://baqrykwr3ohax" path="res://assets/scripts/chaser_enemy.gd" id="1_8nrqd"]
+
+[ext_resource type="Script" uid="uid://baqrykwr3ohax" path="res://assets/scripts/characters/enemies/chaser_enemy.gd" id="1_8nrqd"]
 [ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="1_ft5sb"]
 [ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/components/damage.gd" id="3_5ysyj"]
-[ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/components/health.gd" id="3_klc86"]
-[ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/components/state_machine/state_machine.gd" id="3_ui4im"]
 [ext_resource type="Script" uid="uid://o6abt6qw55vj" path="res://assets/scripts/components/speed.gd" id="4_8igut"]
-[ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/components/states/chasing.gd" id="4_ij6ca"]
-[ext_resource type="Script" uid="uid://c0urfdqqav6u7" path="res://assets/scripts/components/states/patrolling.gd" id="5_o5s0t"]
+[ext_resource type="PackedScene" uid="uid://oo66sq1qhksu" path="res://scenes/objects/effects/pickup_health.tscn" id="2_8igut"]
+[ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/combat_components/health.gd" id="3_5ysyj"]
+[ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/state_machine/state_machine.gd" id="3_ui4im"]
+[ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/state_machine/states/chasing.gd" id="4_ij6ca"]
 [ext_resource type="Script" uid="uid://cw7tjqsmiuaf4" path="res://assets/scripts/components/states/damaging.gd" id="7_8igut"]
-[ext_resource type="AudioStream" uid="uid://bb6qkawy3yw5g" path="res://assets/sfx/enemy_melee_hit.wav" id="7_o5s0t"]
+[ext_resource type="Script" uid="uid://c0urfdqqav6u7" path="res://assets/scripts/state_machine/states/patrolling.gd" id="5_o5s0t"]
+[ext_resource type="Script" uid="uid://cw7tjqsmiuaf4" path="res://assets/scripts/state_machine/states/attacking.gd" id="7_8igut"]
+[ext_resource type="AudioStream" uid="uid://bb6qkawy3yw5g" path="res://assets/audio/sfx/enemy_melee_hit.wav" id="7_o5s0t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8nrqd"]
 size = Vector3(1.30945, 1.32855, 0.203125)
@@ -20,6 +23,9 @@ attack_damage = 10
 attack_speed = 2.0
 detection_range = 6.0
 attack_range = 2.0
+pickup_scene = ExtResource("2_8igut")
+movement_speed = 5.0
+
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture = ExtResource("1_ft5sb")

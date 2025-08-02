@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dplt1tt4bsrd"]
+
+[ext_resource type="Script" uid="uid://da6eipc3iqy1s" path="res://assets/scripts/intro_cutscene.gd" id="1_rlq26"]
+[ext_resource type="Texture2D" uid="uid://2tqjcet4ahac" path="res://assets/sprites/characters/player characters/jeremy/main_character_placeholder.png" id="2_c8wj0"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-139, -97)
+script = ExtResource("1_rlq26")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(429, 358)
+texture = ExtResource("2_c8wj0")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 199.0
+offset_top = 615.0
+offset_right = 1233.0
+offset_bottom = 690.0
+theme_override_font_sizes/font_size = 20

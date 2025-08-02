@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://babv1xukg6bjw"]
 
-[ext_resource type="Texture2D" uid="uid://cgtprobmxubbq" path="res://assets/debug_helper/waypoint.png" id="1_re42g"]
+[ext_resource type="Texture2D" uid="uid://cgtprobmxubbq" path="res://assets/sprites/debug_helper/waypoint.png" id="1_re42g"]
 
 [node name="Waypoint" type="Marker3D"]
 

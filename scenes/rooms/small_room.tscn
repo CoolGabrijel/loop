@@ -1,10 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://bomgebpabfa7n"]
+[gd_scene load_steps=30 format=3 uid="uid://bomgebpabfa7n"]
 
 [ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/room.gd" id="1_r5qor"]
 [ext_resource type="PackedScene" uid="uid://kwogjc17hy0f" path="res://assets/environment/assembled_rooms/room_small.fbx" id="2_2mcrf"]
 [ext_resource type="PackedScene" uid="uid://d16qt4tn24akh" path="res://assets/environment/office_elements/chair.fbx" id="3_4ldyd"]
 [ext_resource type="Script" uid="uid://dhm34geqivke2" path="res://assets/scripts/room_connection.gd" id="3_r64i6"]
-[ext_resource type="Script" uid="uid://v83i1w254732" path="res://assets/scripts/enemy_spawner.gd" id="4_2mcrf"]
+[ext_resource type="Script" uid="uid://v83i1w254732" path="res://assets/scripts/characters/enemies/spawners/enemy_spawner.gd" id="4_2mcrf"]
 [ext_resource type="PackedScene" uid="uid://dnc2eek8ic67t" path="res://assets/environment/office_elements/desk_b.fbx" id="4_4ldyd"]
 [ext_resource type="PackedScene" uid="uid://duru03m1mnj23" path="res://assets/environment/structures/floor_2x2.fbx" id="5_b5bix"]
 [ext_resource type="PackedScene" uid="uid://cbc3cyql2xqg3" path="res://assets/environment/structures/wall_1m.fbx" id="5_p71np"]
@@ -21,6 +21,12 @@
 [ext_resource type="PackedScene" uid="uid://bnt464olyou6t" path="res://assets/environment/structures/door_wall.fbx" id="18_pq6fp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ncbss"]
+size = Vector3(9, 4, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pq6fp"]
+size = Vector3(2, 4, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iihcv"]
 size = Vector3(12, 4, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_amxms"]
@@ -29,6 +35,15 @@ size = Vector3(0.1, 4, 4)
 [sub_resource type="BoxShape3D" id="BoxShape3D_25rrm"]
 size = Vector3(0.1, 4, 5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_axpkb"]
+size = Vector3(3, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v8ok8"]
+size = Vector3(2.25049, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p560i"]
+size = Vector3(1, 2, 1)
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_2mcrf"]
 vertices = PackedVector3Array(-5.5, 0.5, -4.5, -5.5, 0.5, 4.5, 5.5, 0.5, 4.5, 5.5, 0.5, -4.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
@@ -36,9 +51,10 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 [sub_resource type="BoxShape3D" id="BoxShape3D_r64i6"]
 size = Vector3(12, 1, 10)
 
-[node name="SmallRoom" type="Node3D" node_paths=PackedStringArray("connection_points")]
+[node name="SmallRoom" type="Node3D" node_paths=PackedStringArray("connection_points", "enemy_spawners")]
 script = ExtResource("1_r5qor")
 connection_points = [NodePath("Connections/Node3D"), NodePath("Connections/Node3D2"), NodePath("Connections/Node3D3")]
+enemy_spawners = [NodePath("EnemySpawners/EnemySpawner"), NodePath("EnemySpawners/EnemySpawner2"), NodePath("EnemySpawners/EnemySpawner3")]
 
 [node name="GFX" type="Node3D" parent="."]
 
@@ -424,12 +440,16 @@ transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -0.5, 0,
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2, -5)
 shape = SubResource("BoxShape3D_ncbss")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -5)
+shape = SubResource("BoxShape3D_pq6fp")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5)
-shape = SubResource("BoxShape3D_ncbss")
+shape = SubResource("BoxShape3D_iihcv")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, 3)
@@ -447,10 +467,50 @@ shape = SubResource("BoxShape3D_25rrm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, -2.5)
 shape = SubResource("BoxShape3D_25rrm")
 
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50409, 0.5, 1.42363)
+shape = SubResource("BoxShape3D_axpkb")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.49591, 0.5, 1.42363)
+shape = SubResource("BoxShape3D_axpkb")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -2)
+shape = SubResource("BoxShape3D_axpkb")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12524, 0.5, -2)
+shape = SubResource("BoxShape3D_v8ok8")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 3)
+shape = SubResource("BoxShape3D_p560i")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 3)
+shape = SubResource("BoxShape3D_p560i")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -2)
+shape = SubResource("BoxShape3D_p560i")
+
 [node name="EnemySpawners" type="Node3D" parent="."]
 
 [node name="EnemySpawner" type="Node3D" parent="EnemySpawners" node_paths=PackedStringArray("patrol_waypoints")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
+script = ExtResource("4_2mcrf")
+patrol_waypoints = NodePath("../../PatrolWaypoints")
+metadata/_custom_type_script = "uid://v83i1w254732"
+
+[node name="EnemySpawner2" type="Node3D" parent="EnemySpawners" node_paths=PackedStringArray("patrol_waypoints")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+script = ExtResource("4_2mcrf")
+patrol_waypoints = NodePath("../../PatrolWaypoints")
+metadata/_custom_type_script = "uid://v83i1w254732"
+
+[node name="EnemySpawner3" type="Node3D" parent="EnemySpawners" node_paths=PackedStringArray("patrol_waypoints")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
 script = ExtResource("4_2mcrf")
 patrol_waypoints = NodePath("../../PatrolWaypoints")
 metadata/_custom_type_script = "uid://v83i1w254732"
