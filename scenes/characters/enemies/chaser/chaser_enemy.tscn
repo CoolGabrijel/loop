@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bx8kgvoah1vaq"]
+[gd_scene load_steps=10 format=3 uid="uid://bx8kgvoah1vaq"]
 
 [ext_resource type="Script" uid="uid://baqrykwr3ohax" path="res://assets/scripts/chaser_enemy.gd" id="1_8nrqd"]
 [ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="1_ft5sb"]
+[ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/components/health.gd" id="3_5ysyj"]
 [ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/components/damage.gd" id="3_5ysyj"]
+
 [ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/components/state_machine/state_machine.gd" id="3_ui4im"]
 [ext_resource type="Script" uid="uid://o6abt6qw55vj" path="res://assets/scripts/components/speed.gd" id="4_8igut"]
 [ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/components/states/chasing.gd" id="4_ij6ca"]
@@ -15,6 +17,7 @@ size = Vector3(1.30945, 1.32855, 0.203125)
 
 [node name="ChaserEnemy" type="CharacterBody3D"]
 script = ExtResource("1_8nrqd")
+movement_speed = 5.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 texture = ExtResource("1_ft5sb")
@@ -26,6 +29,10 @@ shape = SubResource("BoxShape3D_8nrqd")
 [node name="NavigationAgent" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.75
 debug_enabled = true
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_5ysyj")
+metadata/_custom_type_script = "uid://bisswsux178ff"
 
 [node name="DebugLabel" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78317, 0)
@@ -64,6 +71,12 @@ chasing = NodePath("../Chasing")
 
 [node name="Chaser is Damaged Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_o5s0t")
+volume_db = -15.0
 bus = &"SFX"
 
+
 [connection signal="timeout" from="StateMachine/Damaging/DamageCooldownTimer" to="StateMachine/Damaging" method="_on_attack_cooldown_timeout"]
+
+[connection signal="on_damage" from="Health" to="." method="_on_damaged"]
+[connection signal="on_death" from="Health" to="." method="_on_death"]
+

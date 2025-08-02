@@ -4,6 +4,7 @@ class_name chaser_enemy
 @onready var state_machine: Node = $StateMachine
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent
 @onready var debug_label: Label3D = $DebugLabel
+@onready var damaged_sfx: AudioStreamPlayer = $"Chaser is Damaged Sound"
 
 @onready var speed_component: Speed = $SpeedComponent
 @onready var damage_component: Damage = $DamageComponent
@@ -53,3 +54,11 @@ func can_see_player(view_range: float) -> bool:
 	var distance = parent_pos.distance_to(player_pos)
 	
 	return distance <= view_range
+
+
+func _on_damaged() -> void:
+	damaged_sfx.play()
+
+func _on_death() -> void:
+	queue_free()
+
