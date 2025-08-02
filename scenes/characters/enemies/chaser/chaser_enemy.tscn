@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://bx8kgvoah1vaq"]
 
-[ext_resource type="Script" uid="uid://baqrykwr3ohax" path="res://assets/scripts/chaser_enemy.gd" id="1_8nrqd"]
+[ext_resource type="Script" uid="uid://baqrykwr3ohax" path="res://assets/scripts/characters/enemies/chaser_enemy.gd" id="1_8nrqd"]
 [ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="1_ft5sb"]
-[ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/components/health.gd" id="3_5ysyj"]
-[ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/components/state_machine/state_machine.gd" id="3_ui4im"]
-[ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/components/states/chasing.gd" id="4_ij6ca"]
-[ext_resource type="Script" uid="uid://c0urfdqqav6u7" path="res://assets/scripts/components/states/patrolling.gd" id="5_o5s0t"]
-[ext_resource type="Script" uid="uid://cw7tjqsmiuaf4" path="res://assets/scripts/components/states/attacking.gd" id="7_8igut"]
-[ext_resource type="AudioStream" uid="uid://bb6qkawy3yw5g" path="res://assets/sfx/enemy_melee_hit.wav" id="7_o5s0t"]
+[ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/combat_components/health.gd" id="3_5ysyj"]
+[ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/state_machine/state_machine.gd" id="3_ui4im"]
+[ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/state_machine/states/chasing.gd" id="4_ij6ca"]
+[ext_resource type="Script" uid="uid://c0urfdqqav6u7" path="res://assets/scripts/state_machine/states/patrolling.gd" id="5_o5s0t"]
+[ext_resource type="Script" uid="uid://cw7tjqsmiuaf4" path="res://assets/scripts/state_machine/states/attacking.gd" id="7_8igut"]
+[ext_resource type="AudioStream" uid="uid://bb6qkawy3yw5g" path="res://assets/audio/sfx/enemy_melee_hit.wav" id="7_o5s0t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8nrqd"]
 size = Vector3(1.30945, 1.32855, 0.203125)

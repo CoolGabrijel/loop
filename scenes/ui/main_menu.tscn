@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6edee52tjkgr"]
+[gd_scene load_steps=9 format=3 uid="uid://b6edee52tjkgr"]
 
 [ext_resource type="Texture2D" uid="uid://dv6mwh4xcx5xc" path="res://assets/sprites/ui/gmtkgj2k25_server_logo.png" id="1_1g8jr"]
+[ext_resource type="Script" uid="uid://bk6rx8fwlvotg" path="res://assets/scripts/ui/main_menu.gd" id="1_x2yvf"]
 [ext_resource type="Texture2D" uid="uid://bi1pd1wuts8ae" path="res://assets/sprites/ui/placeholder_game_name.png" id="2_1g8jr"]
-[ext_resource type="AudioStream" uid="uid://5sl47bjd56cs" path="res://assets/sfx/ui_game_start.wav" id="3_m1kxf"]
-[ext_resource type="AudioStream" uid="uid://dau8l6aqublrn" path="res://assets/sfx/ui_accept.wav" id="4_x2yvf"]
+[ext_resource type="AudioStream" uid="uid://5sl47bjd56cs" path="res://assets/audio/sfx/ui_game_start.wav" id="3_m1kxf"]
+[ext_resource type="AudioStream" uid="uid://dau8l6aqublrn" path="res://assets/audio/sfx/ui_accept.wav" id="4_x2yvf"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1g8jr"]
 
@@ -12,6 +13,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_x2yvf"]
 
 [node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_x2yvf")
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color(0.203705, 0.380515, 0.489827, 1)
