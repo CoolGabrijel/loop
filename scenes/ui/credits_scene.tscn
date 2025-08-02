@@ -42,12 +42,13 @@ ratio = 30.0
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
 text = "Kusaku
 Lighthern
-Gabrijel
+[url={https://coolgabrijel.itch.io/}]CoolGabrijel[/url]
 Femme
 pebble
-Pory
+[url={https://thatguypory.itch.io/}]Pory[/url]
 Giovanni
 Jernstolpe
 Lucas
