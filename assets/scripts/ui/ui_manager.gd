@@ -17,6 +17,8 @@ extends CanvasLayer
 
 
 func _ready() -> void:
+	player.set_process_input(false)
+	
 	add_child(main_menu)
 	add_child(hud)
 	add_child(options)
@@ -39,9 +41,11 @@ func _ready() -> void:
 	intro.intro_has_ended.connect(_on_intro_ended)
 
 
+
 func _on_play_button_pressed() -> void:
 	hud.show()
 	main_menu.hide()
+	player.set_process_input(true)
 
 
 func _on_options_button_pressed() -> void:
