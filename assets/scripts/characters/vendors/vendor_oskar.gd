@@ -1,5 +1,7 @@
 extends Vendor
 
+@onready var oskars_theme: AudioStreamPlayer = $VendorOskarThemeFinal
+
 var dialouge_line = [
 	"You look hungry, my friend!", 
 	"Fresh food is good for the soul.", 
@@ -32,5 +34,5 @@ var dialouge_line = [
 ]
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	pass
-	# add oskar's buffs
+	oskars_theme.play()
+	# also add oskar's buffs
