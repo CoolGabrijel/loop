@@ -109,9 +109,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72518, 0, -7.55536)
 [node name="Waypoint2" parent="NavigationRegion3D/PatrollingRangerPath" instance=ExtResource("1_8lak6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4739, 0, -14.9115)
 
-[node name="ChaserEnemy" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("3_himde")]
+[node name="ChaserEnemy" parent="." instance=ExtResource("3_himde")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6207, 1, -21.2433)
-player_ref = NodePath("../Player")
 patrol_points = NodePath("../NavigationRegion3D/PatrollingChaserPath")
 attack_damage = 5
 detection_range = 8.0

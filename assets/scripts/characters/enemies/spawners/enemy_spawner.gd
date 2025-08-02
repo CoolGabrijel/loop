@@ -11,5 +11,4 @@ func _ready() -> void:
 func spawn_enemy() -> void:
 	var enemy: chaser_enemy = CHASER_ENEMY.instantiate()
 	enemy.patrol_points = patrol_waypoints.get_path()
-	enemy.player_ref = Player.player
 	add_child(enemy)
