@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2hrj408gqob6"]
+[gd_scene load_steps=15 format=3 uid="uid://d2hrj408gqob6"]
 
 [ext_resource type="Script" uid="uid://bnvfgjfds8oxh" path="res://assets/scripts/world_gen.gd" id="1_qfnet"]
 [ext_resource type="PackedScene" uid="uid://bomgebpabfa7n" path="res://scenes/rooms/small_room.tscn" id="2_i7141"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bniykmsjaoqh3" path="res://scenes/ui/hud.tscn" id="7_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://cyt8p317g5go2" path="res://scenes/ui/fullscreen_map.tscn" id="8_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://h7wrnmmv0v4c" path="res://scenes/ui/credits_scene.tscn" id="9_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://dplt1tt4bsrd" path="res://scenes/ui/intro_cutscene.tscn" id="10_q5onr"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qfnet"]
 
@@ -27,6 +28,7 @@ volume_control_menu_scene = ExtResource("6_7r4gi")
 hud_scene = ExtResource("7_w7kh3")
 fullscreen_game_map_scene = ExtResource("8_w7kh3")
 credits_scene = ExtResource("9_e3hyu")
+intro_scene = ExtResource("10_q5onr")
 
 [node name="Player" parent="." instance=ExtResource("5_w7kh3")]
 
