@@ -17,7 +17,7 @@ func process_frame(_delta: float) -> State:
 	return null
 
 func process_physics(_delta: float) -> State:
-	if not parent.can_see_player(parent.damage_component.attack_range):
+	if parent.can_see_player(parent.damage_component.attack_range) == false:
 		return chasing
 		
 	if parent.state_machine.can_attack:

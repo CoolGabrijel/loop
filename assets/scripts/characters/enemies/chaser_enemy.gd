@@ -34,7 +34,7 @@ func _ready() -> void:
 	_create_waypoints()
 	
 	health_component.base_max_hp = health
-	speed_component.speed = speed
+	speed_component.base_speed = speed
 	
 	damage_component.attack_damage = attack_damage
 	damage_component.attack_speed = attack_speed

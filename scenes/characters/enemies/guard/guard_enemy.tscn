@@ -52,6 +52,7 @@ script = ExtResource("4_0gxep")
 
 [node name="SpeedComponent" type="Node" parent="."]
 script = ExtResource("5_d2gc6")
+base_speed = 3.0
 
 [node name="CombinationTimer" type="Timer" parent="."]
 

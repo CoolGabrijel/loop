@@ -44,7 +44,7 @@ func _ready() -> void:
 	_create_waypoints()
 	
 	health_component.base_max_hp = health
-	speed_component.speed = speed
+	speed_component.base_speed = speed
 	
 	damage_component.attack_damage = attack_damage
 	damage_component.attack_speed = attack_speed
@@ -78,7 +78,7 @@ func update_movement() -> void:
 		var local_destination = next_path_position - global_position
 		var direction = local_destination.normalized()
 	
-		velocity = direction * speed_component.speed
+		velocity = direction * speed_component.base_speed
 		
 func can_see_player(view_range: float) -> bool:
 	var parent_pos: Vector3 = global_position
