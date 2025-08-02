@@ -6,6 +6,7 @@ extends CanvasLayer
 @export var fullscreen_game_map_scene: PackedScene
 @export var credits_scene: PackedScene
 @export var intro_scene: PackedScene
+@export var end_game_scene: PackedScene
 
 @onready var main_menu = main_menu_scene.instantiate()
 @onready var hud = hud_scene.instantiate()
@@ -13,6 +14,7 @@ extends CanvasLayer
 @onready var credits = credits_scene.instantiate()
 @onready var map = fullscreen_game_map_scene.instantiate()
 @onready var intro = intro_scene.instantiate()
+@onready var end_game = end_game_scene.instantiate()
 @onready var player: Player = $"../Player"
 
 
@@ -39,7 +41,11 @@ func _ready() -> void:
 	credits.back_button_was_pressed.connect(_on_back_button_pressed)
 	hud.show_map.connect(_on_show_map)
 	intro.intro_has_ended.connect(_on_intro_ended)
+	end_game.restart_button_pressed.connect(_on_restart_button_pressed)
 
+
+func _on_restart_button_pressed() -> void:
+	get_tree().reload_current_scene()
 
 
 func _on_play_button_pressed() -> void:
