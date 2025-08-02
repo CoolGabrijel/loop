@@ -1,20 +1,17 @@
 [gd_scene load_steps=7 format=3 uid="uid://bb2g4wmqrqan1"]
 
-[ext_resource type="Script" uid="uid://8k8ahcbgiukl" path="res://assets/scripts/ui/volume_menu.gd" id="1_5qqp5"]
-[ext_resource type="AudioStream" uid="uid://dau8l6aqublrn" path="res://assets/audio/sfx/ui_accept.wav" id="1_lamhx"]
-[ext_resource type="AudioStream" uid="uid://bm31aan3dooad" path="res://assets/audio/sfx/ui_cancel.wav" id="2_5qqp5"]
+[ext_resource type="Texture2D" uid="uid://deiv8aj72yt8q" path="res://assets/textures/tx_menubg.png" id="1_lamhx"]
+[ext_resource type="FontFile" uid="uid://bg1s5wb6k0hb2" path="res://assets/sprites/fonts/Scribbles-Regular.ttf" id="2_5qqp5"]
+[ext_resource type="Texture2D" uid="uid://d02ju31b6jmph" path="res://assets/sprites/ui/slider.png" id="3_5qqp5"]
+[ext_resource type="Texture2D" uid="uid://cqqquxi5y8rr" path="res://assets/sprites/ui/close_map_button.png" id="4_nay2i"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lamhx"]
 
 [sub_resource type="Theme" id="Theme_5qqp5"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_c0ffj"]
-
 [node name="VolumeMenu" type="CanvasLayer"]
-script = ExtResource("1_5qqp5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.203922, 0.380392, 0.490196, 1)
 material = SubResource("CanvasItemMaterial_lamhx")
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,75 +19,82 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_5qqp5")
-texture = SubResource("CanvasTexture_c0ffj")
+texture = ExtResource("1_lamhx")
 
 [node name="LabelContainer" type="VBoxContainer" parent="."]
-offset_left = 332.0
-offset_top = 214.0
-offset_right = 480.0
-offset_bottom = 318.0
-scale = Vector2(1.71514, 1.66077)
+offset_left = 38.0
+offset_top = 38.0
+offset_right = 289.0
+offset_bottom = 241.0
+theme_override_constants/separation = 19
 
 [node name="MasterVolumeLabel" type="Label" parent="LabelContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.0941176, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("2_5qqp5")
+theme_override_font_sizes/font_size = 55
 text = "Master Volume:"
 
 [node name="SFXLabel" type="Label" parent="LabelContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.0941176, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("2_5qqp5")
+theme_override_font_sizes/font_size = 55
 text = "Sound Effects:"
 
 [node name="MusicVolumeLabel" type="Label" parent="LabelContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.0941176, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("2_5qqp5")
+theme_override_font_sizes/font_size = 55
 text = "Music:"
 
-[node name="DialogueLabel" type="Label" parent="LabelContainer"]
+[node name="DialougeLabel" type="Label" parent="LabelContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.0941176, 0.0941176, 1)
+theme_override_fonts/font = ExtResource("2_5qqp5")
+theme_override_font_sizes/font_size = 55
 text = "Dialogue:"
 
 [node name="MasterVolumeSlider" type="HSlider" parent="."]
-offset_left = 566.0
-offset_top = 222.0
-offset_right = 714.0
-offset_bottom = 238.0
-scale = Vector2(1.71514, 1.66077)
+offset_left = 291.0
+offset_top = 36.0
+offset_right = 439.0
+offset_bottom = 84.0
+theme_override_icons/grabber = ExtResource("3_5qqp5")
+theme_override_icons/grabber_highlight = ExtResource("3_5qqp5")
 
 [node name="SFXSlider" type="HSlider" parent="."]
-offset_left = 566.0
-offset_top = 267.0
-offset_right = 714.0
-offset_bottom = 283.0
-scale = Vector2(1.71514, 1.66077)
+offset_left = 293.0
+offset_top = 94.0
+offset_right = 441.0
+offset_bottom = 142.0
+theme_override_icons/grabber = ExtResource("3_5qqp5")
+theme_override_icons/grabber_highlight = ExtResource("3_5qqp5")
+theme_override_icons/grabber_disabled = ExtResource("4_nay2i")
 
 [node name="MusicVolumeSlider" type="HSlider" parent="."]
-offset_left = 566.0
-offset_top = 312.0
-offset_right = 714.0
-offset_bottom = 328.0
-scale = Vector2(1.71514, 1.66077)
+offset_left = 292.0
+offset_top = 158.0
+offset_right = 440.0
+offset_bottom = 174.0
+theme_override_icons/grabber = ExtResource("3_5qqp5")
+theme_override_icons/grabber_highlight = ExtResource("3_5qqp5")
+theme_override_icons/grabber_disabled = ExtResource("4_nay2i")
 
 [node name="DialogueSlider" type="HSlider" parent="."]
-offset_left = 566.0
-offset_top = 357.0
-offset_right = 714.0
-offset_bottom = 379.0
-scale = Vector2(1.71514, 1.66077)
+offset_left = 295.0
+offset_top = 210.0
+offset_right = 443.0
+offset_bottom = 232.0
+theme_override_icons/grabber = ExtResource("3_5qqp5")
+theme_override_icons/grabber_highlight = ExtResource("3_5qqp5")
+theme_override_icons/grabber_disabled = ExtResource("4_nay2i")
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = 39.0
-offset_top = 582.0
-offset_right = 180.0
-offset_bottom = 614.0
-scale = Vector2(1.0292, 1.0292)
-text = "Back"
-
-[node name="UI Accept (Mouse Click)" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_lamhx")
-bus = &"UI"
-
-[node name="UI Cancel (Back Button)" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_5qqp5")
-volume_db = 4.5
-pitch_scale = 1.02
-bus = &"UI"
-
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+offset_left = 1075.0
+offset_top = 579.0
+offset_right = 1107.0
+offset_bottom = 611.0
+icon = ExtResource("4_nay2i")
+flat = true
