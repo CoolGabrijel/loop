@@ -1,4 +1,5 @@
 extends Node2D
+
 var intro = ["Omega Corp. They make everything and anything there, including miserable people like Jeremy.",
 "He used to be optimistic. Bright. Vibrant, even.",
 "But the corporate machine grinds everyone to dust eventually.",
@@ -14,17 +15,31 @@ var intro = ["Omega Corp. They make everything and anything there, including mis
 "As many times as it took,  ", 
 "until Jeremy delivered his message to the ruler of the most powerful organisation in the world."]
 
-var current_line=0
-
 @onready var label = $Label
+
+var current_line = 0
+
+signal intro_has_ended
+
+
 func _ready(): 
- update_intro()
+	update_intro()
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		advance_intro()
+
 
 func update_intro():
- label.text = intro[current_line]
+	label.text = intro[current_line]
+
 
 func advance_intro():
- current_line += 1
-
- if current_line < intro.size(): update_intro()
- else: print("Intro ended")
+	current_line += 1
+	if current_line < intro.size():
+		update_intro()
+	else: 
+		print("Intro ended")
+		emit_signal("intro_has_ended")
+		queue_free()

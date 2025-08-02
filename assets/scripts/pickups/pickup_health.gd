@@ -5,3 +5,5 @@ extends Area3D
 
 func _on_body_entered(body: Node3D) -> void:
 	player.health.heal(5)
+	print("pickup was picked, health regained!")
+	queue_free()

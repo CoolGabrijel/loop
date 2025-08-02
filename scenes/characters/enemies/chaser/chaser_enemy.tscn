@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bx8kgvoah1vaq"]
+[gd_scene load_steps=11 format=3 uid="uid://bx8kgvoah1vaq"]
 
 [ext_resource type="Script" uid="uid://baqrykwr3ohax" path="res://assets/scripts/characters/enemies/chaser_enemy.gd" id="1_8nrqd"]
 [ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="1_ft5sb"]
+[ext_resource type="PackedScene" uid="uid://oo66sq1qhksu" path="res://scenes/objects/effects/pickup_health.tscn" id="2_8igut"]
 [ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/combat_components/health.gd" id="3_5ysyj"]
 [ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/state_machine/state_machine.gd" id="3_ui4im"]
 [ext_resource type="Script" uid="uid://bqqytkdcd5syp" path="res://assets/scripts/state_machine/states/chasing.gd" id="4_ij6ca"]
@@ -14,6 +15,7 @@ size = Vector3(1.30945, 1.32855, 0.203125)
 
 [node name="ChaserEnemy" type="CharacterBody3D"]
 script = ExtResource("1_8nrqd")
+pickup_scene = ExtResource("2_8igut")
 movement_speed = 5.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
