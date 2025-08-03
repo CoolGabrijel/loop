@@ -15,6 +15,7 @@ extends Node
 
 # For showing status effects, like stun
 @onready var debug_label: Label3D = $"../DebugLabel"
+@onready var attack_sound: AudioStreamPlayer = $"../McAttack"
 
 var movement_input: Vector2
 var movement_locked: bool = false
@@ -89,6 +90,8 @@ func _play_punch_anim() -> void:
 	await get_tree().create_timer(0.2).timeout
 	slash.hide()
 	sprite.play("idle")
+	attack_sound.play()
+	
 
 func _get_mouse_pos_in_3d() -> Vector3:
 	var space_state := player.get_world_3d().direct_space_state

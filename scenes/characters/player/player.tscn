@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c1kr8rxxx5th4"]
+[gd_scene load_steps=19 format=3 uid="uid://c1kr8rxxx5th4"]
 
 [ext_resource type="Script" uid="uid://wijgm4seg182" path="res://assets/scripts/characters/player/player.gd" id="1_dyp2m"]
 [ext_resource type="Script" uid="uid://cese66jyrcxy6" path="res://assets/scripts/characters/player/player_controller.gd" id="1_pq8s5"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/combat_components/damage.gd" id="6_kqtwu"]
 [ext_resource type="Texture2D" uid="uid://bqkho3u7858ti" path="res://assets/sprites/characters/player characters/jeremy/handsome_walk1.png" id="7_3xnwo"]
 [ext_resource type="Script" uid="uid://o6abt6qw55vj" path="res://assets/scripts/combat_components/speed.gd" id="7_6eyoc"]
+[ext_resource type="AudioStream" uid="uid://dh1nqblnwj2k6" path="res://assets/audio/sfx/mc_attack.wav" id="12_blysn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6eyoc"]
 size = Vector3(3, 1, 1)
@@ -113,6 +114,9 @@ shape = SubResource("CylinderShape3D_76oj4")
 stream = ExtResource("4_dyp2m")
 pitch_scale = 1.05
 bus = &"SFX"
+
+[node name="McAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_blysn")
 
 [node name="SpeedComponent" type="Node" parent="."]
 script = ExtResource("7_6eyoc")

@@ -19,6 +19,7 @@ class_name Damage
 
 var enemies_within_range: Array[Node3D]
 
+
 func _physics_process(delta: float) -> void:
 	#var mouse_pos := _get_mouse_pos_in_3d()
 	#mouse_pos.y = global_position.y
@@ -30,6 +31,7 @@ func deal_damage() -> void:
 	for enemy in enemies_within_range:
 		var health: Health = enemy.get_node("HealthComponent")
 		health.damage(attack_damage)
+
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if !body.has_node("HealthComponent"):
