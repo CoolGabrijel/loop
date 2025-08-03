@@ -41,6 +41,10 @@ func handle_movement(delta: float) -> void:
 func handle_damage_component() -> void:
 	var mouse_pos := _get_mouse_pos_in_3d()
 	mouse_pos.y = player.damage_node.global_position.y
+	
+	if player.damage_node.position == mouse_pos:
+		return
+	
 	player.damage_node.look_at(mouse_pos)
 
 func update_movement_input() -> void:
