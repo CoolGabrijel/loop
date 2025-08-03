@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d14xlfcx4gj0d" path="res://assets/sprites/intro/1.png" id="2_uqmjl"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(-139, -97)
+position = Vector2(-130, -191)
+scale = Vector2(0.986835, 0.986835)
 script = ExtResource("1_rlq26")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -19,11 +20,12 @@ texture = ExtResource("2_uqmjl")
 position = Vector2(429, 358)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 199.0
-offset_top = 615.0
-offset_right = 1233.0
-offset_bottom = 690.0
-theme_override_colors/font_outline_color = Color(0.349903, 0.232299, 0.114865, 1)
+offset_left = 198.615
+offset_top = 615.098
+offset_right = 1232.61
+offset_bottom = 690.098
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 20
 text = "Placeholder text"
