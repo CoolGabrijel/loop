@@ -23,6 +23,7 @@ const MAX_DB := 0.0
 
 func _ready() -> void:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	master_bus_index = AudioServer.get_bus_index("Master")
 	sfx_bus_index = AudioServer.get_bus_index("SFX")
 	music_bus_index = AudioServer.get_bus_index("Music")
@@ -31,11 +32,16 @@ func _ready() -> void:
 	if master_bus_index != -1:
 		master_volume_slider.value = linear_to_db(AudioServer.get_bus_volume_db(master_bus_index))
 =======
+=======
+>>>>>>> Stashed changes
 	# Get bus indices
 	master_bus_index = AudioServer.get_bus_index(master_audio_bus)
 	sfx_bus_index = AudioServer.get_bus_index(sfx_audio_bus)
 	music_bus_index = AudioServer.get_bus_index(music_audio_bus)
 	dialogue_bus_index = AudioServer.get_bus_index(dialogue_audio_bus)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 	# Configure sliders (percentage UI)
