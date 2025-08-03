@@ -24,10 +24,11 @@ theme = SubResource("Theme_5qqp5")
 texture = ExtResource("1_lamhx")
 
 [node name="LabelContainer" type="VBoxContainer" parent="."]
-offset_left = 38.0
-offset_top = 38.0
-offset_right = 289.0
-offset_bottom = 241.0
+offset_left = 376.0
+offset_top = 152.0
+offset_right = 627.0
+offset_bottom = 361.0
+scale = Vector2(1.09214, 1.09214)
 theme_override_constants/separation = 19
 
 [node name="MasterVolumeLabel" type="Label" parent="LabelContainer"]
@@ -59,44 +60,55 @@ theme_override_font_sizes/font_size = 55
 text = "Dialogue:"
 
 [node name="MasterVolumeSlider" type="HSlider" parent="."]
-offset_left = 291.0
-offset_top = 36.0
-offset_right = 439.0
-offset_bottom = 84.0
+offset_left = 666.0
+offset_top = 150.0
+offset_right = 814.0
+offset_bottom = 198.0
+scale = Vector2(1.09214, 1.09214)
 theme_override_icons/grabber = ExtResource("3_5qqp5")
 theme_override_icons/grabber_highlight = ExtResource("3_5qqp5")
 
 [node name="SFXSlider" type="HSlider" parent="."]
-offset_left = 293.0
-offset_top = 94.0
-offset_right = 441.0
-offset_bottom = 142.0
+offset_left = 666.0
+offset_top = 212.0
+offset_right = 814.0
+offset_bottom = 260.0
+scale = Vector2(1.09214, 1.09214)
 theme_override_icons/grabber = ExtResource("3_5qqp5")
 theme_override_icons/grabber_highlight = ExtResource("3_5qqp5")
 theme_override_icons/grabber_disabled = ExtResource("4_nay2i")
 
 [node name="MusicVolumeSlider" type="HSlider" parent="."]
-offset_left = 292.0
-offset_top = 158.0
-offset_right = 440.0
-offset_bottom = 174.0
+offset_left = 666.0
+offset_top = 272.0
+offset_right = 814.0
+offset_bottom = 320.0
+scale = Vector2(1.09214, 1.09214)
 theme_override_icons/grabber = ExtResource("3_5qqp5")
 theme_override_icons/grabber_highlight = ExtResource("3_5qqp5")
 theme_override_icons/grabber_disabled = ExtResource("4_nay2i")
 
 [node name="DialogueSlider" type="HSlider" parent="."]
-offset_left = 295.0
-offset_top = 210.0
-offset_right = 443.0
-offset_bottom = 232.0
+offset_left = 666.0
+offset_top = 331.0
+offset_right = 814.0
+offset_bottom = 379.0
+scale = Vector2(1.09214, 1.09214)
 theme_override_icons/grabber = ExtResource("3_5qqp5")
 theme_override_icons/grabber_highlight = ExtResource("3_5qqp5")
 theme_override_icons/grabber_disabled = ExtResource("4_nay2i")
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = 1075.0
-offset_top = 579.0
-offset_right = 1107.0
-offset_bottom = 611.0
+offset_left = 63.0
+offset_top = 571.0
+offset_right = 95.0
+offset_bottom = 603.0
+scale = Vector2(1.42315, 1.49439)
 icon = ExtResource("4_nay2i")
 flat = true
+
+[connection signal="value_changed" from="MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="DialogueSlider" to="." method="_on_dialogue_slider_value_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
