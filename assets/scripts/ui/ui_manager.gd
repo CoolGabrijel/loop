@@ -67,6 +67,9 @@ func _on_play_button_pressed() -> void:
 func _on_death() -> void:
 	end_game.show()
 
+func _on_victory() -> void:
+	victory.show()
+
 func _on_options_button_pressed() -> void:
 	options.show()
 
