@@ -4,21 +4,23 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nv5uj"]
 
-[node name="Vendor" type="CanvasLayer"]
-follow_viewport_enabled = true
+[node name="Vendor" type="Node3D"]
 script = ExtResource("1_nv5uj")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="Area3D" type="Area3D" parent="CanvasLayer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CanvasLayer/Area3D"]
 shape = SubResource("BoxShape3D_nv5uj")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area3D"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Area3D"]
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 319.0
+offset_bottom = 36.0
 theme_override_font_sizes/font_size = 26
 text = "placeholder dialogue text"
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="CanvasLayer/Area3D" to="." method="_on_area_3d_body_entered"]
