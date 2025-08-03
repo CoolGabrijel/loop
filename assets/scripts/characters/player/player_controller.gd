@@ -19,12 +19,15 @@ var movement_input: Vector2
 var movement_locked: bool = false
 
 func _physics_process(delta: float) -> void:
-	if movement_locked == false:
+	if movement_locked == false and !player.is_dead:
 		update_movement_input()
 		handle_movement(delta)
 	update_sprite()
 	handle_footstep_sfx()
 	handle_damage_component()
+	
+	if player.is_dead:
+		debug_label.text = "Fired. Again."
 
 func _unhandled_input(event: InputEvent) -> void:
 	if !event.is_action_pressed("Attack"):
@@ -52,11 +55,11 @@ func update_movement_input() -> void:
 	movement_input.y = Input.get_axis("Up", "Down")
 
 func handle_footstep_sfx() -> void:
-	if movement_input != Vector2.ZERO and !walking_sounds.playing:
+	if player.velocity != Vector3.ZERO and !walking_sounds.playing:
 		walking_sounds.pitch_scale = randf_range(pitch - pitch_variance, pitch + pitch_variance)
 		walking_sounds.volume_db = randf_range(volume - volume_variance, volume - volume_variance)
 		walking_sounds.play()
-	elif movement_input == Vector2.ZERO:
+	elif player.velocity == Vector3.ZERO:
 		walking_sounds.stop()
 
 func update_sprite() -> void:
