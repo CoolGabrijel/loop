@@ -7,6 +7,7 @@ extends Node
 @export var pitch_variance: float = 0.1
 @export var volume_variance: float = 0.1
 
+@onready var slash: MeshInstance3D = $"../Damage/Area3D/CollisionShape3D/MeshInstance3D"
 @onready var player: Player = $".."
 @onready var sprite: AnimatedSprite3D = $"../AnimatedSprite3D"
 @onready var walking_sounds: AudioStreamPlayer = $"../MC_Marching"
@@ -83,8 +84,10 @@ func stun(duration: float) -> void:
 	debug_label.text = ""
 
 func _play_punch_anim() -> void:
+	slash.show()
 	sprite.play("punch")
 	await get_tree().create_timer(0.2).timeout
+	slash.hide()
 	sprite.play("idle")
 
 func _get_mouse_pos_in_3d() -> Vector3:
