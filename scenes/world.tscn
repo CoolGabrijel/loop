@@ -53,3 +53,4 @@ shape = SubResource("WorldBoundaryShape3D_e3hyu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_xo05s")
+bus = &"Music"
