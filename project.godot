@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="loop"
-run/main_scene="uid://d2hrj408gqob6"
+run/main_scene="uid://c0j75ggv8qrkm"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

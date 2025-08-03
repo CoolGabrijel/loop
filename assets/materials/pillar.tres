@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dwgawdo5tohqq"]
 
-[ext_resource type="Texture2D" uid="uid://cxcp8d2vdxtls" path="res://assets/textures/enviroment/tx_pillar_alb.png" id="1_l4r1n"]
+[ext_resource type="Texture2D" uid="uid://cs8gd42mku60p" path="res://assets/textures/enviroment/tx_pillar_alb.png" id="1_l4r1n"]
 
 [resource]
 resource_name = "lambert1"
