@@ -4,7 +4,8 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nv5uj"]
 
-[node name="Vendor" type="Node3D"]
+[node name="Vendor" type="CanvasLayer"]
+follow_viewport_enabled = true
 script = ExtResource("1_nv5uj")
 
 [node name="Area3D" type="Area3D" parent="."]

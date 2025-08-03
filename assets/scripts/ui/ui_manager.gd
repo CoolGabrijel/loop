@@ -12,6 +12,7 @@ static var instance : UIManager
 @export var end_game_scene: PackedScene
 @export var victory_scene: PackedScene
 
+
 @onready var main_menu = main_menu_scene.instantiate()
 @onready var hud = hud_scene.instantiate()
 @onready var options = volume_control_menu_scene.instantiate()
@@ -22,6 +23,7 @@ static var instance : UIManager
 @onready var victory = victory_scene.instantiate()
 @onready var player: Player = $"../Player"
 @onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
+
 
 func _ready() -> void:
 	player.set_process_input(false)
@@ -52,6 +54,7 @@ func _ready() -> void:
 	hud.show_map.connect(_on_show_map)
 	intro.intro_has_ended.connect(_on_intro_ended)
 	end_game.restart_button_pressed.connect(_on_restart_button_pressed)
+	victory.restart_button_pressed.connect(_on_restart_button_pressed)
 
 
 func _on_restart_button_pressed() -> void:
