@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dj5a7o120ecao"]
+[gd_scene load_steps=24 format=3 uid="uid://dj5a7o120ecao"]
 
 [ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/room.gd" id="1_u6nsy"]
 [ext_resource type="PackedScene" uid="uid://cjnmywl7bnqu5" path="res://assets/environment/assembled_rooms/corridor.fbx" id="2_a5ngl"]
@@ -27,6 +27,13 @@ size = Vector3(0.1, 4, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5255u"]
 size = Vector3(0.1, 4, 2)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_nyj86"]
+vertices = PackedVector3Array(-8.5, 0.5, -2.5, -8.5, 0.5, 2.5, 8.5, 0.5, 2.5, 8.5, 0.5, -2.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwn1g"]
+size = Vector3(18, 1, 6)
 
 [node name="Corridor" type="Node3D" node_paths=PackedStringArray("connection_points", "enemy_spawners")]
 script = ExtResource("1_u6nsy")
@@ -425,3 +432,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
 [node name="Node3D2" type="Node3D" parent="Waypoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_nyj86")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_mwn1g")

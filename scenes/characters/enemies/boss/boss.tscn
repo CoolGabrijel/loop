@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d3g4f7eu4fasa" path="res://scenes/objects/boss/slam_hitbox.tscn" id="8_w71f7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1u71s"]
-size = Vector3(1.28894, 1.28949, 0.287598)
+size = Vector3(4, 4, 0.288)
 
 [node name="Boss" type="CharacterBody3D"]
 script = ExtResource("1_w71f7")
@@ -22,10 +22,11 @@ slam_attack_cooldown = 2.0
 sweep_attack_cooldown = 4.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5, 0)
 texture = ExtResource("2_w71f7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00628662, 0.0104065, 0.00805664)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00628662, 2.01041, 0.00805664)
 shape = SubResource("BoxShape3D_1u71s")
 
 [node name="DebugLabel" type="Label3D" parent="."]
