@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dboce28r4m85n"]
 
 [ext_resource type="Script" uid="uid://bbn60hn4t57ci" path="res://assets/scripts/characters/enemies/guard_enemy.gd" id="1_nhv7k"]
-[ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="1_rhftm"]
+[ext_resource type="Texture2D" uid="uid://dgyby4d2c88nw" path="res://assets/sprites/characters/enemies/guards/guard_idle.png" id="2_8jkhe"]
 [ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/combat_components/health.gd" id="3_dn3d6"]
 [ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/combat_components/damage.gd" id="4_0gxep"]
 [ext_resource type="Script" uid="uid://o6abt6qw55vj" path="res://assets/scripts/combat_components/speed.gd" id="5_d2gc6"]
@@ -30,7 +30,7 @@ retreat_range_multiplier = 100.0
 combination_attack_cooldown = 5.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("1_rhftm")
+texture = ExtResource("2_8jkhe")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012085, 0.00469971, 0.00830078)

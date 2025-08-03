@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://doo7s3nni4bbs"]
+[gd_scene load_steps=9 format=3 uid="uid://doo7s3nni4bbs"]
 
 [ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/room.gd" id="1_rmaf1"]
 [ext_resource type="PackedScene" uid="uid://iyi6qjy6u7e2" path="res://assets/environment/assembled_rooms/room_large.fbx" id="2_hkx70"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://p8xwidysebve" path="res://assets/environment/structures/wall_2m.fbx" id="4_gfdek"]
 [ext_resource type="PackedScene" uid="uid://cbc3cyql2xqg3" path="res://assets/environment/structures/wall_1m.fbx" id="5_bm5hw"]
 [ext_resource type="PackedScene" uid="uid://bnt464olyou6t" path="res://assets/environment/structures/door_wall.fbx" id="7_qfvvh"]
+[ext_resource type="PackedScene" uid="uid://b8uiduwj7s6b1" path="res://scenes/characters/enemies/boss/boss.tscn" id="8_qfvvh"]
 
 [node name="BossRoom" type="Node3D" node_paths=PackedStringArray("connection_points")]
 script = ExtResource("1_rmaf1")
@@ -707,3 +708,5 @@ metadata/_custom_type_script = "uid://dhm34geqivke2"
 
 [node name="door_wall" parent="Connections/RoomConnection4" instance=ExtResource("7_qfvvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
+
+[node name="Boss" parent="." instance=ExtResource("8_qfvvh")]

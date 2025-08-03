@@ -12,9 +12,6 @@ class_name boss
 
 @export var health: float = 30.0
 
-@export_group("Object References")
-@export var player_ref: CharacterBody3D
-
 @export_group("Combat")
 @export var attack_damage: int
 @export var attack_speed: float
@@ -29,7 +26,7 @@ var can_slam_attack: bool = false
 var can_sweep_attack: bool = false
 
 func _ready() -> void:
-	if !player_ref:
+	if !Player.player:
 		queue_free()
 	
 	state_machine.init(self)
@@ -60,7 +57,7 @@ func can_see_player(view_range: float) -> bool:
 	var can_see_player: bool = false
 	
 	var parent_pos: Vector3 = global_position
-	var player_pos: Vector3 = player_ref.global_position
+	var player_pos: Vector3 = Player.player.global_position
 	
 	var distance = parent_pos.distance_to(player_pos)
 	

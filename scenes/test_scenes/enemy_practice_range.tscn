@@ -146,6 +146,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72518, 0, -7.55536)
 [node name="Waypoint2" parent="NavigationRegion3D/PatrollingRangerPath" instance=ExtResource("1_8lak6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4739, 0, -14.9115)
 
-[node name="Boss" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("8_mt6cm")]
+[node name="Boss" parent="." instance=ExtResource("8_mt6cm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.184, 4, -18.929)
-player_ref = NodePath("../Player")
