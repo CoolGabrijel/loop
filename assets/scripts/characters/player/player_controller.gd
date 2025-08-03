@@ -34,6 +34,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	
 	player.damage_node.deal_damage()
+	_play_punch_anim()
 
 func handle_movement(delta: float) -> void:
 	var normalized_input = movement_input.normalized()
@@ -59,11 +60,12 @@ func handle_footstep_sfx() -> void:
 		walking_sounds.pitch_scale = randf_range(pitch - pitch_variance, pitch + pitch_variance)
 		walking_sounds.volume_db = randf_range(volume - volume_variance, volume - volume_variance)
 		walking_sounds.play()
-		if !sprite.is_playing() or sprite.animation == "idle":
+		if !sprite.is_playing() or sprite.animation == "idle" or sprite.animation == "punch":
 			sprite.play("walking")
 	elif player.velocity == Vector3.ZERO:
 		walking_sounds.stop()
-		sprite.play("idle")
+		if sprite.animation != "punch":
+			sprite.play("idle")
 
 func update_sprite() -> void:
 	if movement_input.x >= 0:
@@ -79,6 +81,11 @@ func stun(duration: float) -> void:
 	sprite.play("idle")
 	movement_locked = false
 	debug_label.text = ""
+
+func _play_punch_anim() -> void:
+	sprite.play("punch")
+	await get_tree().create_timer(0.2).timeout
+	sprite.play("idle")
 
 func _get_mouse_pos_in_3d() -> Vector3:
 	var space_state := player.get_world_3d().direct_space_state

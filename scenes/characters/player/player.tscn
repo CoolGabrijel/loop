@@ -90,12 +90,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
 shape = SubResource("BoxShape3D_6eyoc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Damage/Area3D/CollisionShape3D"]
+visible = false
 mesh = SubResource("BoxMesh_6eyoc")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.130109, 0, 0, 0, 0.130109, 0, 0, 0, 0.5, 0, 1.42279, 0)
 sprite_frames = SubResource("SpriteFrames_7n8ao")
-animation = &"hurt"
+animation = &"idle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
