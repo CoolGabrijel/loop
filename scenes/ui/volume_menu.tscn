@@ -33,28 +33,28 @@ theme_override_constants/separation = 19
 
 [node name="MasterVolumeLabel" type="Label" parent="LabelContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.352941, 0.0941176, 0.0941176, 1)
+theme_override_colors/font_color = Color(0.517647, 0.0117647, 0.192157, 1)
 theme_override_fonts/font = ExtResource("2_5qqp5")
 theme_override_font_sizes/font_size = 55
 text = "Master Volume:"
 
 [node name="SFXLabel" type="Label" parent="LabelContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.352941, 0.0941176, 0.0941176, 1)
+theme_override_colors/font_color = Color(0.517647, 0.0117647, 0.192157, 1)
 theme_override_fonts/font = ExtResource("2_5qqp5")
 theme_override_font_sizes/font_size = 55
 text = "Sound Effects:"
 
 [node name="MusicVolumeLabel" type="Label" parent="LabelContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.352941, 0.0941176, 0.0941176, 1)
+theme_override_colors/font_color = Color(0.517647, 0.0117647, 0.192157, 1)
 theme_override_fonts/font = ExtResource("2_5qqp5")
 theme_override_font_sizes/font_size = 55
 text = "Music:"
 
 [node name="DialogueLabel" type="Label" parent="LabelContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.352941, 0.0941176, 0.0941176, 1)
+theme_override_colors/font_color = Color(0.517647, 0.0117647, 0.192157, 1)
 theme_override_fonts/font = ExtResource("2_5qqp5")
 theme_override_font_sizes/font_size = 55
 text = "Dialogue:"

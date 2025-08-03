@@ -25,7 +25,6 @@ func _ready() -> void:
 	music_bus_index = AudioServer.get_bus_index("Music")
 	dialogue_bus_index = AudioServer.get_bus_index("Dialogue")
 	
-	# Initialize slider values based on current bus volume, needs adjusting.
 	if master_bus_index != -1:
 		master_volume_slider.value = linear_to_db(AudioServer.get_bus_volume_db(master_bus_index))
 
