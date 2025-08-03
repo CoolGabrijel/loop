@@ -21,7 +21,7 @@ buses/default_bus_layout="res://assets/audio/busses/default_bus_layout.tres"
 
 [autoload]
 
-SignalHub="*res://globals/signal_hub.gd"
+SignalHub="*res://assets/scripts/globals/signal_hub.gd"
 
 [file_customization]
 
