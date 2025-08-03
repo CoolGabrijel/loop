@@ -35,6 +35,20 @@ enemy_spawners = [NodePath("Spawners/EnemySpawner"), NodePath("Spawners/EnemySpa
 
 [node name="GFX" type="Node3D" parent="."]
 
+[node name="Lights" type="Node3D" parent="GFX"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="GFX/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.55707, 2.14204, 0)
+light_energy = 2.965
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="GFX/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.225057, 2.14204, 0)
+light_energy = 2.965
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="GFX/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61437, 2.14204, 0)
+light_energy = 2.965
+
 [node name="Corridor" parent="GFX" instance=ExtResource("2_a5ngl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 3)
 visible = false
