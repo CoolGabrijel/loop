@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbqn4mem61grm"
-path="res://.godot/imported/small_elements.png-1b2561b07f0064cfe87a8359c19d7842.ctex"
+uid="uid://bnh6cjnpmnxym"
+path="res://.godot/imported/pillar.png-90c2f47e61500a6e9e32e4d05d1013e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/uv_maps/small_elements.png"
-dest_files=["res://.godot/imported/small_elements.png-1b2561b07f0064cfe87a8359c19d7842.ctex"]
+source_file="res://assets/textures/uv_maps/pillar.png"
+dest_files=["res://.godot/imported/pillar.png-90c2f47e61500a6e9e32e4d05d1013e1.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://beywnuorsffek"
-path="res://.godot/imported/drawer.png-4be811bfe2517bc3eb7a4c6d51af5ded.ctex"
+path="res://.godot/imported/drawer.png-a7400dbe9b736595fc0995f593e7943e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/uv_maps/drawer.png"
-dest_files=["res://.godot/imported/drawer.png-4be811bfe2517bc3eb7a4c6d51af5ded.ctex"]
+source_file="res://assets/textures/uv_maps/drawer.png"
+dest_files=["res://.godot/imported/drawer.png-a7400dbe9b736595fc0995f593e7943e.ctex"]
 
 [params]
 
