@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cyt8p317g5go2" path="res://scenes/ui/fullscreen_map.tscn" id="8_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://h7wrnmmv0v4c" path="res://scenes/ui/credits_scene.tscn" id="9_e3hyu"]
 [ext_resource type="PackedScene" uid="uid://dplt1tt4bsrd" path="res://scenes/ui/intro_cutscene.tscn" id="10_q5onr"]
-[ext_resource type="PackedScene" uid="uid://bn6kxiderf7nc" path="res://scenes/ui/end_game_screen.tscn" id="12_o8fc1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/end_game_screen.tscn" id="12_o8fc1"]
 [ext_resource type="AudioStream" uid="uid://h4hmij2vpguj" path="res://assets/audio/music/maintheme_final.ogg" id="13_xo05s"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qfnet"]
