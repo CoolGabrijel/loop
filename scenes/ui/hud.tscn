@@ -9,8 +9,13 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_136eg"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("heart_rects")]
+follow_viewport_enabled = true
 script = ExtResource("1_oj5la")
+heart_full = ExtResource("2_n1ea6")
+heart_half = ExtResource("4_riojq")
+heart_empty = ExtResource("3_gqn5w")
+heart_rects = [NodePath("HeartsContainer/TextureRect"), NodePath("HeartsContainer/TextureRect2"), NodePath("HeartsContainer/TextureRect3")]
 
 [node name="HeartsContainer" type="HBoxContainer" parent="."]
 offset_left = 19.0
@@ -19,22 +24,20 @@ offset_right = 223.0
 offset_bottom = 75.0
 alignment = 1
 
-[node name="HeartFull" type="Sprite2D" parent="HeartsContainer"]
-position = Vector2(47.875, 26.875)
-scale = Vector2(0.75, 0.75)
+[node name="TextureRect" type="TextureRect" parent="HeartsContainer"]
+layout_mode = 2
 texture = ExtResource("2_n1ea6")
 
-[node name="HeartEmpty" type="Sprite2D" parent="HeartsContainer"]
-position = Vector2(157.875, 26.875)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_gqn5w")
-
-[node name="HeartHalf" type="Sprite2D" parent="HeartsContainer"]
-position = Vector2(102.875, 26.875)
-scale = Vector2(0.75, 0.75)
+[node name="TextureRect2" type="TextureRect" parent="HeartsContainer"]
+layout_mode = 2
 texture = ExtResource("4_riojq")
 
+[node name="TextureRect3" type="TextureRect" parent="HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("3_gqn5w")
+
 [node name="Minimap" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1072, 81.0001)
 scale = Vector2(0.921876, 0.921876)
 texture = ExtResource("5_n1ea6")

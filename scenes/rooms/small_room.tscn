@@ -1,17 +1,25 @@
-[gd_scene load_steps=30 format=3 uid="uid://bomgebpabfa7n"]
+[gd_scene load_steps=38 format=3 uid="uid://bomgebpabfa7n"]
 
 [ext_resource type="Script" uid="uid://dsi7xpwh1sblr" path="res://assets/scripts/room.gd" id="1_r5qor"]
 [ext_resource type="PackedScene" uid="uid://kwogjc17hy0f" path="res://assets/environment/assembled_rooms/room_small.fbx" id="2_2mcrf"]
+[ext_resource type="PackedScene" uid="uid://47ytxxs5s5ke" path="res://assets/environment/office_elements/posters/poster_a.fbx" id="2_aeqn2"]
 [ext_resource type="PackedScene" uid="uid://d16qt4tn24akh" path="res://assets/environment/office_elements/chair.fbx" id="3_4ldyd"]
+[ext_resource type="PackedScene" uid="uid://cerkayj43jk4r" path="res://assets/environment/office_elements/posters/poster_b.fbx" id="3_qe4y7"]
 [ext_resource type="Script" uid="uid://dhm34geqivke2" path="res://assets/scripts/room_connection.gd" id="3_r64i6"]
+[ext_resource type="PackedScene" uid="uid://bs80i6lw0rulh" path="res://assets/environment/office_elements/posters/poster_c.fbx" id="4_2m78f"]
 [ext_resource type="Script" uid="uid://v83i1w254732" path="res://assets/scripts/characters/enemies/spawners/enemy_spawner.gd" id="4_2mcrf"]
 [ext_resource type="PackedScene" uid="uid://dnc2eek8ic67t" path="res://assets/environment/office_elements/desk_b.fbx" id="4_4ldyd"]
 [ext_resource type="PackedScene" uid="uid://duru03m1mnj23" path="res://assets/environment/structures/floor_2x2.fbx" id="5_b5bix"]
 [ext_resource type="PackedScene" uid="uid://cbc3cyql2xqg3" path="res://assets/environment/structures/wall_1m.fbx" id="5_p71np"]
+[ext_resource type="PackedScene" uid="uid://ll60btaswo18" path="res://assets/environment/office_elements/posters/poster_d.fbx" id="5_ssprj"]
 [ext_resource type="PackedScene" uid="uid://p8xwidysebve" path="res://assets/environment/structures/wall_2m.fbx" id="6_bq6nb"]
+[ext_resource type="PackedScene" uid="uid://cexwh8bkysxwg" path="res://assets/environment/office_elements/posters/poster_e.fbx" id="6_pxm1b"]
+[ext_resource type="PackedScene" uid="uid://ic1mk4dfnh5x" path="res://assets/environment/office_elements/posters/poster_f.fbx" id="7_0o677"]
 [ext_resource type="PackedScene" uid="uid://o3lqqbbnqby0" path="res://assets/environment/office_elements/desk_c.fbx" id="7_cjgtw"]
 [ext_resource type="PackedScene" uid="uid://b808it2edpk4t" path="res://assets/environment/office_elements/monitor.fbx" id="8_30e3l"]
+[ext_resource type="PackedScene" uid="uid://cu2dofk6dl1f6" path="res://assets/environment/office_elements/posters/poster_g.fbx" id="8_hxbin"]
 [ext_resource type="PackedScene" uid="uid://fu8xjollvhpx" path="res://assets/environment/office_elements/bin.fbx" id="9_svo7l"]
+[ext_resource type="PackedScene" uid="uid://dt3fq8hg6yjlx" path="res://assets/environment/office_elements/posters/poster_i.fbx" id="9_wwi1m"]
 [ext_resource type="PackedScene" uid="uid://ddud05s3fpu6h" path="res://assets/environment/office_elements/drawers.fbx" id="10_odw37"]
 [ext_resource type="PackedScene" uid="uid://by8ekb2vji252" path="res://assets/environment/office_elements/cabinet.fbx" id="11_bod5p"]
 [ext_resource type="PackedScene" uid="uid://bub178c7yd83r" path="res://assets/environment/structures/pillar.fbx" id="12_v3l3y"]
@@ -58,6 +66,41 @@ enemy_spawners = [NodePath("EnemySpawners/EnemySpawner"), NodePath("EnemySpawner
 vendor_locations = [NodePath("VendorSpawns/Node3D")]
 
 [node name="GFX" type="Node3D" parent="."]
+
+[node name="posters" type="Node3D" parent="GFX"]
+
+[node name="poster_a" parent="GFX/posters" instance=ExtResource("2_aeqn2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66919, 1.71478, -4.84706)
+
+[node name="poster_b" parent="GFX/posters" instance=ExtResource("3_qe4y7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90036, 1.46021, -4.87963)
+
+[node name="poster_c" parent="GFX/posters" instance=ExtResource("4_2m78f")]
+transform = Transform3D(-0.0359286, 0, -0.999354, 0, 1, 0, 0.999354, 0, -0.0359286, 5.88729, 1.73471, -0.537248)
+
+[node name="poster_c2" parent="GFX/posters" instance=ExtResource("4_2m78f")]
+transform = Transform3D(-0.0021817, 0, 0.999998, 0, 1, 0, -0.999998, 0, -0.0021817, -5.87629, 1.65967, 2.22581)
+
+[node name="poster_d" parent="GFX/posters" instance=ExtResource("5_ssprj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99849, 2.06706, -1.74847)
+
+[node name="poster_e" parent="GFX/posters" instance=ExtResource("6_pxm1b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97481, 2.23791, 3.26317)
+
+[node name="poster_e2" parent="GFX/posters" instance=ExtResource("6_pxm1b")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.88283, 2.07083, 3.70234)
+
+[node name="poster_f" parent="GFX/posters" instance=ExtResource("7_0o677")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.7471, 2.12884, 3.00253)
+
+[node name="poster_f2" parent="GFX/posters" instance=ExtResource("7_0o677")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59492, 2.12884, -4.88171)
+
+[node name="poster_g" parent="GFX/posters" instance=ExtResource("8_hxbin")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.7329, 2.09571, -1.98831)
+
+[node name="poster_i" parent="GFX/posters" instance=ExtResource("9_wwi1m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.88781, 1.81416, -4.05953)
 
 [node name="Lights" type="Node3D" parent="GFX"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 5)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vo2cuajseqfo" path="res://assets/scripts/characters/enemies/boss/boss.gd" id="1_w71f7"]
 [ext_resource type="Script" uid="uid://bisswsux178ff" path="res://assets/scripts/combat_components/health.gd" id="2_0wkl8"]
-[ext_resource type="Texture2D" uid="uid://dok0llhhtuac2" path="res://assets/sprites/characters/enemies/big_bad_boss/mr_omega_stand.png" id="2_w71f7"]
+[ext_resource type="Texture2D" uid="uid://dqip1go4ry4sd" path="res://assets/sprites/characters/enemies/big_bad_boss/mr_omega_battle.png" id="2_w71f7"]
 [ext_resource type="Script" uid="uid://dq0fymwjbtvhm" path="res://assets/scripts/combat_components/damage.gd" id="3_85anx"]
 [ext_resource type="Script" uid="uid://cbeqft0vb56gl" path="res://assets/scripts/state_machine/state_machine.gd" id="5_ugwxe"]
 [ext_resource type="Script" uid="uid://clv1c6wby5cqs" path="res://assets/scripts/state_machine/states/boss/idle.gd" id="6_c1hxc"]
