@@ -2,24 +2,24 @@
 
 [ext_resource type="Script" uid="uid://cvoryiwwm5k2t" path="res://assets/scripts/characters/enemies/spawners/bullet.gd" id="1_rcpd2"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rcpd2"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_rcpd2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcpd2"]
 albedo_color = Color(0.241156, 0.241156, 0.241156, 1)
 
-[sub_resource type="SphereMesh" id="SphereMesh_rcpd2"]
+[sub_resource type="SphereMesh" id="SphereMesh_838e8"]
 
 [node name="Bullet" type="Area3D"]
 script = ExtResource("1_rcpd2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.33, 0, 0, 0, -1.44248e-08, -0.33, 0, 0.33, -1.44248e-08, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_rcpd2")
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_rcpd2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.7, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_rcpd2")
-mesh = SubResource("SphereMesh_rcpd2")
+mesh = SubResource("SphereMesh_838e8")
 
 [node name="LifeTimer" type="Timer" parent="."]
 
