@@ -1,13 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dplt1tt4bsrd"]
+[gd_scene load_steps=3 format=3 uid="uid://dplt1tt4bsrd"]
 
 [ext_resource type="Script" uid="uid://da6eipc3iqy1s" path="res://assets/scripts/ui/intro_cutscene.gd" id="1_rlq26"]
-
-[sub_resource type="Gradient" id="Gradient_uqmjl"]
-offsets = PackedFloat32Array(0, 0.36875, 0.53125, 0.74375, 1)
-colors = PackedColorArray(0.716159, 0.559299, 0.514418, 1, 0.701955, 0.419, 0.454199, 1, 0.549303, 0.373369, 0.699049, 1, 0.823653, 0.599544, 0.514375, 1, 0.912457, 0.798302, 0.582608, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jcsyo"]
-gradient = SubResource("Gradient_uqmjl")
+[ext_resource type="Texture2D" uid="uid://d14xlfcx4gj0d" path="res://assets/sprites/intro/1.png" id="2_uqmjl"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(-139, -97)
@@ -15,10 +9,11 @@ script = ExtResource("1_rlq26")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 132.0
-offset_top = 83.0
-offset_right = 1320.0
-offset_bottom = 766.0
-texture = SubResource("GradientTexture2D_jcsyo")
+offset_top = 84.0
+offset_right = 3432.0
+offset_bottom = 2584.0
+scale = Vector2(0.353798, 0.353798)
+texture = ExtResource("2_uqmjl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(429, 358)
