@@ -5,6 +5,6 @@
 [resource]
 resource_name = "lambert1"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.813258, 0.813258, 0.813258, 1)
+albedo_color = Color(0.758006, 0.736143, 0.731802, 1)
 albedo_texture = ExtResource("1_y86sv")
 emission_enabled = true
