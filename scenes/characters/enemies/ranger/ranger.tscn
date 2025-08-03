@@ -64,9 +64,10 @@ starting_state = NodePath("Patrolling")
 script = ExtResource("4_g47ss")
 chasing = NodePath("../Chasing")
 
-[node name="Chasing" type="Node" parent="StateMachine" node_paths=PackedStringArray("patrolling", "shoot")]
+[node name="Chasing" type="Node" parent="StateMachine" node_paths=PackedStringArray("patrolling", "melee", "shoot")]
 script = ExtResource("5_gdvw5")
 patrolling = NodePath("../Patrolling")
+melee = NodePath(".")
 shoot = NodePath("../Shoot")
 
 [node name="Shoot" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]

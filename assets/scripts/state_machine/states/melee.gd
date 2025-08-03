@@ -1,6 +1,6 @@
 extends State
 
-@export var chasing: State
+@export var return_state: State
 
 func enter() -> void:
 	if parent.state_machine.is_combination_enabled:
@@ -17,8 +17,8 @@ func process_frame(_delta: float) -> State:
 
 func process_physics(_delta: float) -> State:
 	if parent.can_see_player(parent.damage_component.attack_range) == false:
-		return chasing
-	
+		return return_state
+
 	if parent.state_machine.can_attack:
 		Player.player.health_node.damage(parent.damage_component.attack_damage)
 		parent.state_machine.reset_attack_timer()

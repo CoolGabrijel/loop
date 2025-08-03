@@ -62,9 +62,9 @@ melee = NodePath("../Melee")
 script = ExtResource("8_kaptv")
 chasing = NodePath("../Chasing")
 
-[node name="Melee" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
+[node name="Melee" type="Node" parent="StateMachine" node_paths=PackedStringArray("return_state")]
 script = ExtResource("9_klc86")
-chasing = NodePath("../Chasing")
+return_state = NodePath("../Chasing")
 
 [node name="AttackTimer" type="Timer" parent="StateMachine"]
 

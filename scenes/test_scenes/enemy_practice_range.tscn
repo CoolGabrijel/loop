@@ -48,6 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88985, 0, 9.92411)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2379, 1, -0.558065)
 speed = 3.0
 patrol_points = NodePath("../NavigationRegion3D/PatrollingGuardPath")
+attack_damage = 1
 retreat_range_multiplier = 3.0
 
 [node name="Ranger" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("6_sllat")]
@@ -147,4 +148,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72518, 0, -7.55536)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4739, 0, -14.9115)
 
 [node name="Boss" parent="." instance=ExtResource("8_mt6cm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.184, 4, -18.929)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.184, 1, -18.929)
+health = null
+slam_attack_damage = null
+sweep_attack_damage = null

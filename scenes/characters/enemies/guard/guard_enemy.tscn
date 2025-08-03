@@ -74,9 +74,9 @@ retreat = NodePath("../Retreat")
 script = ExtResource("8_nqukw")
 chasing = NodePath("../Chasing")
 
-[node name="Melee" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing")]
+[node name="Melee" type="Node" parent="StateMachine" node_paths=PackedStringArray("return_state")]
 script = ExtResource("9_dn3d6")
-chasing = NodePath("../Chasing")
+return_state = NodePath("../Chasing")
 
 [node name="Shoot" type="Node" parent="StateMachine" node_paths=PackedStringArray("chasing", "stun")]
 script = ExtResource("10_0gxep")

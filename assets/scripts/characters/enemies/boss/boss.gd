@@ -16,11 +16,13 @@ class_name boss
 @export var attack_damage: int
 @export var attack_speed: float
 @export var attack_range: float
+@export var melee_attack_range: float
 
 @export var slam_attack_damage: float
 @export var sweep_attack_damage: float
 @export var slam_attack_cooldown: float
 @export var sweep_attack_cooldown: float
+
 	
 var can_slam_attack: bool = false
 var can_sweep_attack: bool = false
