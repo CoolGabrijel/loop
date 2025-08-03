@@ -1,4 +1,7 @@
 extends CanvasLayer
+class_name UIManager
+
+static var instance : UIManager
 
 @export var main_menu_scene: PackedScene
 @export var volume_control_menu_scene: PackedScene
@@ -7,6 +10,7 @@ extends CanvasLayer
 @export var credits_scene: PackedScene
 @export var intro_scene: PackedScene
 @export var end_game_scene: PackedScene
+@export var victory_scene: PackedScene
 
 @onready var main_menu = main_menu_scene.instantiate()
 @onready var hud = hud_scene.instantiate()
@@ -15,11 +19,13 @@ extends CanvasLayer
 @onready var map = fullscreen_game_map_scene.instantiate()
 @onready var intro = intro_scene.instantiate()
 @onready var end_game = end_game_scene.instantiate()
+@onready var victory = victory_scene.instantiate()
 @onready var player: Player = $"../Player"
 @onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
 
 func _ready() -> void:
 	player.set_process_input(false)
+	instance = self
 	
 	add_child(main_menu)
 	add_child(hud)
@@ -27,12 +33,16 @@ func _ready() -> void:
 	add_child(map)
 	add_child(credits)
 	add_child(intro)
+	add_child(end_game)
+	add_child(victory)
 	
 	main_menu.hide()
 	hud.hide()
 	map.hide()
 	options.hide()
 	credits.hide()
+	end_game.hide()
+	victory.hide()
 	
 	main_menu.play_button_was_pressed.connect(_on_play_button_pressed)
 	main_menu.options_button_was_pressed.connect(_on_options_button_pressed)
@@ -54,6 +64,8 @@ func _on_play_button_pressed() -> void:
 	player.set_process_input(true)
 	audio_stream_player.play()
 
+func _on_death() -> void:
+	end_game.show()
 
 func _on_options_button_pressed() -> void:
 	options.show()
