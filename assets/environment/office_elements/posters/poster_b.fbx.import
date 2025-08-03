@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ic1mk4dfnh5x"
-path="res://.godot/imported/poster_f.fbx-a3b8e97eeee63b18cc14854f61b0640d.scn"
+uid="uid://cerkayj43jk4r"
+path="res://.godot/imported/poster_b.fbx-87cec9a824e7c5af2868efbf8dfc45dc.scn"
 
 [deps]
 
-source_file="res://assets/environment/office_elements/poster/poster_f.fbx"
-dest_files=["res://.godot/imported/poster_f.fbx-a3b8e97eeee63b18cc14854f61b0640d.scn"]
+source_file="res://assets/environment/office_elements/posters/poster_b.fbx"
+dest_files=["res://.godot/imported/poster_b.fbx-87cec9a824e7c5af2868efbf8dfc45dc.scn"]
 
 [params]
 
