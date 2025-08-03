@@ -54,8 +54,8 @@ func process_frame(delta: float) -> void:
 	var new_state = current_state.process_frame(delta)
 	if new_state:
 		change_state(new_state)
-		
-		
+
+
 func reset_attack_timer() -> void:
 	can_attack = false
 	attack_timer.start()

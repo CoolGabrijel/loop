@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0j75ggv8qrkm"]
+[gd_scene load_steps=13 format=3 uid="uid://c0j75ggv8qrkm"]
 
 [ext_resource type="PackedScene" uid="uid://babv1xukg6bjw" path="res://scenes/characters/enemies/waypoint/waypoint.tscn" id="1_8lak6"]
 [ext_resource type="PackedScene" uid="uid://c1kr8rxxx5th4" path="res://scenes/characters/player/player.tscn" id="2_de3vm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dbsa304r1fd1q" path="res://assets/scripts/characters/enemies/spawners/bullet_maker.gd" id="4_xbs10"]
 [ext_resource type="PackedScene" uid="uid://dboce28r4m85n" path="res://scenes/characters/enemies/guard/guard_enemy.tscn" id="6_mt6cm"]
 [ext_resource type="PackedScene" uid="uid://dywqknbf016tq" path="res://scenes/characters/enemies/ranger/ranger.tscn" id="6_sllat"]
+[ext_resource type="PackedScene" uid="uid://b8uiduwj7s6b1" path="res://scenes/characters/enemies/boss/boss.tscn" id="8_mt6cm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_de3vm"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -144,3 +145,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72518, 0, -7.55536)
 
 [node name="Waypoint2" parent="NavigationRegion3D/PatrollingRangerPath" instance=ExtResource("1_8lak6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4739, 0, -14.9115)
+
+[node name="Boss" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("8_mt6cm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.184, 4, -18.929)
+player_ref = NodePath("../Player")
