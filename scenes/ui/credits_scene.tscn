@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bg1s5wb6k0hb2" path="res://assets/sprites/fonts/Scribbles-Regular.ttf" id="1_oobj6"]
 [ext_resource type="Script" uid="uid://c54peqq4y0spq" path="res://assets/scripts/ui/credits_scene.gd" id="1_vojle"]
-[ext_resource type="Texture2D" uid="uid://deiv8aj72yt8q" path="res://assets/textures/tx_menubg.png" id="2_b1jii"]
+[ext_resource type="Texture2D" uid="uid://deiv8aj72yt8q" path="res://assets/textures/enviroment/tx_menubg.png" id="2_b1jii"]
 [ext_resource type="Texture2D" uid="uid://cqqquxi5y8rr" path="res://assets/sprites/ui/close_map_button.png" id="3_ltqs5"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0cael"]

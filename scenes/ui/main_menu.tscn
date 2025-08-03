@@ -3,14 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://dv6mwh4xcx5xc" path="res://assets/sprites/ui/gmtkgj2k25_server_logo.png" id="1_1g8jr"]
 [ext_resource type="Script" uid="uid://bk6rx8fwlvotg" path="res://assets/scripts/ui/main_menu.gd" id="1_m1kxf"]
 [ext_resource type="Texture2D" uid="uid://bi1pd1wuts8ae" path="res://assets/sprites/ui/placeholder_game_name.png" id="2_1g8jr"]
-[ext_resource type="Texture2D" uid="uid://deiv8aj72yt8q" path="res://assets/textures/tx_menubg.png" id="2_7suek"]
+[ext_resource type="Texture2D" uid="uid://deiv8aj72yt8q" path="res://assets/textures/enviroment/tx_menubg.png" id="2_7suek"]
 [ext_resource type="FontFile" uid="uid://cshab6w8pf3hi" path="res://assets/sprites/fonts/Scribbles-Regular.otf" id="4_uhagc"]
 [ext_resource type="Texture2D" uid="uid://d02ju31b6jmph" path="res://assets/sprites/ui/slider.png" id="5_btxxm"]
 [ext_resource type="FontFile" uid="uid://bg1s5wb6k0hb2" path="res://assets/sprites/fonts/Scribbles-Regular.ttf" id="6_wb0q5"]
 [ext_resource type="Texture2D" uid="uid://sgpvnxwvlssa" path="res://assets/sprites/ui/options.png" id="8_otr3d"]
 [ext_resource type="Texture2D" uid="uid://cqqquxi5y8rr" path="res://assets/sprites/ui/close_map_button.png" id="9_8ekit"]
 [ext_resource type="Texture2D" uid="uid://dprrwi7aoji0f" path="res://assets/sprites/ui/volume.png" id="10_n4uci"]
-[ext_resource type="Texture2D" uid="uid://xe2hfyt0voa2" path="res://assets/sprites/ui/volumeoff.png" id="11_877pj"]
+[ext_resource type="Texture2D" uid="uid://xe2hfyt0voa2" path="res://assets/sprites/ui/volume_off.png" id="11_877pj"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1g8jr"]
 
