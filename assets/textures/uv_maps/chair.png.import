@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf7fxxhleq7sp"
-path="res://.godot/imported/small_floors.png-209079bf8982b1668b141f3ee123c86e.ctex"
+uid="uid://bcab4bvmlj2fb"
+path="res://.godot/imported/chair.png-56643c8372a683ae381817658565942d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/uv_maps/small_floors.png"
-dest_files=["res://.godot/imported/small_floors.png-209079bf8982b1668b141f3ee123c86e.ctex"]
+source_file="res://assets/textures/uv_maps/chair.png"
+dest_files=["res://.godot/imported/chair.png-56643c8372a683ae381817658565942d.ctex"]
 
 [params]
 

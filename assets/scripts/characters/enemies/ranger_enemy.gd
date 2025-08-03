@@ -61,7 +61,7 @@ func _create_waypoints() -> void:
 		waypoints.append(child.global_position)
 
 func update_raycast() -> void:
-	player_detection.look_at(player_ref.global_position)
+	player_detection.look_at(Player.player.global_position)
 	
 func player_is_visible() -> bool:
 	return player_detection.get_collider() is Player
@@ -80,7 +80,7 @@ func can_see_player(view_range: float) -> bool:
 	var can_see_player: bool = false
 	
 	var parent_pos: Vector3 = global_position
-	var player_pos: Vector3 = player_ref.global_position
+	var player_pos: Vector3 = Player.player.global_position
 	
 	var distance = parent_pos.distance_to(player_pos)
 	

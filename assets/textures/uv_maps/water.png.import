@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcab4bvmlj2fb"
-path="res://.godot/imported/chair.png-afa3cb4907e06f723b133b0b6075d260.ctex"
+uid="uid://cxkfsq6u5wqk6"
+path="res://.godot/imported/water.png-6f8a98b10d4ee2be6cf55fdd75451f31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/uv_maps/chair.png"
-dest_files=["res://.godot/imported/chair.png-afa3cb4907e06f723b133b0b6075d260.ctex"]
+source_file="res://assets/textures/uv_maps/water.png"
+dest_files=["res://.godot/imported/water.png-6f8a98b10d4ee2be6cf55fdd75451f31.ctex"]
 
 [params]
 

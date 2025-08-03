@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1l2f66ledodl"
-path="res://.godot/imported/wall_half.png-4b6242ef1592df6c8d0660ffd0134573.ctex"
+uid="uid://dbqn4mem61grm"
+path="res://.godot/imported/small_elements.png-c3a2f9574a01fcda7ca8598e511995d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/uv_maps/wall_half.png"
-dest_files=["res://.godot/imported/wall_half.png-4b6242ef1592df6c8d0660ffd0134573.ctex"]
+source_file="res://assets/textures/uv_maps/small_elements.png"
+dest_files=["res://.godot/imported/small_elements.png-c3a2f9574a01fcda7ca8598e511995d4.ctex"]
 
 [params]
 

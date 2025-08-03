@@ -79,3 +79,6 @@ func _on_slam_attack_timer_timeout() -> void:
 
 func _on_sweep_attack_timer_timeout() -> void:
 	can_sweep_attack = true
+
+func _on_death() -> void:
+	UIManager.instance._on_victory()
