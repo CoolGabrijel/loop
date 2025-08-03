@@ -59,11 +59,11 @@ func handle_footstep_sfx() -> void:
 		walking_sounds.pitch_scale = randf_range(pitch - pitch_variance, pitch + pitch_variance)
 		walking_sounds.volume_db = randf_range(volume - volume_variance, volume - volume_variance)
 		walking_sounds.play()
-		if !sprite.is_playing():
-			sprite.play("default")
+		if !sprite.is_playing() or sprite.animation == "idle":
+			sprite.play("walking")
 	elif player.velocity == Vector3.ZERO:
 		walking_sounds.stop()
-		sprite.stop()
+		sprite.play("idle")
 
 func update_sprite() -> void:
 	if movement_input.x >= 0:
@@ -74,7 +74,9 @@ func update_sprite() -> void:
 func stun(duration: float) -> void:
 	movement_locked = true
 	debug_label.text = "Stunned"
+	sprite.play("hurt")
 	await get_tree().create_timer(duration).timeout
+	sprite.play("idle")
 	movement_locked = false
 	debug_label.text = ""
 
