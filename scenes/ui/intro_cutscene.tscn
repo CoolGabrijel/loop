@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dplt1tt4bsrd"]
 
-[ext_resource type="Script" uid="uid://da6eipc3iqy1s" path="res://assets/scripts/intro_cutscene.gd" id="1_rlq26"]
+[ext_resource type="Script" uid="uid://da6eipc3iqy1s" path="res://assets/scripts/ui/intro_cutscene.gd" id="1_rlq26"]
 [ext_resource type="Texture2D" uid="uid://2tqjcet4ahac" path="res://assets/sprites/characters/player characters/jeremy/main_character_placeholder.png" id="2_c8wj0"]
 
 [sub_resource type="Gradient" id="Gradient_uqmjl"]

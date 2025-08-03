@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq3rogex1sbg"]
+[gd_scene load_steps=4 format=3 uid="uid://dq3rogex1sbg"]
+
+[ext_resource type="Script" uid="uid://eekdpcvjbjo2" path="res://assets/scripts/ui/end_game_screen.gd" id="1_erjqy"]
 
 [sub_resource type="Gradient" id="Gradient_s61n4"]
 offsets = PackedFloat32Array(0, 0.49375, 1)
@@ -8,6 +10,7 @@ colors = PackedColorArray(0.668833, 0.433907, 0.311823, 1, 0.287521, 0.586529, 0
 gradient = SubResource("Gradient_s61n4")
 
 [node name="VictoryScene" type="CanvasLayer"]
+script = ExtResource("1_erjqy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15

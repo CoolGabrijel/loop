@@ -57,9 +57,9 @@ func handle_footstep_sfx() -> void:
 
 func update_sprite() -> void:
 	if movement_input.x >= 0:
-		sprite.flip_h = false
-	else:
 		sprite.flip_h = true
+	else:
+		sprite.flip_h = false
 		
 func stun(duration: float) -> void:
 	movement_locked = true

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba7xda0epbv4j"]
+[gd_scene load_steps=7 format=3 uid="uid://ba7xda0epbv4j"]
 
 [ext_resource type="PackedScene" uid="uid://cq7aw1vqv4ohb" path="res://scenes/objects/npcs/vendor.tscn" id="1_afdak"]
 [ext_resource type="Script" uid="uid://bp4lt48xrq8jy" path="res://assets/scripts/characters/vendors/vendor_oskar.gd" id="2_6xi6l"]
 [ext_resource type="AudioStream" uid="uid://bua63cqg67mt" path="res://assets/audio/music/vendor_oskar_theme_final.ogg" id="3_6xi6l"]
+[ext_resource type="Texture2D" uid="uid://dd4hun5u0aqht" path="res://assets/sprites/characters/npcs/oskar/oskar_idle.png" id="3_awsp8"]
 [ext_resource type="Texture2D" uid="uid://bhphy1vxvamp" path="res://icon.svg" id="3_ommfv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ommfv"]
@@ -18,7 +19,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_ommfv")
 
 [node name="Sprite2D" parent="Area3D" index="1"]
-texture = ExtResource("3_ommfv")
+scale = Vector2(0.104317, 0.104317)
+texture = ExtResource("3_awsp8")
 
 [node name="Sprite3D" type="Sprite3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
