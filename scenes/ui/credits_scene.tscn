@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://h7wrnmmv0v4c"]
+[gd_scene load_steps=3 format=3 uid="uid://h7wrnmmv0v4c"]
 
 [ext_resource type="FontFile" uid="uid://bg1s5wb6k0hb2" path="res://assets/sprites/fonts/Scribbles-Regular.ttf" id="1_oobj6"]
+[ext_resource type="Script" uid="uid://c54peqq4y0spq" path="res://assets/scripts/ui/credits_scene.gd" id="1_vojle"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_vojle")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

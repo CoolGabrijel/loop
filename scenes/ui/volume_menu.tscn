@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb2g4wmqrqan1"]
+[gd_scene load_steps=8 format=3 uid="uid://bb2g4wmqrqan1"]
 
 [ext_resource type="Texture2D" uid="uid://deiv8aj72yt8q" path="res://assets/textures/tx_menubg.png" id="1_lamhx"]
+[ext_resource type="Script" uid="uid://8k8ahcbgiukl" path="res://assets/scripts/ui/volume_menu.gd" id="1_nay2i"]
 [ext_resource type="FontFile" uid="uid://bg1s5wb6k0hb2" path="res://assets/sprites/fonts/Scribbles-Regular.ttf" id="2_5qqp5"]
 [ext_resource type="Texture2D" uid="uid://d02ju31b6jmph" path="res://assets/sprites/ui/slider.png" id="3_5qqp5"]
 [ext_resource type="Texture2D" uid="uid://cqqquxi5y8rr" path="res://assets/sprites/ui/close_map_button.png" id="4_nay2i"]
@@ -10,6 +11,7 @@
 [sub_resource type="Theme" id="Theme_5qqp5"]
 
 [node name="VolumeMenu" type="CanvasLayer"]
+script = ExtResource("1_nay2i")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("CanvasItemMaterial_lamhx")
