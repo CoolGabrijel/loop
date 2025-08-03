@@ -31,10 +31,23 @@ theme = SubResource("Theme_m1kxf")
 texture = ExtResource("2_7suek")
 
 [node name="PlaceholderGameName" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(540, 278)
 rotation = -0.151775
 scale = Vector2(0.61755, 0.61755)
 texture = ExtResource("2_1g8jr")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 194.0
+offset_top = 48.0
+offset_right = 1158.0
+offset_bottom = 291.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.517647, 0.0117647, 0.192157, 1)
+theme_override_fonts/font = ExtResource("6_wb0q5")
+theme_override_font_sizes/font_size = 177
+text = "Rock, Scissors,
+   Staplers"
 
 [node name="JamLogo" type="Sprite2D" parent="."]
 position = Vector2(1057, 552)
